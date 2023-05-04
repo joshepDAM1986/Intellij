@@ -1,0 +1,50 @@
+@options
+@packages
+@argfile
+-encoding
+'UTF-8'
+-protected
+-source
+'19'
+-sourcepath
+'C:/Users/garci/OneDrive/Documentos/NetBeansProjects/_ejercicio_discord_1/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/garci/OneDrive/Documentos/NetBeansProjects/_ejercicio_discord_1/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'_ejercicio_discord_1 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'_ejercicio_discord_1 1.0-SNAPSHOT API'
+com.mycompany._ejercicio_discord_1
+'C:/Users/garci/OneDrive/Documentos/NetBeansProjects/_ejercicio_discord_1/src/main/java/com/mycompany/_ejercicio_discord_1/Cuadrado.java'
+'C:/Users/garci/OneDrive/Documentos/NetBeansProjects/_ejercicio_discord_1/src/main/java/com/mycompany/_ejercicio_discord_1/Figura.java'
+'C:/Users/garci/OneDrive/Documentos/NetBeansProjects/_ejercicio_discord_1/src/main/java/com/mycompany/_ejercicio_discord_1/Triangulo.java'
+'C:/Users/garci/OneDrive/Documentos/NetBeansProjects/_ejercicio_discord_1/src/main/java/com/mycompany/_ejercicio_discord_1/_ejercicio_discord_1.java'
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\src\main\java = 1679416405376
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\allclasses-index.html = 1679478790280
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\allpackages-index.html = 1679478790282
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\copy.svg = 1679478790328
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\element-list = 1679478790200
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\help-doc.html = 1679478790315
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\index-all.html = 1679478790303
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\index.html = 1679478790309
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\jquery-ui.overrides.css = 1679478790348
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\member-search-index.js = 1679478790288
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\module-search-index.js = 1679478790284
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\overview-tree.html = 1679478790264
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\package-search-index.js = 1679478790285
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\script.js = 1679478790326
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\search-page.js = 1679478790335
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\search.html = 1679478790306
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\search.js = 1679478790332
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\stylesheet.css = 1679478790323
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\tag-search-index.js = 1679478790289
+C:\Users\garci\OneDrive\Documentos\NetBeansProjects\_ejercicio_discord_1\target\site\apidocs\type-search-index.js = 1679478790286
