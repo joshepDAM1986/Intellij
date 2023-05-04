@@ -1,1 +1,0 @@
-typeSearchIndex = [{"p":"com.mycompany._ejercicio_discord_1","l":"_ejercicio_discord_1"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.mycompany._ejercicio_discord_1","l":"Cuadrado"},{"p":"com.mycompany._ejercicio_discord_1","l":"Figura"},{"p":"com.mycompany._ejercicio_discord_1","l":"Triangulo"}];updateSearchResults();
