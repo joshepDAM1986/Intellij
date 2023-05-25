@@ -1,0 +1,8 @@
+12345678A#Pérez#López#Pedro#2007-12-23#2023-01-12#Programador
+22345678B#Abad#Gómez#Ana María#2001-06-21#2020-01-12#Gerente
+33345678C#Ruiz#López#Carmen#2006-09-03#2023-01-12#Analista
+44345678D#Marquez#González#Luis#2002-09-03#2021-01-20#Programador
+55345678E#Smith#Sánchez#Jane#2003-04-20#2020-01-12#Administrador
+66345678F#Riquelme#Esteban#Carlos#2001-09-12#2020-01-12#Analista
+77345678G#Rio#Ruiz#Raquel#2005-02-13#2021-10-01#Programador
+88345678H#Flores#Fernandez#Pepe#1999-01-20#2021-10-01#Programador

@@ -1,0 +1,274 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 10:57:41 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\$objetcdb\db\BBDD.odb' is opened by 7508@JMGN
+
+[2023-05-05 10:57:41 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 10:57:41 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 10:57:41 #4 type] 
+Type org.example.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 10:58:06 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\$objetcdb\db\BBDD.odb' has been recovered (tr. 1-3)
+
+[2023-05-05 10:58:06 #2 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\$objetcdb\db\BBDD.odb' is opened by 16416@JMGN
+
+[2023-05-05 10:58:06 #3 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 10:58:06 #4 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 10:58:06 #5 type] 
+Type org.example.Persona is not enhanced.
+
+[2023-05-05 10:58:06 #6 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\$objetcdb\db\BBDD.odb' is closed by 16416@JMGN
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 10:58:22 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\$objetcdb\db\BBDD.odb' is opened by 8628@JMGN
+
+[2023-05-05 10:58:22 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 10:58:22 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 10:58:23 #4 type] 
+Type org.example.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 10:58:31 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\$objetcdb\db\BBDD.odb' is opened by 14716@JMGN
+
+[2023-05-05 10:58:31 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 10:58:31 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 10:58:31 #4 type] 
+Type org.example.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 10:58:45 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\$objetcdb\db\BBDD.odb' is opened by 18092@JMGN
+
+[2023-05-05 10:58:45 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 10:58:45 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 10:58:45 #4 type] 
+Type org.example.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 10:58:52 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\$objetcdb\db\BBDD.odb' is opened by 9016@JMGN
+
+[2023-05-05 10:58:52 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 10:58:52 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 10:58:52 #4 type] 
+Type org.example.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 11:43:10 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\$objetcdb\db\BBDD.odb' is opened by 16956@JMGN
+
+[2023-05-05 11:43:10 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 11:43:10 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 11:43:10 #4 type] 
+Type org.example.Persona is not enhanced.
+
+[2023-05-05 11:43:10 #5 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\$objetcdb\db\BBDD.odb' is closed by 16956@JMGN
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 11:46:04 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb_v2.8.8\db\BBDD.odb' is opened by 15860@JMGN
+
+[2023-05-05 11:46:04 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 11:46:04 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 11:46:04 #4 type] 
+Type org.example.Persona is not enhanced.
+
+[2023-05-05 11:46:04 #5 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb_v2.8.8\db\BBDD.odb' is closed by 15860@JMGN
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 11:48:31 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb\db\BBDD.odb' is opened by 11708@JMGN
+
+[2023-05-05 11:48:31 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 11:48:31 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 11:48:31 #4 type] 
+Type org.example.Persona is not enhanced.
+
+[2023-05-05 11:48:31 #5 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb\db\BBDD.odb' is closed by 11708@JMGN
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 11:48:55 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb\db\BBDD.odb' is opened by 4120@JMGN
+
+[2023-05-05 11:48:55 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 11:48:55 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 11:48:55 #4 type] 
+Type org.example.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 11:49:29 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb\db\BBDD.odb' is opened by 1336@JMGN
+
+[2023-05-05 11:49:29 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 11:49:29 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 11:49:29 #4 type] 
+Type org.example.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 11:49:59 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb\db\BBDD.odb' is opened by 11888@JMGN
+
+[2023-05-05 11:49:59 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 11:50:00 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 11:50:00 #4 type] 
+Type org.example.Persona is not enhanced.
+
+[2023-05-05 11:50:00 #5 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb\db\BBDD.odb' is closed by 11888@JMGN
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 11:51:51 #1 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb\db\BBDD.odb' is opened by 16692@JMGN
+
+[2023-05-05 11:51:51 #2 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 11:51:51 #3 type] 
+Type org.example.Vehiculo is not enhanced.
+
+[2023-05-05 11:51:51 #4 type] 
+Type org.example.Persona is not enhanced.
+
+[2023-05-05 11:51:51 #5 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb\db\BBDD.odb' is closed by 16692@JMGN
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-05 11:54:14 #1 store.file] 
+readTextFile error.
+
+[2023-05-05 11:54:14 #2 store.file] 
+java.io.FileNotFoundException: C:\Users\garci\.objectdb\exolorer.xml (El sistema no puede encontrar el archivo especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:158)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
+	at com.objectdb.o.STH.B(STH.java:731)
+	at com.objectdb.o.STH.A(STH.java:715)
+	at com.objectdb.o.CNF.<init>(CNF.java:106)
+	at com.objectdb.o.CNF.<clinit>(CNF.java:32)
+	at com.objectdb.o.MainFrame.init(MainFrame.java:132)
+	at com.objectdb.o.EXA.<init>(EXA.java:77)
+	at com.objectdb.Explorer$1.run(Explorer.java:57)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+[2023-05-05 11:54:14 #3 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb\db\BBDD.odb' is opened by 840@JMGN
+
+[2023-05-05 11:54:14 #4 store] 
+Configuration path: C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb_v2.8.8\objectdb.conf
+
+[2023-05-05 11:54:15 #5 store.file] 
+readTextFile error.
+
+[2023-05-05 11:54:15 #6 store.file] 
+java.io.FileNotFoundException: C:\Users\garci\.objectdb\exolorer.xml (El sistema no puede encontrar el archivo especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:158)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
+	at com.objectdb.o.STH.B(STH.java:731)
+	at com.objectdb.o.STH.A(STH.java:715)
+	at com.objectdb.o.CNF.<init>(CNF.java:106)
+	at com.objectdb.o.CNF.f(CNF.java:130)
+	at com.objectdb.o.CNC.s(CNC.java:119)
+	at com.objectdb.o.EXA.<init>(EXA.java:87)
+	at com.objectdb.Explorer$1.run(Explorer.java:57)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+[2023-05-05 11:55:32 #7 store] 
+Database 'C:\Users\garci\OneDrive\Documentos\IdeaProjects\objectdb\objectdb\db\BBDD.odb' is closed by 840@JMGN
+
