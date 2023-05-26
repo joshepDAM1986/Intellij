@@ -7,10 +7,22 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
                 <title>Ejercicio 1 Pag 216-217</title>
+                <style>
+
+                    table {
+                    border-collapse: collapse;
+                    }
+
+                    table, tr, th {
+                    border: 1px solid;
+                    padding: 5px
+                    }
+
+                </style>
             </head>
             <body>
                 <h1>CATALOGO DE DISCOS</h1>
-                <table border="1">
+                <table>
                     <tr>
                         <th>TITULO</th>
                         <th>ARTISTA</th>

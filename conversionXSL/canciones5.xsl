@@ -19,7 +19,7 @@
                         <th>PRECIO</th>
                         <th>ANIO</th>
                     </tr>
-                    <xsl:for-each select="CATALOGO/DISCO[ANIO &gt;= 1990]">
+                    <xsl:for-each select="CATALOGO/DISCO[ANIO > 1990]">
                         <tr>
                             <td>
                                 <xsl:value-of select="TITULO"/>

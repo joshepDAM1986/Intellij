@@ -43,9 +43,9 @@
                     </xsl:for-each>
                     <!-- Agregar fila con la suma de los precios -->
                     <tr>
-                        <td colspan="4">Total:</td>
+                        <td colspan="4">TOTAL:</td>
                         <td>
-                            <xsl:value-of select="(CATALOGO/DISCO/PRECIO)"/>
+                            <xsl:value-of select="sum(CATALOGO/DISCO/PRECIO)"/>
                         </td>
                         <td></td>
                     </tr>

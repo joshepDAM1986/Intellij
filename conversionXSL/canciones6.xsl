@@ -8,10 +8,10 @@
                 <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
                 <title>Ejercicio 1 Pag 216-217</title>
                 <style>
-                    .green-bg {
+                    .fondo_verde {
                     background-color: green;
                     }
-                    .yellow-bg {
+                    .fondo_amarillo {
                     background-color: yellow;
                     }
                 </style>
@@ -28,14 +28,14 @@
                         <th>ANIO</th>
                     </tr>
                     <xsl:for-each select="CATALOGO/DISCO">
-                        <xsl:variable name="precio" select="number(PRECIO)" />
-                        <xsl:variable name="rowClass">
+                        <xsl:variable name="precio" select="PRECIO" />
+                        <xsl:variable name="filaPintada">
                             <xsl:choose>
-                                <xsl:when test="$precio &gt; 10">green-bg</xsl:when>
-                                <xsl:otherwise>yellow-bg</xsl:otherwise>
+                                <xsl:when test="$precio > 10">fondo_verde</xsl:when>
+                                <xsl:otherwise>fondo_amarillo</xsl:otherwise>
                             </xsl:choose>
                         </xsl:variable>
-                        <tr class="{$rowClass}">
+                        <tr class="{$filaPintada}">
                             <td>
                                 <xsl:value-of select="TITULO"/>
                             </td>
