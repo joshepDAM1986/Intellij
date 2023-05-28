@@ -45,12 +45,12 @@ public class Control {
                 case 7 -> CRUDVehiculo.modificarVehiculo(em);
                 case 8 -> CRUDVehiculo.borrarVehiculo(em);
                 case 9 -> DatosArchivo.importarDatos(em);
-                case 10 -> DatosArchivo.consultarEmpleados(em);
-                case 11 -> DatosArchivo.insertarNuevoEmpleado(em);
-                case 12 -> DatosArchivo.filtrarPorMayoresEdad(em);
-                case 13 -> DatosArchivo.filtrarPorAntiguedad(em);
-                case 14 -> DatosArchivo.filtrarDni(em);
-                case 15 -> DatosArchivo.filtrarPrimeraLetra(em);
+                case 10 -> CRUDEmpleado.consultarEmpleados(em);
+                case 11 -> CRUDEmpleado.insertarNuevoEmpleado(em);
+                case 12 -> CRUDEmpleado.filtrarPorMayoresEdad(em);
+                case 13 -> CRUDEmpleado.filtrarPorAntiguedad(em);
+                case 14 -> CRUDEmpleado.filtrarDni(em);
+                case 15 -> CRUDEmpleado.filtrarPrimeraLetra(em);
                 case 0 -> System.out.println("Saliendo del programa...");
                 default -> System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
 
