@@ -175,7 +175,6 @@ public class DatosArchivo {
         }
     }
 
-
     public static void filtrarPrimeraLetra(EntityManager em) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce la primera letra del nombre:");
@@ -185,7 +184,7 @@ public class DatosArchivo {
         TypedQuery<Empleado> consulta = em.createQuery(
                 "SELECT e FROM Empleado e WHERE e.nombre LIKE :Nombre",
                 Empleado.class);
-        consulta.setParameter("Nombre", letra + "%"); // Establecer el valor para el parámetro con nombre
+        consulta.setParameter("Nombre", letra + "%");
         List<Empleado> resultado = consulta.getResultList();
         for (Empleado empleado : resultado) {
             System.out.println(empleado);

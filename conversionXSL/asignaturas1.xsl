@@ -14,7 +14,7 @@
                     <ul>
                    <xsl:for-each select="ciclos/ciclo">
                        <xsl:variable name="grado" select="ciclos/ciclo/grado"/>
-                       <xsl:if test="grado='Superior'">
+                       <xsl:if test="grado='Superior'">e
                         <li>
                             <p>
                         <strong>
