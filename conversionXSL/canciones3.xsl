@@ -20,8 +20,7 @@
                         <th>ANIO</th>
                     </tr>
                     <xsl:for-each select="CATALOGO/DISCO">
-                        <xsl:variable name="grado" select="CATALOGO/DISCO/PAIS"/>
-                        <xsl:if test="PAIS='PORTUGAL'">
+                        <xsl:if test="PRECIO &lt; 999 ">
                         <tr>
                             <td>
                                 <xsl:value-of select="TITULO"/>

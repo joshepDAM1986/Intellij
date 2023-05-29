@@ -8,7 +8,7 @@
                 <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
                 <title>Ejercicio 1 Pag 216-217</title>
                 <style>
-                    p {
+                    span {
                     color: red;
                     }
                     li {
@@ -21,7 +21,7 @@
                     <ol>
                         <xsl:for-each select="CATALOGO/DISCO">
                                 <li><xsl:value-of select="TITULO"/></li>
-                                <p><xsl:value-of select="PRECIO"/></p>
+                                <span><xsl:value-of select="PRECIO"/></span>
                         </xsl:for-each>
                     </ol>
             </body>
