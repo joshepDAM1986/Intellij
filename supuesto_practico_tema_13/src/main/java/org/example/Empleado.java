@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@NamedQuery(name = "masAntiguoPrimero", query = "SELECT e FROM Empleado e ORDER BY e.fechaIncorporacion ASC")
+@NamedQuery(name = "masAntiguoPrimero", query = "SELECT e FROM Empleado e WHERE e.fechaIncorporacion >= :fechaReferencia")
 public class Empleado {
     @Id
     private String dni;

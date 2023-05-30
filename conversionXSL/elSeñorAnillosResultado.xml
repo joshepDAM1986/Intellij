@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<señordelosanillos>
+    <personaje>
+        <nombre>Gimli</nombre>
+        <raza>Enano</raza>
+        <descripcion>Gimli, hijo de Glóin, un fiero guerrero enano y leal compañero de la Comunidad del Anillo.</descripcion>
+        <atributos>
+            <edad>139</edad>
+            <altura>1.40m</altura>
+            <arma>Hacha de guerra y hacha arrojadiza</arma>
+        </atributos>
+        <afiliacion/>
+    </personaje>
+    <personaje>
+        <nombre>Bilbo Bolsón</nombre>
+        <raza>Hobbit</raza>
+        <descripcion>Bilbo Bolsón, tío de Frodo y portador anterior del Anillo Único.</descripcion>
+        <atributos>
+            <edad>131</edad>
+            <altura>1.22m</altura>
+            <arma>Espada Dardo y Anillo Único</arma>
+        </atributos>
+        <afiliacion>Comunidad del Anillo, Reino de los Hobbits</afiliacion>
+    </personaje>
+</señordelosanillos>

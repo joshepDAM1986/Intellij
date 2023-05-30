@@ -20,7 +20,7 @@ public class Control {
             System.out.println("4. Dar de alta vehículo");
             System.out.println("5. Consultar todos los vehículos");
             System.out.println("6. Consultar un vehículo por su ID");
-            System.out.println("7. Modificar datos de un vehículo");
+            System.out.println("7. Modificar matrícula de un vehículo");
             System.out.println("8. Eliminar vehículo");
             System.out.println("9. Ingresar datos de archivo");
             System.out.println("10. Consultar datos de empleados");
@@ -58,9 +58,7 @@ public class Control {
             em.close();
             emf.close();
         }
-
         while (opcion != 0);
-
     }
 }
 

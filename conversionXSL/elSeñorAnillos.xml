@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="asignaturas1.xsl" type="text/xsl"?>
+<señordelosanillos>
+
+    <personaje>
+
+        <nombre>Aragorn</nombre>
+
+        <raza>Hombre</raza>
+
+        <descripcion>Aragorn II, hijo de Arathorn, también conocido como Trancos o Viggo Mortensen.</descripcion>
+
+        <atributos>
+
+            <edad>87</edad>
+
+            <altura>1.89m</altura>
+
+            <arma>Andúril, la espada que fue rota</arma>
+
+        </atributos>
+
+        <afiliacion>Gondor, La Comunidad del Anillo</afiliacion>
+
+    </personaje>
+
+    <personaje>
+
+        <nombre>Gandalf</nombre>
+
+        <raza>Maiar</raza>
+
+        <descripcion>Gandalf el Gris, el mago poderoso y sabio interpretado por Ian McKellen.</descripcion>
+
+        <atributos>
+
+            <edad>desconocida</edad>
+
+            <altura>variable</altura>
+
+            <arma>Cayado mágico y espada Glamdring</arma>
+
+        </atributos>
+
+        <afiliacion>La Comunidad del Anillo, Istari</afiliacion>
+
+    </personaje>
+
+    <personaje>
+
+        <nombre>Frodo Bolsón</nombre>
+
+        <raza>Hobbit</raza>
+
+        <descripcion>Frodo Bolsón, el portador del Anillo, interpretado por Elijah Wood.</descripcion>
+
+        <atributos>
+
+            <edad>51</edad>
+
+            <altura>1.42m</altura>
+
+            <arma>Daga y el Anillo Único</arma>
+
+        </atributos>
+
+        <afiliacion>La Comunidad del Anillo</afiliacion>
+
+    </personaje>
+
+    <personaje>
+
+        <nombre>Gollum</nombre>
+
+        <raza>Hobbit</raza>
+
+        <descripcion>Gollum, anteriormente conocido como Sméagol, es un hobbit corrompido por el Anillo Único.</descripcion>
+
+        <atributos>
+
+            <edad>aproximadamente 589</edad>
+
+            <altura>1.23m</altura>
+
+            <arma>Sus manos y astucia</arma>
+
+        </atributos>
+
+        <afiliacion>Ninguna</afiliacion>
+
+    </personaje>
+
+    <personaje>
+
+        <nombre>Legolas</nombre>
+
+        <raza>Elfo</raza>
+
+        <descripcion>Legolas, el hábil arquero elfo interpretado por Orlando Bloom.</descripcion>
+
+        <atributos>
+
+            <edad>desconocida</edad>
+
+            <altura>1.80m</altura>
+
+            <arma>Arco y flechas, espadas gemelas</arma>
+
+        </atributos>
+
+        <afiliacion>La Comunidad del Anillo, Reino del Bosque</afiliacion>
+
+    </personaje>
+
+    <personaje>
+
+        <nombre>Gimli</nombre>
+
+        <raza>Enano</raza>
+
+        <descripcion>Gimli, hijo de Glóin, un fiero guerrero enano y leal compañero de la Comunidad del Anillo.</descripcion>
+
+        <atributos>
+
+            <edad>139</edad>
+
+            <altura>1.40m</altura>
+
+            <arma>Hacha de guerra y hacha arrojadiza</arma>
+
+        </atributos>
+
+    </personaje>
+
+    <personaje>
+
+        <nombre>Bilbo Bolsón</nombre>
+
+        <raza>Hobbit</raza>
+
+        <descripcion>Bilbo Bolsón, tío de Frodo y portador anterior del Anillo Único.</descripcion>
+
+        <atributos>
+
+            <edad>131</edad>
+
+            <altura>1.22m</altura>
+
+            <arma>Espada Dardo y Anillo Único</arma>
+
+        </atributos>
+
+        <afiliacion>Comunidad del Anillo, Reino de los Hobbits</afiliacion>
+
+    </personaje>
+
+    <personaje>
+
+        <nombre>Samwise "Sam" Gamyi</nombre>
+
+        <raza>Hobbit</raza>
+
+        <descripcion>Samwise Gamyi, fiel amigo y jardinero de Frodo.</descripcion>
+
+        <atributos>
+
+            <edad>38</edad>
+
+            <altura>1.26m</altura>
+
+            <arma>Daga y valentía</arma>
+
+        </atributos>
+
+        <afiliacion>Comunidad del Anillo, Reino de los Hobbits</afiliacion>
+
+    </personaje>
+
+    <personaje>
+
+        <nombre>Merry</nombre>
+
+        <raza>Hobbit</raza>
+
+        <descripcion>Merry, nombre completo Meriadoc Brandigamo, es uno de los cuatro hobbits de la Comunidad del Anillo.</descripcion>
+
+        <atributos>
+
+            <edad>37</edad>
+
+            <altura>1.10m</altura>
+
+            <arma>Élfica daga Barrow-blade</arma>
+
+        </atributos>
+
+        <afiliacion>Comunidad del Anillo, Reino de los Hobbits</afiliacion>
+
+    </personaje>
+
+    <personaje>
+
+        <nombre>Pippin</nombre>
+
+        <raza>Hobbit</raza>
+
+        <descripcion>Pippin, nombre completo Peregrin Tuk, es uno de los cuatro hobbits de la Comunidad del Anillo.</descripcion>
+
+        <atributos>
+
+            <edad>29</edad>
+
+            <altura>1.16m</altura>
+
+            <arma>Élfica daga Barrow-blade</arma>
+
+        </atributos>
+
+        <afiliacion>Comunidad del Anillo, Reino de los Hobbits</afiliacion>
+
+    </personaje>
+
+    <personaje>
+
+        <nombre>Boromir</nombre>
+
+        <raza>Hombre</raza>
+
+        <descripcion>Boromir, hijo del Senescal de Gondor, es un valiente guerrero y miembro de la Comunidad del Anillo.</descripcion>
+
+        <atributos>
+
+            <edad>41</edad>
+
+            <altura>1.88m</altura>
+
+            <arma>Espada y arco</arma>
+
+        </atributos>
+
+        <afiliacion>Gondor, Comunidad del Anillo</afiliacion>
+
+    </personaje>
+
+</señordelosanillos>

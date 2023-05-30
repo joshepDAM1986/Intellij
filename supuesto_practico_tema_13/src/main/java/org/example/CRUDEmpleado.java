@@ -2,6 +2,7 @@ package org.example;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
@@ -100,16 +101,29 @@ public class CRUDEmpleado {
     }
 
     public static void filtrarPorAntiguedad(EntityManager em) {
-        System.out.println("Filtrar por fecha");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduzca la fecha de referencia");
+        String fechaReferencia = sc.nextLine();
         System.out.println("-------------------------------------");
 
-        TypedQuery<Empleado> consulta = em.createNamedQuery("masAntiguoPrimero", Empleado.class);
-        List<Empleado> resultado = consulta.getResultList();
+        try {
+            TypedQuery<Empleado> query = em.createNamedQuery("masAntiguoPrimero", Empleado.class);
+            query.setParameter("fechaReferencia", LocalDate.parse(fechaReferencia));
+            List<Empleado> resultado = query.getResultList();
 
-        System.out.println("Empleados ordenados por antigüedad en el trabajo:");
-        for (Empleado empleado : resultado) {
-            System.out.println(empleado);
+            System.out.println("Empleados ordenados por antigüedad en el trabajo:");
+
+            for (Empleado empleado : resultado) {
+                System.out.println(empleado);
+            }
+
+            if (resultado.size() == 0) {
+                System.out.println("No existen trabajadores tan antiguos");
+            }
         }
+        catch (DateTimeException e){
+                System.out.println("Error, fecha no válida"+ e.getMessage());
+            }
     }
 
     static public void filtrarDni(EntityManager em) {

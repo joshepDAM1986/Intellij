@@ -133,14 +133,23 @@ import java.util.Scanner;
         }
     }
     static public void consultarVehiculoId(EntityManager em) {
+        em.getTransaction().begin();
         Scanner sc=new Scanner(System.in);
         System.out.println("Introduce la id del vehículo:");
         int id = sc.nextInt();
         sc.nextLine();
+        Vehiculo vehiculoExistente = em.find(Vehiculo.class, id);
+        if (vehiculoExistente == null) {
+            System.out.println("El vehiculo con ID " + id + " no existe en la base de datos.");
+            em.getTransaction().rollback();
+            return;
+        }
+
         System.out.println("Datos del vehículo buscado:");
         System.out.println("---------------------------");
         Vehiculo vehiculo = em.find(Vehiculo.class, id);
         System.out.println(vehiculo);
+        em.getTransaction().commit();
     }
 
     /*
@@ -174,7 +183,6 @@ import java.util.Scanner;
         int numModificados = consulta.executeUpdate();
         em.getTransaction().commit();
         System.out.println("Modificaciones realizadas: " + numModificados);
-
     }
 
     static public void borrarVehiculo(EntityManager em) {
