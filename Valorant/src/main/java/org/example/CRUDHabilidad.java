@@ -26,4 +26,5 @@ public class CRUDHabilidad {
         em.persist(habilidad);
         em.getTransaction().commit();
     }
+
 }

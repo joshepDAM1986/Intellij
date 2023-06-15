@@ -3,7 +3,6 @@ package org.example;
 import javax.persistence.*;
 import java.util.*;
 
-
 public class CRUDAgente {
     public static void altaAgente(EntityManager em) {
         em.getTransaction().begin();
@@ -202,6 +201,8 @@ public class CRUDAgente {
             System.out.println("Número de agentes borrados: " + numBorrados);
         }
     }
+
+
 }
 
 

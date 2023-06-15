@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cafeteria xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="productos.xsd">
+  <productos>
+    <producto id="01">
+      <nombre>Café Americano</nombre>
+      <descripcion>Café negro y sin azúcar</descripcion>
+      <categoria>Cafetería</categoria>
+      <precio>2.50</precio>
+      <fecha>2000-01-01</fecha>
+      <stock>20</stock>
+      <alergenos>Huevos Sulfitos Huevos</alergenos>
+    </producto>
+    <producto id="02">
+      <nombre>Capuchino</nombre>
+      <descripcion>Espresso con leche vaporizada y espuma de leche</descripcion>
+      <categoria>Cafetería</categoria>
+      <precio>3.50</precio>
+      <fecha>2001-02-02</fecha>
+      <stock>20</stock>
+      <alergenos>Huevos</alergenos>
+    </producto>
+    <producto id="03">
+      <nombre>Tarta Manzana</nombre>
+      <descripcion>Tarta con relleno de manzana y crujiente de canela</descripcion>
+      <categoria>Pastelería</categoria>
+      <precio>100.25</precio>
+      <fecha>2002-03-03</fecha>
+      <stock>20</stock>
+      <alergenos>Huevos</alergenos>
+    </producto>
+    <producto id="04">
+      <nombre>Croissant</nombre>
+      <descripcion>Croissant de mantequilla recién horneado</descripcion>
+      <categoria>Pastelería</categoria>
+      <precio>0.01</precio>
+      <fecha>2003-04-04</fecha>
+      <stock>20</stock>
+      <alergenos>Huevos</alergenos>
+    </producto>
+    <producto id="05">
+      <nombre>Latte Macchiato</nombre>
+      <descripcion>Leche caliente con una capa de espresso</descripcion>
+      <categoria>Cafetería</categoria>
+      <precio>3.20</precio>
+      <fecha>2004-05-05</fecha>
+      <stock>20</stock>
+      <alergenos>Huevos</alergenos>
+    </producto>
+    <producto id="06">
+      <nombre>Muffin Arándanos</nombre>
+      <descripcion>Muffin esponjoso con arándanos frescos</descripcion>
+      <categoria>Pastelería</categoria>
+      <precio>2.80</precio>
+      <fecha>2005-06-06</fecha>
+      <stock>20</stock>
+      <alergenos>Huevos</alergenos>
+    </producto>
+    <producto id="07">
+      <nombre>Espresso</nombre>
+      <descripcion>Pequeño y fuerte café</descripcion>
+      <categoria>Cafetería</categoria>
+      <precio>2.00</precio>
+      <fecha>2006-07-07</fecha>
+      <stock>20</stock>
+      <alergenos>Huevos</alergenos>
+    </producto>
+    <producto id="08">
+      <nombre>Croissant Chocolate</nombre>
+      <descripcion>Croissant relleno de chocolate</descripcion>
+      <categoria>Pastelería</categoria>
+      <precio>2.00</precio>
+      <fecha>2007-08-08</fecha>
+      <stock>20</stock>
+      <alergenos>Huevos</alergenos>
+    </producto>
+    <producto id="09">
+      <nombre>Cappuccino</nombre>
+      <descripcion>Espresso con leche vaporizada y espuma de leche</descripcion>
+      <categoria>Cafetería</categoria>
+      <precio>3.50</precio>
+      <fecha>2008-09-09</fecha>
+      <stock>20</stock>
+      <alergenos>Huevos</alergenos>
+    </producto>
+    <producto id="10">
+      <nombre>Tarta Chocolate</nombre>
+      <descripcion>Tarta decorada con virutas de chocolate</descripcion>
+      <categoria>Pastelería</categoria>
+      <precio>4.20</precio>
+      <fecha>2009-10-10</fecha>
+      <stock>20</stock>
+      <alergenos>Huevos</alergenos>
+    </producto>
+  </productos>
+</cafeteria>

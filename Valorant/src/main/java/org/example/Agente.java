@@ -1,7 +1,7 @@
 package org.example;
 
 import javax.persistence.*;
-import java.util.Scanner;
+import java.util.Objects;
 
 @Entity
 public class Agente {
@@ -74,5 +74,18 @@ public class Agente {
                 "Tipo de Agente= " + tipoAgente + "\n" +
                 "Nacionalidad= " + Nacionalidad + "\n" +
                 "Habilidad= " + habilidad.getNombre() + "\n";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Agente agente = (Agente) o;
+        return id == agente.id && Objects.equals(nombre, agente.nombre) && tipoAgente == agente.tipoAgente && Objects.equals(Nacionalidad, agente.Nacionalidad) && Objects.equals(habilidad, agente.habilidad);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nombre, tipoAgente, Nacionalidad, habilidad);
     }
 }

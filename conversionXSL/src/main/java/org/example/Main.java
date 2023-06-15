@@ -1,9 +1,9 @@
 package org.example;
 public class Main {
     public static void main(String[] args) {
-        String inputXML = "elSeñorAnillos.xml";
-        String inputXSL = "elSeñorAnillos.xsl";
-        String outputXML = "elSeñorAnillosResultado.html";
+        String inputXML = "entregaWeb_paises.xml";
+        String inputXSL = "entregaWeb_paises.xsl";
+        String outputXML = "entregaWeb_paises_Resultado.html";
 
         try {
             Conversor.convertXMLusingXSL(inputXML, inputXSL, outputXML);

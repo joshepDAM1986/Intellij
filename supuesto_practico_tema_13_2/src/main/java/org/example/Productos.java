@@ -1,6 +1,7 @@
 package org.example;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 public class Productos {
@@ -72,5 +73,18 @@ public class Productos {
                 ", precio=" + precio +
                 ", pais='" + pais + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Productos productos = (Productos) o;
+        return id == productos.id && Float.compare(productos.precio, precio) == 0 && nombre.equals(productos.nombre) && descripcion.equals(productos.descripcion) && pais.equals(productos.pais);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nombre, descripcion, precio, pais);
     }
 }

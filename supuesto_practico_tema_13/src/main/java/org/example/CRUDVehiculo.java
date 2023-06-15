@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
-    public class CRUDVehiculo extends Vehiculo {
+    public class CRUDVehiculo {
         public static void altaVehiculo(EntityManager em) {
             em.getTransaction().begin();
             Scanner sc = new Scanner(System.in);
