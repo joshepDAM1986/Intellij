@@ -28,7 +28,6 @@ public class Main {
 //                    /* Borrar Frutas */
 //                      CRUDFrutas.borrarFrutas(stmt, 62);
 
-//
 //                    /* Lista Inglés */
 //                      CRUDFrutas.datosFrutaIngles(stmt);
 //

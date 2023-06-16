@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"org.example","l":"Afiliacion"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"org.example","l":"Arma"},{"p":"org.example","l":"CRUDPersonaje"},{"p":"org.example","l":"Especie"},{"p":"org.example","l":"Main"},{"p":"org.example","l":"Personaje"}];updateSearchResults();

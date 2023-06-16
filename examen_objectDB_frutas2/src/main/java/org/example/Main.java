@@ -45,7 +45,7 @@ public class Main {
                             CRUDFruta.leerPais(em);
                             break;
                         case 5:
-                            CRUDFruta.consultarFrutaId(em, 2);
+                            CRUDFruta.consultarFrutaId(em, 16);
                             break;
                         case 6:
                             CRUDFruta.consultarFrutaNombre(em, "Manzana");

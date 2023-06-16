@@ -8,6 +8,7 @@ import java.util.List;
  * (Crear, Leer, Actualizar, Eliminar) en la base de datos para
  * entidades de tipo Fruta y Pais.
  */
+
 public class CRUDFruta {
 
     /**
@@ -41,7 +42,6 @@ public class CRUDFruta {
      * @param pais el nombre del país a buscar.
      * @return el objeto de tipo Pais encontrado o null si no existe en la base de datos.
      */
-
     public static Pais buscarPaisPorNombre(EntityManager em, String pais) {
         TypedQuery<Pais> query = em.createQuery("SELECT p FROM Pais p WHERE p.pais = :nombre", Pais.class);
         query.setParameter("nombre", pais);
