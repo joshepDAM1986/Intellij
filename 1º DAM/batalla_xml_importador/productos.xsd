@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="cafeteria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="productos" type="productosType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="productosType">
+    <xs:sequence>
+      <xs:element name="producto" maxOccurs="unbounded" type="productoType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="productoType">
+    <xs:sequence>
+      <xs:element name="nombre" type="nombreType"/>
+      <xs:element name="descripcion" type="descripcionType"/>
+      <xs:element name="categoria" type="categoriaType"/>
+      <xs:element name="precio" type="precioType"/>
+      <xs:element name="fecha" type="fechaType"/>
+      <xs:element name="stock" type="stockType"/>
+      <xs:element name="alergenos" type="alergenosType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="nombreType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Za-záéíóúüñÑ\s]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="descripcionType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Za-záéíóúüÑñ0-9\s]+"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="categoriaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pastelería"/>
+      <xs:enumeration value="Cafetería"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="precioType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0.01"/>
+      <xs:maxInclusive value="250.00"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="fechaType">
+    <xs:annotation>
+      <xs:documentation>Fecha en formato yyyy-mm-dd en el rango desde 2000 hasta 2023.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="((20\d{2}|19\d{2}|200\d|201[0-9]|202[0-3]))-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="stockType">
+    <xs:restriction base="xs:integer">
+      <xs:minExclusive value="00"/>
+      <xs:maxInclusive value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="alergenosEnumType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Gluten"/>
+      <xs:enumeration value="Crustáceos"/>
+      <xs:enumeration value="Huevos"/>
+      <xs:enumeration value="Pescados"/>
+      <xs:enumeration value="Cacahuetes"/>
+      <xs:enumeration value="Lácteos"/>
+      <xs:enumeration value="Cáscara"/>
+      <xs:enumeration value="Sésamo"/>
+      <xs:enumeration value="Sulfitos"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="alergenosType">
+    <xs:list itemType="alergenosEnumType"/>
+  </xs:simpleType>
+</xs:schema>

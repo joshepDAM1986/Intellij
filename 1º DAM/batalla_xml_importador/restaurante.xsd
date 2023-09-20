@@ -1,0 +1,81 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="datos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="plato" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[^\d]+"/>
+                    <xs:minLength value="3"/>
+                    <xs:maxLength value="50"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="categoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Entrada"/>
+                    <xs:enumeration value="Plato principal"/>
+                    <xs:enumeration value="Postre"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:minInclusive value="0.00"/>
+                    <xs:maxInclusive value="1000.00"/>
+                    <xs:pattern value="\d+\.\d{2}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ingredientes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[^\d]+"/>
+                    <xs:minLength value="5"/>
+                    <xs:maxLength value="200"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tiempoPreparacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:positiveInteger">
+                    <xs:maxInclusive value="120"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fechaCreacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:date">
+                    <xs:pattern value="\d{4}-\d{2}-\d{2}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[^\d]+"/>
+                    <xs:minLength value="10"/>
+                    <xs:maxLength value="200"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidadDisponible">
+                <xs:simpleType>
+                  <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="0"/>  
+                    <xs:maxInclusive value="100"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

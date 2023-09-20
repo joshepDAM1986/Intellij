@@ -1,0 +1,102 @@
+<datos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="restaurante.xsd">
+  <plato>
+    <nombre>Lomo Saltado</nombre>
+    <categoria>Plato principal</categoria>
+    <precio>15.50</precio>
+    <ingredientes>Lomo de res, cebolla, tomate, papas fritas</ingredientes>
+    <tiempoPreparacion>45</tiempoPreparacion>
+    <fechaCreacion>2021-10-10</fechaCreacion>
+    <descripcion>Plato tradicional peruano que combina lomo de res, cebolla, tomate y papas fritas.</descripcion>
+    <cantidadDisponible>30</cantidadDisponible>
+  </plato>
+  <plato>
+    <nombre>Tarta de Manzana</nombre>
+    <categoria>Postre</categoria>
+    <precio>6.99</precio>
+    <ingredientes>Manzanas, azúcar, canela, masa de hojaldre</ingredientes>
+    <tiempoPreparacion>60</tiempoPreparacion>
+    <fechaCreacion>2023-03-05</fechaCreacion>
+    <descripcion>Deliciosa tarta casera de manzana con un toque de canela y masa de hojaldre crujiente.</descripcion>
+    <cantidadDisponible>20</cantidadDisponible>
+  </plato>
+  <plato>
+    <nombre>Sushi Mixto</nombre>
+    <categoria>Entrada</categoria>
+    <precio>12.99</precio>
+    <ingredientes>Salmón, atún, aguacate, arroz, alga nori</ingredientes>
+    <tiempoPreparacion>40</tiempoPreparacion>
+    <fechaCreacion>2022-08-20</fechaCreacion>
+    <descripcion>Selección variada de sushi con salmón, atún, aguacate y arroz envuelto en alga nori.</descripcion>
+    <cantidadDisponible>25</cantidadDisponible>
+  </plato>
+  <plato>
+    <nombre>Pasta Alfredo</nombre>
+    <categoria>Plato principal</categoria>
+    <precio>11.50</precio>
+    <ingredientes>Pasta, salsa Alfredo, champiñones, queso parmesano</ingredientes>
+    <tiempoPreparacion>35</tiempoPreparacion>
+    <fechaCreacion>2022-02-12</fechaCreacion>
+    <descripcion>Plato de pasta cremosa con salsa Alfredo, champiñones y queso parmesano rallado.</descripcion>
+    <cantidadDisponible>40</cantidadDisponible>
+  </plato>
+  <plato>
+    <nombre>Cheesecake de Fresa</nombre>
+    <categoria>Postre</categoria>
+    <precio>8.50</precio>
+    <ingredientes>Galleta triturada, queso crema, fresas, azúcar</ingredientes>
+    <tiempoPreparacion>50</tiempoPreparacion>
+    <fechaCreacion>2023-01-05</fechaCreacion>
+    <descripcion>Deliciosa cheesecake con base de galleta, relleno de queso crema y topping de fresas frescas.</descripcion>
+    <cantidadDisponible>15</cantidadDisponible>
+  </plato>
+  <plato>
+    <nombre>Ensalada César</nombre>
+    <categoria>Entrada</categoria>
+    <precio>7.99</precio>
+    <ingredientes>Lechuga romana, pollo a la parrilla, crutones, aderezo César</ingredientes>
+    <tiempoPreparacion>20</tiempoPreparacion>
+    <fechaCreacion>2022-11-08</fechaCreacion>
+    <descripcion>Clásica ensalada César con lechuga romana, pollo a la parrilla, crutones crujientes y aderezo César.</descripcion>
+    <cantidadDisponible>35</cantidadDisponible>
+  </plato>
+  <plato>
+    <nombre>Filete de Salmón</nombre>
+    <categoria>Plato principal</categoria>
+    <precio>17.99</precio>
+    <ingredientes>Salmón fresco, limón, aceite de oliva, especias</ingredientes>
+    <tiempoPreparacion>25</tiempoPreparacion>
+    <fechaCreacion>2022-06-25</fechaCreacion>
+    <descripcion>Delicioso filete de salmón fresco preparado con limón, aceite de oliva y especias.</descripcion>
+    <cantidadDisponible>28</cantidadDisponible>
+  </plato>
+  <plato>
+    <nombre>Mousse de Chocolate</nombre>
+    <categoria>Postre</categoria>
+    <precio>6.50</precio>
+    <ingredientes>Chocolate negro, azúcar, crema batida</ingredientes>
+    <tiempoPreparacion>15</tiempoPreparacion>
+    <fechaCreacion>2023-04-02</fechaCreacion>
+    <descripcion>Irresistible mousse de chocolate negro con una suave textura y sabor intenso.</descripcion>
+    <cantidadDisponible>10</cantidadDisponible>
+  </plato>
+  <plato>
+    <nombre>Empanadas Argentinas</nombre>
+    <categoria>Entrada</categoria>
+    <precio>10.99</precio>
+    <ingredientes>Carne de res, cebolla, aceitunas, masa para empanadas</ingredientes>
+    <tiempoPreparacion>55</tiempoPreparacion>
+    <fechaCreacion>2022-07-18</fechaCreacion>
+    <descripcion>Clásicas empanadas argentinas rellenas de carne de res, cebolla y aceitunas.</descripcion>
+    <cantidadDisponible>18</cantidadDisponible>
+  </plato>
+  <plato>
+    <nombre>!"·$%/()=?¿|@#~€¬*-+</nombre>
+    <categoria>Entrada</categoria>
+    <precio>10.99</precio>
+    <ingredientes>!"·$%/()=?¿|@#~€¬*-+</ingredientes>
+    <tiempoPreparacion>55</tiempoPreparacion>
+    <fechaCreacion>2022-07-18</fechaCreacion>
+    <descripcion>!"·$%/()=?¿|@#~€¬*-+</descripcion>
+    <cantidadDisponible>18</cantidadDisponible>
+  </plato>
+</datos>
