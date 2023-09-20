@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 public class EscrituraTexto {
     public static void main(String[] args) {
         try {
-            FileWriter fw = new FileWriter("src/main/java/texto"); //vacia el fichero si existe
+            FileWriter fw = new FileWriter("src/main/java/texto/fila.txt"); //vacia el fichero si existe
             PrintWriter fichero = new PrintWriter(fw);
             for (int i = 1; i <= 10; i++) {
                 fichero.println("Fila numero: " + i); //escribe en la posicion actual
