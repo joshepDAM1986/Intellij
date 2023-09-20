@@ -8,7 +8,7 @@ import java.io.IOException;
 public class LecturaTexto {
     public static void main(String[] args) {
         try{
-            FileReader fr = new FileReader("src/main/java/texto/LecturaTexto.java");
+            FileReader fr = new FileReader("src/main/java/texto/fila.txt");
             BufferedReader fichero = new BufferedReader(fr);
             String linea,resultado="CONTENIDO DEL FICHERO:\n";
 
@@ -28,5 +28,4 @@ public class LecturaTexto {
 
         }
     }
-
 }
