@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LanzaProcesos:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LanzaProcesos_jar</output-path>
+    <root id="archive" name="LanzaProcesos.jar">
+      <element id="module-output" name="LanzaProcesos" />
+    </root>
+  </artifact>
+</component>

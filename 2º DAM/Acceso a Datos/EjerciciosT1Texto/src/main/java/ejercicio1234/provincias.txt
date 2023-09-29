@@ -1,0 +1,8 @@
+Cordoba:2500
+Huelva:2100
+Sevilla:670
+Jaen:510
+Almeria:2700
+Cadiz:5500
+Granada:1000
+Malaga:1300

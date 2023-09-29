@@ -47,11 +47,7 @@ class Ejercicio1234Test {
 
         final String url_salida = "src/main/java/ejercicio1234/provincias.txt";
 
-
         dao.ejercicio4(url_empleados,url_salida);
 
      }
-
-
-
 }
