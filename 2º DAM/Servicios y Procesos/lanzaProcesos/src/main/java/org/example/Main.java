@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class Main {
-//    public static int MAX_TIEMPO = 11;
 
     public static void main(String[] args) {
         if (args.length <= 0) {
@@ -17,26 +16,31 @@ public class Main {
 
         try {
             Process p = pb.start();
+            long tInicio=System.currentTimeMillis();
             int i = 0;
             boolean fin = false;
-//            int codRet = p.waitFor();
 
             while (!fin) {
+
                 if (p.isAlive()) {
                     System.out.printf("Verificación %d: Proceso está vivo.%n", i++);
+                    long tActual=System.currentTimeMillis();
+                    if ((tActual - tInicio) > 10000){
+                        p.destroy();
+                        System.out.println("Proceso destruido");
+                    }
                 } else {
                     System.out.println("Proceso no está vivo.");
                     fin = true;
                 }
 
                 if (!fin) {
-                    Thread.sleep(5000);
+                    Thread.sleep(3000);
                 }
-
-
             }
+            int codRet = p.exitValue();
 
-//            System.out.println("La ejecución de " + Arrays.toString(args) + " devuelve " + codRet);
+            System.out.println("La ejecución de " + Arrays.toString(args) + " devuelve " + codRet);
         } catch (IOException e) {
             System.out.println("Error ejecutando el proceso");
             e.printStackTrace();
@@ -45,5 +49,6 @@ public class Main {
             System.out.println("Proceso interrumpido");
             System.exit(3);
         }
+        System.exit(0);
     }
 }

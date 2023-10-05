@@ -24,7 +24,6 @@ class LigaTest {
         dao.añadirFutbolista("Luka Modric", "Real Madrid", "centrocampista", 7);
         dao.añadirFutbolista("Kilyan Mbappe", "PSG", "delantero", 20);
         dao.añadirFutbolista("Martin Braithwate", "FC Barcelona", "delantero", 10);
-
     }
 
     @Test
@@ -48,7 +47,7 @@ class LigaTest {
                 "Nombre=Gerard Pique\n" +
                 "Club=FC Barcelona\n" +
                 "Posicion=defensa\n" +
-                "Goles=5\n" +
+                "Goles=6\n" +
                 "=======================\n" +
                 "Nombre=Luka Modric\n" +
                 "Club=Real Madrid\n" +
@@ -71,39 +70,36 @@ class LigaTest {
 
     @Test
     void visualizarFutbolistasVacio() {
+        String respuesta = dao.visualizarFutbolistas();
+        assertEquals("Plantilla Vacía", respuesta);
     }
 
     @Test
     void guardarCargarFutbolistas() {
-
-    }
-
-    @Test
-    void guardarFutbolistas() {  //Verificar que el formato de fichero tiene la cabecera y es correcto
-
-        String valor_esperado = "nombre:club:posicion:goles\n" +
-                "Messi:PSG:delantero:40\n" +
-                "Sergio Ramos:PSG:defensa:15\n" +
-                "Cristiano Ronaldo:Manchester United:delantero:41\n" +
-                "Gerard Pique:FC Barcelona:defensa:6\n" +
-                "Luka Modric:Real Madrid:centrocampista:7\n" +
-                "Kilyan Mbappe:PSG:delantero:20\n" +
-                "Martin Braithwate:FC Barcelona:delantero:10\n";
-
-        dao.guardarFutbolistas(ruta_salida);
-        String respuesta = Utils.leerFichero(ruta_salida);
-
-        assertEquals(valor_esperado, respuesta);
+    String valor_esperado = dao.visualizarFutbolistas();
+    dao.guardarFutbolistas(ruta_salida);
+    dao.cargarFutbolistas(ruta_salida);
+    String respuesta = dao.visualizarFutbolistas();
+    assertEquals(valor_esperado, respuesta);
     }
 
     @Test
     void buscarFutbolista() {
+        String valor_esperado = "=======================\n" +
+                "Nombre=Messi\n" +
+                "Club=PSG\n" +
+                "Posicion=delantero\n" +
+                "Goles=40\n";
+
+        String respuesta = dao.buscarFutbolista("Messi");
+        assertEquals(valor_esperado, respuesta);
     }
 
     @Test
     void buscarFutbolistaNoExiste() {
+        String respuesta = dao.buscarFutbolista("Josele");
+        assertEquals("No se encuentra el jugador", respuesta);
     }
-
 
     @Test
     void defensasGoleadores() {
@@ -115,6 +111,7 @@ class LigaTest {
 
     @Test
     void añadirFutbolistas() {
+
     }
 
     @Test

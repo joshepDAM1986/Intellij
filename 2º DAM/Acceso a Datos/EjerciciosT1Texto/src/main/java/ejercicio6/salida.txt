@@ -1,0 +1,7 @@
+Messi:PSG:delantero:40
+Sergio Ramos:PSG:defensa:15
+Cristiano Ronaldo:Manchester United:delantero:41
+Gerard Pique:FC Barcelona:defensa:6
+Luka Modric:Real Madrid:centrocampista:7
+Kilyan Mbappe:PSG:delantero:20
+Martin Braithwate:FC Barcelona:delantero:10
