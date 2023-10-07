@@ -1,0 +1,44 @@
+{
+'liga':
+[
+{
+'nombre':'Cristiano Ronaldo',
+'club':'Manchester United',
+'posicion':'delantero',
+'goles':'41'
+
+}
+,
+{
+'nombre':'Messi',
+'club':'PSG',
+'posicion':'delantero',
+'goles':'40'
+
+}
+,
+{
+'nombre':'Kilyan Mbappe',
+'club':'PSG',
+'posicion':'delantero',
+'goles':'20'
+
+}
+,
+{
+'nombre':'Sergio Ramos',
+'club':'PSG',
+'posicion':'defensa',
+'goles':'15'
+
+}
+,
+{
+'nombre':'Martin Braithwate',
+'club':'FC Barcelona',
+'posicion':'delantero',
+'goles':'10'
+
+}
+
+]}

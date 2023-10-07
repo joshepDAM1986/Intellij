@@ -3,15 +3,17 @@ package ejercicio1234;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class Ejercicio1234 {
     final String url_empleados = "src/main/java/ejercicio1234/empleados.txt";
-    static final String url = "src/main/java/ejercicio1234/numeros.txt";
+    final static String url = "src/main/java/ejercicio1234/numeros.txt";
 
     public static void main(String[] args) {
         Ejercicio1234 ejercicios = new Ejercicio1234();
         ejercicios.ejercicio1(url);
     }
+
 
     public int ejercicio1(String nombre_fichero) {
         int resultado = 0;
@@ -20,76 +22,84 @@ public class Ejercicio1234 {
             BufferedReader br = new BufferedReader(fr);
             String linea;
             int numero;
+
             while ((linea = br.readLine()) != null) {
                 numero = Integer.parseInt(linea);
                 if (numero > 10) {
                     resultado += numero;
                 }
             }
-//            System.out.println("Resultado = "+ resultado);
-            fr.close();
+            //System.out.println(resultado);
+
             br.close();
+            fr.close();
         } catch (FileNotFoundException e) {
             System.out.println("no existe el fichero");
         } catch (IOException e) {
-            System.out.println("error de lectura");
+            System.out.println("Error de lectura");
         }
         return resultado;
     }
 
-
     public String ejercicio2(String nombre_fichero) {
-        String resultado2 = "";
-        String empleado;
+        String res = "";
+        String empleado;//Por ejemplo Juan,1000,Granada
         String[] partes;
-        String nombreEmpleado;
+        String nombre_empleado;
         int ventas;
         try {
             FileReader fr = new FileReader(nombre_fichero);
             BufferedReader br = new BufferedReader(fr);
             while ((empleado = br.readLine()) != null) {
                 partes = empleado.split(",");
-                nombreEmpleado = partes[0];
+                nombre_empleado = partes[0];
                 ventas = Integer.parseInt(partes[1]);
                 if (ventas > 1000) {
-                    resultado2 += nombreEmpleado + "\n";
+                    res += nombre_empleado + "\n";
                 }
             }
-            fr.close();
+
             br.close();
+            fr.close();
         } catch (FileNotFoundException fnf) {
-            System.out.println("no existe el fichero");
+            System.out.println("Existe el fichero");
             fnf.printStackTrace();
         } catch (IOException io) {
-            System.out.println("error de lectura");
+            System.out.println("Error de lectura");
             io.printStackTrace();
         }
-        return resultado2;
+
+
+        return res;
     }
 
     public void ejercicio3(String nombre_fichero_entrada, String nombre_fichero_salida) {
         String empleado;
         String[] partes;
         try {
+            //modo lectura
             FileReader fr = new FileReader(nombre_fichero_entrada);
             BufferedReader br = new BufferedReader(fr);
+            //modo escritura
             FileWriter fw = new FileWriter(nombre_fichero_salida);
             PrintWriter pw = new PrintWriter(fw);
+
             while ((empleado = br.readLine()) != null) {
                 partes = empleado.split(",");
-//                pw.println(partes[0]+"="+partes[1]+"="+partes[2]);
-//                pw.println(empleado.replace(",","="));
+                //pw.println(partes[0]+"="+partes[1]+"="+partes[2]);
+                //pw.println(empleado.replace(",","="));
                 pw.println(String.join("=", partes));
+
             }
-            fr.close();
-            br.close();
             pw.close();
             fw.close();
+            br.close();
+            fr.close();
         } catch (FileNotFoundException fnf) {
-            System.out.println("no existe el fichero");
+            System.out.println("Existe el fichero");
             fnf.printStackTrace();
         } catch (IOException io) {
-            System.out.println("error de lectura");
+            System.out.println("Error de lectura");
             io.printStackTrace();
         }
     }
@@ -126,7 +136,8 @@ public class Ejercicio1234 {
 
             }
 
-//            totales.forEach((prov,vent)-> pw.println(prov+":"+vent));
+            totales.forEach((prov,vent)->
+                               pw.println(prov+":"+vent));
             //EQUIVALE A :
             for (Map.Entry<String,Integer> entrada:totales.entrySet()){
                 pw.println(entrada.getKey()+":"+entrada.getValue());
@@ -136,16 +147,14 @@ public class Ejercicio1234 {
             fw.close();
             br.close();
             fr.close();
-
         } catch (FileNotFoundException fnf) {
-            System.out.println("no existe el fichero");
+            System.out.println("Existe el fichero");
             fnf.printStackTrace();
         } catch (IOException io) {
-            System.out.println("error de lectura");
+            System.out.println("Error de lectura");
             io.printStackTrace();
         }
     }
 }
-
 
 

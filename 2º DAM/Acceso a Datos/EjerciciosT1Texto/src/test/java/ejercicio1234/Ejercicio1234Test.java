@@ -20,9 +20,7 @@ class Ejercicio1234Test {
 
     @Test
     void ejercicio1() {
-
         assertEquals(152, dao.ejercicio1(url), "Test ejercicio1");
-
     }
 
     @Test
@@ -37,7 +35,6 @@ class Ejercicio1234Test {
     @Test
     void ejercicio3() {
         final String url_salida = "src/main/java/ejercicio1234/empleados_mod.txt";
-
         dao.ejercicio3(url_empleados,url_salida);
 
     }
@@ -46,8 +43,10 @@ class Ejercicio1234Test {
     void ejercicio4() {
 
         final String url_salida = "src/main/java/ejercicio1234/provincias.txt";
-
         dao.ejercicio4(url_empleados,url_salida);
 
      }
+
+
+
 }

@@ -1,0 +1,17 @@
+<liga>
+<futbolista>
+<nombre>Cristiano Ronaldo</nombre><club>Manchester United</club><posicion>delantero</posicion><goles>41</goles>
+</futbolista>
+<futbolista>
+<nombre>Messi</nombre><club>PSG</club><posicion>delantero</posicion><goles>40</goles>
+</futbolista>
+<futbolista>
+<nombre>Kilyan Mbappe</nombre><club>PSG</club><posicion>delantero</posicion><goles>20</goles>
+</futbolista>
+<futbolista>
+<nombre>Sergio Ramos</nombre><club>PSG</club><posicion>defensa</posicion><goles>15</goles>
+</futbolista>
+<futbolista>
+<nombre>Martin Braithwate</nombre><club>FC Barcelona</club><posicion>delantero</posicion><goles>10</goles>
+</futbolista>
+</liga>

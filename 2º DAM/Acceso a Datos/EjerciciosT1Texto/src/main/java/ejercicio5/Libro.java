@@ -3,10 +3,6 @@ package ejercicio5;
 import java.util.Objects;
 
 public class Libro {
-
-    public final static int PRECIO = 1;
-    public final static int EJEMPLARES = 2;
-
     private String titulo, autor;
     private double precio;
     private int numero_ejemplares;

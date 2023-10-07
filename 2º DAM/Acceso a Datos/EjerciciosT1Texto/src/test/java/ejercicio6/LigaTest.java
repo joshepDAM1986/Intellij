@@ -20,10 +20,11 @@ class LigaTest {
         dao.añadirFutbolista("Messi", "PSG", "delantero", 40);
         dao.añadirFutbolista("Sergio Ramos", "PSG", "defensa", 15);
         dao.añadirFutbolista("Cristiano Ronaldo", "Manchester United", "delantero", 41);
-        dao.añadirFutbolista("Gerard Pique", "FC Barcelona", "defensa", 6);
+        dao.añadirFutbolista("Gerard Pique", "FC Barcelona", "defensa", 5);
         dao.añadirFutbolista("Luka Modric", "Real Madrid", "centrocampista", 7);
         dao.añadirFutbolista("Kilyan Mbappe", "PSG", "delantero", 20);
         dao.añadirFutbolista("Martin Braithwate", "FC Barcelona", "delantero", 10);
+
     }
 
     @Test
@@ -47,7 +48,7 @@ class LigaTest {
                 "Nombre=Gerard Pique\n" +
                 "Club=FC Barcelona\n" +
                 "Posicion=defensa\n" +
-                "Goles=6\n" +
+                "Goles=5\n" +
                 "=======================\n" +
                 "Nombre=Luka Modric\n" +
                 "Club=Real Madrid\n" +
@@ -70,67 +71,110 @@ class LigaTest {
 
     @Test
     void visualizarFutbolistasVacio() {
-        String respuesta = dao.visualizarFutbolistas();
-        assertEquals("Plantilla Vacía", respuesta);
+        assertEquals("No hay futbolistas",dao.visualizarFutbolistas());
     }
 
     @Test
     void guardarCargarFutbolistas() {
-    String valor_esperado = dao.visualizarFutbolistas();
-    dao.guardarFutbolistas(ruta_salida);
-    dao.cargarFutbolistas(ruta_salida);
-    String respuesta = dao.visualizarFutbolistas();
-    assertEquals(valor_esperado, respuesta);
-    }
+        String valor_esperado = dao.visualizarFutbolistas();
 
-    @Test
-    void buscarFutbolista() {
-        String valor_esperado = "=======================\n" +
-                "Nombre=Messi\n" +
-                "Club=PSG\n" +
-                "Posicion=delantero\n" +
-                "Goles=40\n";
+        dao.guardarFutbolistas(ruta_salida);
+        dao.cargarFutbolistas(ruta_salida);
 
-        String respuesta = dao.buscarFutbolista("Messi");
+        String respuesta = dao.visualizarFutbolistas();
+
         assertEquals(valor_esperado, respuesta);
     }
 
     @Test
-    void buscarFutbolistaNoExiste() {
-        String respuesta = dao.buscarFutbolista("Josele");
-        assertEquals("No se encuentra el jugador", respuesta);
+    void buscarFutbolista() {
+        String valor_esperado ="=======================\n" +
+                "Nombre=Sergio Ramos\n" +
+                "Club=PSG\n" +
+                "Posicion=defensa\n" +
+                "Goles=15\n" ;
+
+        String respuesta=dao.buscarFutbolista("Sergio Ramos");
+        assertEquals(valor_esperado,respuesta);
+
     }
 
     @Test
+    void buscarFutbolistaNoExiste() {
+            assertEquals("No existe el futbolista buscado",
+                                dao.buscarFutbolista("Pelé"));
+    }
+
+
+    @Test
     void defensasGoleadores() {
+        String valor_esperado ="=======================\n" +
+                "Nombre=Sergio Ramos\n" +
+                "Club=PSG\n" +
+                "Posicion=defensa\n" +
+                "Goles=15\n" +
+                "=======================\n" +
+                "Nombre=Gerard Pique\n" +
+                "Club=FC Barcelona\n" +
+                "Posicion=defensa\n" +
+                "Goles=5\n" ;
+
+        String respuesta=dao.defensasGoleadores();
+        assertEquals(valor_esperado,respuesta);
     }
 
     @Test
     void defensasGoleadoresNoExisten() {
+        assertEquals("No hay defensas goleadores",dao.defensasGoleadores());
     }
 
     @Test
-    void añadirFutbolistas() {
+    void borrarFutbolista() {
+        String valor_esperado ="No existe el futbolista buscado";
 
+        dao.borrarFutbolista("Messi");
+
+        assertEquals(valor_esperado, dao.buscarFutbolista("Messi"));
     }
+
+
 
     @Test
     void modificarNombre() {
+        String valor_esperado = "=======================\n" +
+                "Nombre=Messirve\n" +
+                "Club=PSG\n" +
+                "Posicion=delantero\n" +
+                "Goles=40\n" ;
+
+        dao.modificarNombre("Messi","Messirve");
+        String respuesta=dao.buscarFutbolista("Messirve");
+        assertEquals(valor_esperado, respuesta);
     }
 
     @Test
     void backupFutbolistas() {
+        dao.backupFutbolistas(ruta_salida);
     }
 
     @Test
     void backupFutbolistasXML() {
+        dao.backupFutbolistasXML(ruta_salida_xml);
     }
 
     @Test
     void backupFutbolistasJSON() {
+        dao.backupFutbolistasJSON(ruta_salida_json);
     }
 
     @Test
     void resumenEquipos() {
+        String valor_esperado="FC Barcelona:15\n"+
+                              "PSG:75\n"+
+                              "Real Madrid:7\n"+
+                              "Manchester United:41\n";
+        String respuesta=dao.resumenEquipos();
+
+        assertEquals(valor_esperado,respuesta);
     }
 }

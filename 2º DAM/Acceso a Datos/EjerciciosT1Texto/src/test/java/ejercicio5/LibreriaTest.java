@@ -21,6 +21,7 @@ class LibreriaTest {
         dao.añadirLibro("Harry Potter y la piedra filosofal", "JK Rowling", 20.95, 300);
     }
 
+
     @Test
     void visualizarLibros() {
         String respuesta = dao.visualizarLibros();
@@ -29,16 +30,19 @@ class LibreriaTest {
                 "precio=15.6\n" +
                 "autor=JK Rowling\n" +
                 "numero_ejemplares=900\n" +
+
                 "=======================\n" +
                 "titulo=La historia interminable\n" +
                 "precio=5.96\n" +
                 "autor=Michael Ende\n" +
                 "numero_ejemplares=9\n" +
+
                 "=======================\n" +
                 "titulo=Codigo Da Vinci\n" +
                 "precio=10.95\n" +
                 "autor=Dan Brown\n" +
                 "numero_ejemplares=20\n" +
+
                 "=======================\n" +
                 "titulo=Harry Potter y la piedra filosofal\n" +
                 "precio=20.95\n" +
@@ -117,19 +121,19 @@ class LibreriaTest {
                 "precio=15.6\n" +
                 "autor=JK Rowling\n" +
                 "numero_ejemplares=900\n" +
-                "\n" +
+
                 "=======================\n" +
                 "titulo=La historia interminable\n" +
                 "precio=5.96\n" +
                 "autor=Michael Ende\n" +
                 "numero_ejemplares=9\n" +
-                "\n" +
+
                 "=======================\n" +
                 "titulo=Codigo Da Vinci\n" +
                 "precio=10.95\n" +
                 "autor=Dan Brown\n" +
                 "numero_ejemplares=20\n" +
-                "\n" +
+
                 "=======================\n" +
                 "titulo=Harry Potter y la piedra filosofal\n" +
                 "precio=20.95\n" +
@@ -148,13 +152,13 @@ class LibreriaTest {
                 "precio=15.6\n" +
                 "autor=JK Rowling\n" +
                 "numero_ejemplares=900\n" +
-                "\n" +
+
                 "=======================\n" +
                 "titulo=Codigo Da Vinci\n" +
                 "precio=10.95\n" +
                 "autor=Dan Brown\n" +
                 "numero_ejemplares=20\n" +
-                "\n" +
+
                 "=======================\n" +
                 "titulo=Harry Potter y la piedra filosofal\n" +
                 "precio=20.95\n" +
