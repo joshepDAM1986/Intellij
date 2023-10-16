@@ -1,0 +1,30 @@
+{
+"pais":
+[
+  {
+    "nombre": "Estados Unidos",
+    "capital": "Washington D.C.",
+    "habitantes": 331002651,
+    "año": 1776
+]}
+{
+"nombre": "China",
+"capital": "Pekín",
+"habitantes": 1439323776,
+"año": 221
+
+]}
+{
+"nombre": "Brasil",
+"capital": "Brasilia",
+"habitantes": 212559417,
+"año": 1822
+
+]}
+{
+"nombre": "India",
+"capital": "Nueva Delhi",
+"habitantes": 1380004385,
+"año": 1947
+
+]}

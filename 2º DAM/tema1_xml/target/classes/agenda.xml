@@ -1,0 +1,22 @@
+<datos>
+    <persona>
+        <nombre>John</nombre>
+        <edad>30</edad>
+    </persona>
+    <persona>
+        <nombre>Jane</nombre>
+        <edad>25</edad>
+    </persona>
+    <persona>
+        <nombre>Michael</nombre>
+        <edad>40</edad>
+    </persona>
+    <persona>
+        <nombre>Susan</nombre>
+        <edad>28</edad>
+    </persona>
+    <persona>
+        <nombre>David</nombre>
+        <edad>35</edad>
+    </persona>
+</datos>

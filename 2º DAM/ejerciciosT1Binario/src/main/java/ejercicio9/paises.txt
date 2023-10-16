@@ -1,0 +1,4 @@
+Estados Unidos,Washington D.C.,Washington D.C.,1776
+China,Pekín,Pekín,221
+Brasil,Brasilia,Brasilia,1822
+India,Nueva Delhi,Nueva Delhi,1947

@@ -1,0 +1,26 @@
+<Pais>
+<pais>
+    <nombre>Estados Unidos<nombre>
+    <Capital>Washington D.C.</Capital>
+    <habitantes>331002651</habitantes>
+    <año>1776</año>
+  </pais>
+<pais>
+<nombre=China<nombre>
+<Capital>Pekín</Capital>
+<habitantes>1439323776</habitantes>
+<año>221</año>
+  </pais>
+<pais>
+<nombre=Brasil<nombre>
+<Capital>Brasilia</Capital>
+<habitantes>212559417</habitantes>
+<año>1822</año>
+  </pais>
+<pais>
+<nombre=India<nombre>
+<Capital>Nueva Delhi</Capital>
+<habitantes>1380004385</habitantes>
+<año>1947</año>
+  </pais>
+</Pais>

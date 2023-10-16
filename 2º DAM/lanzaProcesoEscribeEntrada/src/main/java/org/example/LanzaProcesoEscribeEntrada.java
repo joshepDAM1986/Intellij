@@ -1,6 +1,5 @@
 package org.example;
 
-import java.io.*;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.OutputStream;
@@ -20,8 +19,7 @@ public class LanzaProcesoEscribeEntrada {
                 Process p = pb.start(); // Lanza el proceso
                 try (OutputStream osp = p.getOutputStream();
                      OutputStreamWriter oswp = new OutputStreamWriter(osp, "UTF-8")) {
-                    oswp.write(linea); // Envía línea leída al proceso
-
+                    oswp.write(linea+"\n"); // Envía línea leída al proceso
                 }
                 try {
                     p.waitFor();

@@ -1,0 +1,22 @@
+<Matricula>
+	<matricula>
+		<nombre>Juan Pérez</nombre>
+		<año>2023</año>
+		<habitantes>1500.0</habitantes>
+	</matricula>
+	<matricula>
+		<nombre>María García</nombre>
+		<año>2023</año>
+		<habitantes>1200.0</habitantes>
+	</matricula>
+	<matricula>
+		<nombre>Carlos Rodríguez</nombre>
+		<año>2023</año>
+		<habitantes>1800.0</habitantes>
+	</matricula>
+	<matricula>
+		<nombre>Ana Martínez</nombre>
+		<año>2023</año>
+		<habitantes>1350.0</habitantes>
+	</matricula>
+</Matricula>

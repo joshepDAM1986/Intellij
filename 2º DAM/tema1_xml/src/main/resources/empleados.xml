@@ -1,0 +1,68 @@
+<empleados>
+    <empleado>
+        <nombre>LUIS MIGUEL</nombre>
+        <apellidos>GALLARDO LEON</apellidos>
+        <nif>5674179P</nif>
+        <empresa>DATATONIC, S.A.</empresa>
+        <direccion>HERMANOS ARAGON , CALLE</direccion>
+        <cp>11690</cp>
+        <localidad>OLVERA</localidad>
+        <tlf_fijo>95630316</tlf_fijo>
+        <tlf_movil>69619915</tlf_movil>
+    </empleado>
+    <empleado>
+        <nombre>MIGUEL</nombre>
+        <apellidos>BERENGUEL MARQUINA</apellidos>
+        <nif>6182669F</nif>
+        <empresa>MAGARIIT SERVICES, S.A.</empresa>
+        <direccion>ALCALA LA REAL , CALLE</direccion>
+        <cp>11640</cp>
+        <localidad>BORNOS</localidad>
+        <tlf_fijo>96304400</tlf_fijo>
+        <tlf_movil>62676864</tlf_movil>
+    </empleado>
+    <empleado>
+        <nombre>Laura</nombre>
+        <apellidos>Rodríguez Martínez</apellidos>
+        <nif>7254381R</nif>
+        <empresa>Tech Solutions, S.L.</empresa>
+        <direccion>Gran Vía, 123</direccion>
+        <cp>28001</cp>
+        <localidad>Madrid</localidad>
+        <tlf_fijo>911223344</tlf_fijo>
+        <tlf_movil>678901234</tlf_movil>
+    </empleado>
+    <empleado>
+        <nombre>Pablo</nombre>
+        <apellidos>Gómez Pérez</apellidos>
+        <nif>8215476G</nif>
+        <empresa>InnovateTech, Inc.</empresa>
+        <direccion>Paseo de la Reforma, 456</direccion>
+        <cp>12345</cp>
+        <localidad>Ciudad de México</localidad>
+        <tlf_fijo>5556789</tlf_fijo>
+        <tlf_movil>55667788</tlf_movil>
+    </empleado>
+    <empleado>
+        <nombre>Sofía</nombre>
+        <apellidos>López Rodríguez</apellidos>
+        <nif>9365127S</nif>
+        <empresa>InnovateTech, Inc.</empresa>
+        <direccion>Av. de los Emprendedores, 789</direccion>
+        <cp>28002</cp>
+        <localidad>Madrid</localidad>
+        <tlf_fijo>912345678</tlf_fijo>
+        <tlf_movil>645987321</tlf_movil>
+    </empleado>
+    <empleado>
+        <nombre>Carlos</nombre>
+        <apellidos>Fernández Pérez</apellidos>
+        <nif>7425138C</nif>
+        <empresa>Tech Solutions, S.L.</empresa>
+        <direccion>Diagonal Norte, 345</direccion>
+        <cp>08001</cp>
+        <localidad>Barcelona</localidad>
+        <tlf_fijo>932112233</tlf_fijo>
+        <tlf_movil>667788899</tlf_movil>
+    </empleado>
+</empleados>

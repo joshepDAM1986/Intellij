@@ -21,10 +21,7 @@ class NacionesTest {
         dao.añadirPais("China", "Pekín", 1439323776, 221);
         dao.añadirPais("Brasil", "Brasilia", 212559417, 1822);
         dao.añadirPais("India", "Nueva Delhi", 1380004385, 1947);
-
     }
-
-
 
     @Test
     void guardarCargarPaises() {
@@ -66,11 +63,8 @@ class NacionesTest {
     }
 
     @Test
-    void backupTexto() {
-        dao.backupTexto(ruta_texto);
+    void backupTexto() {dao.backupTexto(ruta_texto);
         //comprobar que el fichero contiene los datos de iniciales de los paises
-
-
     }
 
     @Test

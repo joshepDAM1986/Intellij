@@ -1,8 +1,6 @@
 package ejercicio6;
 
 
-import ejercicio5.Libro;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -181,7 +179,6 @@ public class Liga {
         }catch(IOException io){
             System.out.println("fallo de escritura");
         }
-
     }
 
     public void backupFutbolistasXML(String nombre) {
