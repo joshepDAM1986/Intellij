@@ -1,0 +1,4 @@
+Estados Unidos,Washington D.C.,331002651,1776
+China,Pekín,1439323776,221
+Brasil,Brasilia,212559417,1822
+India,Nueva Delhi,1380004385,1947

@@ -1,22 +1,22 @@
-<Matricula>
+<Academia>
 	<matricula>
 		<nombre>Juan Pérez</nombre>
 		<año>2023</año>
-		<habitantes>1500.0</habitantes>
+		<precio>1500.0</precio>
 	</matricula>
 	<matricula>
 		<nombre>María García</nombre>
 		<año>2023</año>
-		<habitantes>1200.0</habitantes>
+		<precio>1200.0</precio>
 	</matricula>
 	<matricula>
 		<nombre>Carlos Rodríguez</nombre>
 		<año>2023</año>
-		<habitantes>1800.0</habitantes>
+		<precio>1800.0</precio>
 	</matricula>
 	<matricula>
 		<nombre>Ana Martínez</nombre>
 		<año>2023</año>
-		<habitantes>1350.0</habitantes>
+		<precio>1350.0</precio>
 	</matricula>
-</Matricula>
+</Academia>

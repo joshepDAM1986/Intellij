@@ -118,16 +118,16 @@ public class Academia {
             FileWriter fw = new FileWriter(ruta);
             PrintWriter pw = new PrintWriter(fw);
 
-            pw.println("<Matricula>");
+            pw.println("<Academia>");
 
             for (Matricula matricula : this.academia){
                 pw.println("\t<matricula>");
                 pw.println("\t\t<nombre>" + matricula.getNombre() + "</nombre>");
                 pw.println("\t\t<año>" + matricula.getAño() + "</año>");
-                pw.println("\t\t<habitantes>" + matricula.getPrecio() + "</habitantes>");
+                pw.println("\t\t<precio>" + matricula.getPrecio() + "</precio>");
                 pw.println("\t</matricula>");
             }
-            pw.println("</Matricula>");
+            pw.println("</Academia>");
             fw.close();
             pw.close();
         } catch(IOException e){
@@ -141,7 +141,7 @@ public class Academia {
             PrintWriter pw=new PrintWriter(fw);
 
             pw.println("{");
-            pw.println("\t\"Matriculas\": [");
+            pw.println("\t\"academia\": [");
 
             int numMatriculas = this.academia.size();
             int contador = 0;

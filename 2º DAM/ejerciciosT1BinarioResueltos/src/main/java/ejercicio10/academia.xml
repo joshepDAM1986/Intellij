@@ -1,0 +1,14 @@
+<academia>
+<matriculas>
+<nombre>Juan Pérez</nombre><capital>1500.0</precio><año>2023</año>
+</matriculas>
+<matriculas>
+<nombre>María García</nombre><capital>1200.0</precio><año>2023</año>
+</matriculas>
+<matriculas>
+<nombre>Carlos Rodríguez</nombre><capital>1800.0</precio><año>2023</año>
+</matriculas>
+<matriculas>
+<nombre>Ana Martínez</nombre><capital>1350.0</precio><año>2023</año>
+</matriculas>
+</academia>

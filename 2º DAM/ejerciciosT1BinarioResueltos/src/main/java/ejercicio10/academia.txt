@@ -1,0 +1,2 @@
+Juan Pérez,1500.0,2023
+Carlos Rodríguez,1800.0,2023
