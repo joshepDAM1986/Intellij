@@ -10,7 +10,6 @@ public class Academia {
     private ArrayList<Matricula> academia;
     public Academia(){this.academia=new ArrayList<>();}
 
-
     private Matricula encontrarMatricula(String nombre){
         Matricula buscada=null;
         for(Matricula posible:this.academia){
@@ -162,7 +161,6 @@ public class Academia {
 
             pw.println("\t]");
             pw.println("}");
-
 
             pw.close();
             fw.close();

@@ -15,13 +15,12 @@ class CineTest {
     @BeforeEach
     void setUp() {
         dao=new Cine();
-        dao.añadirPelicula("Los vengadores", "superheroes",140,367.86);
-        dao.añadirPelicula("La monja", "terror", 100,123.57);
-        dao.añadirPelicula("El reino", "suspense", 90,21.54);
-        dao.añadirPelicula("Scream 3", "terror",  123,300.12);
-        dao.añadirPelicula("Pulp Fiction", "drama",  150,98.3);
-        dao.añadirPelicula("La Liga de la justicia", "superheroes",120,190.12);
-
+        dao.añadirPelicula("Los vengadores", "superheroes", 367.86, 140);
+        dao.añadirPelicula("La monja", "terror", 123.57, 100);
+        dao.añadirPelicula("El reino", "suspense", 21.54, 90);
+        dao.añadirPelicula("Scream 3", "terror", 300.12, 123);
+        dao.añadirPelicula("Pulp Fiction", "drama", 98.3, 150);
+        dao.añadirPelicula("La Liga de la justicia", "superheroes", 190.12, 120);
     }
 
     @Test
@@ -107,9 +106,11 @@ class CineTest {
     }
     @Test
     void dineroSuperheroes() {
+        double suma=dao.dineroSuperheroes();
+        assertEquals(suma,557.98);
     }
 
     @Test
-    void exportarmejores() {
+    void exportarmejores() { dao.exportarmejores(ruta_xml);
     }
 }

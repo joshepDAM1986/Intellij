@@ -10,7 +10,7 @@ public class Pelicula implements Serializable {
     private double recaudacion;
     private int duracion;
 
-    public Pelicula(String nombre, String genero,int duracion, double recaudacion) {
+    public Pelicula(String nombre, String genero, double recaudacion,int duracion) {
         this.nombre = nombre;
         this.genero = genero;
         this.recaudacion = recaudacion;
@@ -48,16 +48,16 @@ public class Pelicula implements Serializable {
     public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
-    
+
     public String toString(){
         String res="";
-        
+
         res="-----------------------------\n"+
-            "Nombre: "+this.nombre+"\n"+
-            "Genero: "+this.genero+"\n"+
-            "Duracion: "+this.duracion+" minutos\n"+
-            "Recaudacion: "+this.recaudacion+" millones de dolares\n";
-        
+                "Nombre: "+this.nombre+"\n"+
+                "Genero: "+this.genero+"\n"+
+                "Duracion: "+this.duracion+" minutos\n"+
+                "Recaudacion: "+this.recaudacion+" millones de dolares\n";
+
         return res;
     }
 }

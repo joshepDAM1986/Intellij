@@ -1,0 +1,14 @@
+<cine>
+	<pelicula>
+ 		<nombre>Los vengadores</nombre>
+ 		<genero>superheroes</genero>
+ 		<duracion>140</duracion>
+ 		<recaudacion>367.86</recaudacion>
+	 </pelicula>
+	<pelicula>
+ 		<nombre>Scream 3</nombre>
+ 		<genero>terror</genero>
+ 		<duracion>123</duracion>
+ 		<recaudacion>300.12</recaudacion>
+	 </pelicula>
+</cine>

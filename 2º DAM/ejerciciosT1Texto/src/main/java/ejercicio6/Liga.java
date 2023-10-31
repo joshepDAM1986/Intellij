@@ -13,51 +13,54 @@ public class Liga {
     public Liga() {
         this.liga = new ArrayList<>();
     }
-    public void guardarFutbolistas(String nombre) {
-        try{
-            FileWriter fw=new FileWriter(nombre);
-            PrintWriter pw=new PrintWriter(fw);
 
-            for(Futbolista fut:this.liga){
-                pw.println(fut.getNombre()+":"+
-                        fut.getClub()+":"+
-                        fut.getPosicion()+":"+
+    public void guardarFutbolistas(String nombre) {
+        try {
+            FileWriter fw = new FileWriter(nombre);
+            PrintWriter pw = new PrintWriter(fw);
+
+            for (Futbolista fut : this.liga) {
+                pw.println(fut.getNombre() + ":" +
+                        fut.getClub() + ":" +
+                        fut.getPosicion() + ":" +
                         fut.getGoles());
             }
 
             pw.close();
             fw.close();
-        }catch(IOException io){
+        } catch (IOException io) {
             System.out.println("fallo de escritura");
         }
     }
+
     public void cargarFutbolistas(String ruta) {
         String linea;
         String[] partes;
         int goles;
-        String nombre,posicion,club;
+        String nombre, posicion, club;
         this.liga.clear();
-        try{
-            FileReader fr=new FileReader(ruta);
-            BufferedReader br=new BufferedReader(fr);
+        try {
+            FileReader fr = new FileReader(ruta);
+            BufferedReader br = new BufferedReader(fr);
 
-            while((linea=br.readLine())!=null){
-                partes=linea.split(":");
-                nombre=partes[0];
-                club=partes[1];
-                posicion=partes[2];
-                goles=Integer.parseInt(partes[3]);
-                añadirFutbolista(nombre,club,posicion,goles);
+            while ((linea = br.readLine()) != null) {
+                partes = linea.split(":");
+                nombre = partes[0];
+                club = partes[1];
+                posicion = partes[2];
+                goles = Integer.parseInt(partes[3]);
+                añadirFutbolista(nombre, club, posicion, goles);
             }
 
             br.close();
             fr.close();
-        }catch(FileNotFoundException fne){
+        } catch (FileNotFoundException fne) {
             System.out.println("No existe el fichero");
-        }catch(IOException io){
+        } catch (IOException io) {
             System.out.println("fallo de lectura");
         }
     }
+
     public String visualizarFutbolistas() {
         String res;
         if (this.liga.isEmpty()) {
@@ -85,6 +88,7 @@ public class Liga {
 
         return buscado;
     }
+
     public void añadirFutbolista(String nombre, String club, String posicion, int goles) {
         Futbolista buscado = encontrarFutbolista(nombre);
 
@@ -95,6 +99,7 @@ public class Liga {
             System.out.println("Ya existe ese nombre de futbolista");
         }
     }
+
     public String buscarFutbolista(String nombre) {
         String res;
         Futbolista buscado = encontrarFutbolista(nombre);
@@ -108,7 +113,7 @@ public class Liga {
         return res;
     }
 
-    public void borrarFutbolista(String nombre){
+    public void borrarFutbolista(String nombre) {
         Futbolista buscado = encontrarFutbolista(nombre);
 
         if (buscado == null) {
@@ -120,85 +125,81 @@ public class Liga {
 
 
     public String defensasGoleadores() {
-        String res;
-        res = "";
+        String res=null;
         for (Futbolista f : this.liga) {
-            if(f.getPosicion().equals("defensa") &&
-               f.getGoles()>=5){
+            if (f.getPosicion().equals("defensa") &&
+                    f.getGoles() >= 5) {
                 res += f.toString();
             }
         }
 
-        if(res.equals("")){
-            res="No hay defensas goleadores";
+        if (res.equals("")) {
+            res = "No hay defensas goleadores";
         }
 
         return res;
     }
 
     public void modificarNombre(String nombre_ant, String nombre_nuevo) {
-        if(!nombre_ant.equalsIgnoreCase(nombre_nuevo)){
-            Futbolista ant=encontrarFutbolista(nombre_ant);
-            if(ant!=null){
-                Futbolista nuevo=encontrarFutbolista(nombre_nuevo);
-                if(nuevo==null){
+        if (!nombre_ant.equalsIgnoreCase(nombre_nuevo)) {
+            Futbolista ant = encontrarFutbolista(nombre_ant);
+            if (ant != null) {
+                Futbolista nuevo = encontrarFutbolista(nombre_nuevo);
+                if (nuevo == null) {
                     ant.setNombre(nombre_nuevo);
-                }else{
+                } else {
                     System.out.println("Ese jugador ya existe");
                 }
-            }else{
+            } else {
                 System.out.println("Ese jugador no existe");
             }
-        }else{
+        } else {
             System.out.println("El nombre nuevo tiene que ser diferente al anterior");
         }
 
     }
 
 
-
     public void backupFutbolistas(String nombre) {
-        this.liga.sort((a,b)->Integer.compare(b.getGoles(),a.getGoles()));
+        this.liga.sort((a, b) -> Integer.compare(b.getGoles(), a.getGoles()));
         Iterator<Futbolista> it = this.liga.iterator();
-        int contador=0;
-        try{
-            FileWriter fw=new FileWriter(nombre);
-            PrintWriter pw=new PrintWriter(fw);
+        int contador = 0;
+        try {
+            FileWriter fw = new FileWriter(nombre);
+            PrintWriter pw = new PrintWriter(fw);
 
-            while (contador<5 && it.hasNext()) {
+            while (contador < 5 && it.hasNext()) {
                 Futbolista fut = it.next();
-                pw.println(fut.getNombre()+":"+
-                        fut.getClub()+":"+
-                        fut.getPosicion()+":"+
+                pw.println(fut.getNombre() + ":" +
+                        fut.getClub() + ":" +
+                        fut.getPosicion() + ":" +
                         fut.getGoles());
                 contador++;
             }
 
             pw.close();
             fw.close();
-        }catch(IOException io){
+        } catch (IOException io) {
             System.out.println("fallo de escritura");
         }
     }
 
     public void backupFutbolistasXML(String nombre) {
-        this.liga.sort((a,b)->
-                       Integer.compare(b.getGoles(),a.getGoles()));
-
-
-        int contador=0;
-        try{
-            FileWriter fw=new FileWriter(nombre);
-            PrintWriter pw=new PrintWriter(fw);
+        this.liga.sort((a, b) ->
+                Integer.compare(b.getGoles(), a.getGoles()));
+        int contador = 0;
+        try {
+            FileWriter fw = new FileWriter(nombre);
+            PrintWriter pw = new PrintWriter(fw);
             pw.println("<liga>");
 
-            for(int i=0;i<this.liga.size() && i<5;i++){
-                Futbolista fut=this.liga.get(i);
+            for (int i = 0; i < this.liga.size() && i < 5; i++) {
+                Futbolista fut = this.liga.get(i);
                 pw.println("<futbolista>");
-                pw.println("<nombre>"+fut.getNombre()+"</nombre>"+
-                        "<club>"+fut.getClub()+"</club>"+
-                        "<posicion>"+fut.getPosicion()+"</posicion>"+
-                        "<goles>"+fut.getGoles()+"</goles>");
+                pw.println("<nombre>" + fut.getNombre() + "</nombre>" +
+                        "<club>" + fut.getClub() + "</club>" +
+                        "<posicion>" + fut.getPosicion() + "</posicion>" +
+                        "<goles>" + fut.getGoles() + "</goles>");
                 pw.println("</futbolista>");
             }
             pw.println("</liga>");
@@ -206,43 +207,43 @@ public class Liga {
             //===========con un iterador=========================
             //que es mas eficiente
             Iterator<Futbolista> it = this.liga.iterator();
-            while (contador<5 && it.hasNext()) {
+            while (contador < 5 && it.hasNext()) {
                 Futbolista fut = it.next();
                 pw.println("<futbolista>");
-                pw.println("<nombre>"+fut.getNombre()+"</nombre>"+
-                        "<club>"+fut.getClub()+"</club>"+
-                        "<posicion>"+fut.getPosicion()+"</posicion>"+
-                        "<goles>"+fut.getGoles()+"</goles>");
+                pw.println("<nombre>" + fut.getNombre() + "</nombre>" +
+                        "<club>" + fut.getClub() + "</club>" +
+                        "<posicion>" + fut.getPosicion() + "</posicion>" +
+                        "<goles>" + fut.getGoles() + "</goles>");
                 contador++;
                 pw.println("</futbolista>");
             }
             pw.println("</liga>");
             pw.close();
             fw.close();
-        }catch(IOException io){
+        } catch (IOException io) {
             System.out.println("fallo de escritura");
         }
     }
 
     public void backupFutbolistasJSON(String nombre) {
-        this.liga.sort((a,b)->Integer.compare(b.getGoles(),a.getGoles()));
+        this.liga.sort((a, b) -> Integer.compare(b.getGoles(), a.getGoles()));
         Iterator<Futbolista> it = this.liga.iterator();
-        int contador=0;
-        try{
-            FileWriter fw=new FileWriter(nombre);
-            PrintWriter pw=new PrintWriter(fw);
+        int contador = 0;
+        try {
+            FileWriter fw = new FileWriter(nombre);
+            PrintWriter pw = new PrintWriter(fw);
 
             pw.println("{\n'liga':\n[");
-            while (contador<5 && it.hasNext()) {
+            while (contador < 5 && it.hasNext()) {
                 Futbolista fut = it.next();
                 pw.println("{");
-                pw.println("'nombre':'"+fut.getNombre()+"',\n"+
-                        "'club':'"+fut.getClub()+"',\n"+
-                        "'posicion':'"+fut.getPosicion()+"',\n"+
-                        "'goles':'"+fut.getGoles()+"'\n");
+                pw.println("'nombre':'" + fut.getNombre() + "',\n" +
+                        "'club':'" + fut.getClub() + "',\n" +
+                        "'posicion':'" + fut.getPosicion() + "',\n" +
+                        "'goles':'" + fut.getGoles() + "'\n");
                 contador++;
                 pw.println("}");
-                if(contador<5){
+                if (contador < 5) {
                     pw.println(",");
                 }
 
@@ -251,29 +252,43 @@ public class Liga {
 
             pw.close();
             fw.close();
-        }catch(IOException io){
+        } catch (IOException io) {
             System.out.println("fallo de escritura");
         }
     }
 
+//    public String resumenEquipos() {
+//
+//        HashMap<String,Integer> resumen=new HashMap<>();
+//        String res="";
+//        int goles_actuales;
+//        if(this.liga.isEmpty()){
+//            res="No hay futbolistas";
+//        }else{
+//            for(Futbolista fut:this.liga){
+//                goles_actuales=resumen.getOrDefault(fut.getClub(),0);
+//                resumen.put(fut.getClub(),goles_actuales+fut.getGoles());
+//            }
+//
+//            for(Map.Entry<String,Integer> entrada:resumen.entrySet()){
+//                res+=entrada.getKey()+":"+entrada.getValue()+"\n";
+//            }
+//        }
+//        return res;
+//    }
+//
+//}
+
     public String resumenEquipos() {
-
-        HashMap<String,Integer> resumen=new HashMap<>();
-        String res="";
-        int goles_actuales;
-        if(this.liga.isEmpty()){
-            res="No hay futbolistas";
-        }else{
-            for(Futbolista fut:this.liga){
-                goles_actuales=resumen.getOrDefault(fut.getClub(),0);
-                resumen.put(fut.getClub(),goles_actuales+fut.getGoles());
-            }
-
-            for(Map.Entry<String,Integer> entrada:resumen.entrySet()){
-                res+=entrada.getKey()+":"+entrada.getValue()+"\n";
-            }
+        HashMap<String, Integer> mapa = new HashMap<>();
+        String res = "";
+        for (Futbolista futbolista : this.liga) {
+            int contador = mapa.getOrDefault(futbolista.getClub(), 0);
+            mapa.put(futbolista.getClub(), contador + futbolista.getGoles());
+        }
+        for (String llave : mapa.keySet()) {
+            res += llave +":"+ mapa.get(llave) +"\n";
         }
         return res;
     }
-
 }

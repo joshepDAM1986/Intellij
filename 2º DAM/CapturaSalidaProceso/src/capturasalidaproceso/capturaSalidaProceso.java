@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class CapturaSalidaProceso {
+public class capturaSalidaProceso {
   public static void main(String[] args) {
 
     if (args.length < 1) {

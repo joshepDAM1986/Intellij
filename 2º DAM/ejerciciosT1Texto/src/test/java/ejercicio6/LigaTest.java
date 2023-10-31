@@ -169,7 +169,7 @@ class LigaTest {
 
     @Test
     void resumenEquipos() {
-        String valor_esperado="FC Barcelona:15\n"+
+        String valor_esperado= "FC Barcelona:15\n"+
                               "PSG:75\n"+
                               "Real Madrid:7\n"+
                               "Manchester United:41\n";
