@@ -1,6 +1,7 @@
 package preliminares;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class EmpresaDAO {
     private String host;
@@ -366,7 +367,7 @@ public class EmpresaDAO {
             statement = conexion.createStatement();
 
             //crear consulta
-            String selectSql = "SELECT apellido FROM empleados WHERE fecha_alta < '" + año + "-01.01'";
+            String selectSql = "SELECT apellido FROM empleados WHERE YEAR (fecha_alta) < " + año;
             resultSet = statement.executeQuery(selectSql);
             while(resultSet.next()){
                 resultado+= resultSet.getString(1)+"\n";          }
@@ -802,7 +803,7 @@ public class EmpresaDAO {
             statement = conexion.createStatement();
 
             //crear consulta
-            String selectSql = "SELECT d.nombre, sum(e.salario) FROM empleados e RIGHT JOIN departamentos d on d.id = e.departamento group by d.nombre";
+            String selectSql = "SELECT d.nombre, COALESCE(SUM(e.salario), 0) FROM departamentos d LEFT JOIN empleados e ON d.id = e.departamento GROUP BY d.nombre";
             resultSet = statement.executeQuery(selectSql);
             while (resultSet.next()) {
                 resultado += resultSet.getString(1)+":"+resultSet.getInt(2)+"\n";
@@ -835,8 +836,6 @@ public class EmpresaDAO {
     public void ejercicio21(String apellido_emp,String cargo, Double salario,Double comision,String nombre_dep) {
 
     }
-
-
 
 //    public void metodoPlantilla() {
 //                Connection conexion = null;

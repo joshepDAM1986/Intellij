@@ -1,0 +1,24 @@
+DROP TABLE IF EXISTS EMPLEADOS;
+DROP TABLE IF EXISTS DEPARTAMENTOS;
+
+CREATE TABLE DEPARTAMENTOS
+(
+  id INT(2) AUTO_INCREMENT,
+  nombre VARCHAR(20),
+  localizacion VARCHAR(50),
+  PRIMARY KEY(id) 
+);
+
+CREATE TABLE EMPLEADOS
+(
+  id INTEGER(4) AUTO_INCREMENT,
+  apellido VARCHAR(20),
+  cargo VARCHAR(20),
+  jefe INTEGER(4),
+  fecha_alta DATE,
+  salario DOUBLE,
+  comision DOUBLE,
+  departamento INTEGER(4)  NOT NULL,
+  PRIMARY KEY(id)
+);
+
