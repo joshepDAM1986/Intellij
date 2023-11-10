@@ -305,6 +305,7 @@ public class HoldingDAO {
         Connection conexion = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
+        int filasAfectadasTotal=0;
         try {
             conexion = establecerConexion();
 
@@ -313,24 +314,27 @@ public class HoldingDAO {
             statement.setInt(1,año);
             resultSet = statement.executeQuery();
 
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 int empleadosProyectosId = resultSet.getInt("empleado_id");
 
-                String deleteSql="DELETE FROM empleados_proyectos WHERE empleado_id=?";
+                String deleteSql = "DELETE FROM empleados_proyectos WHERE empleado_id=?";
                 statement = conexion.prepareStatement(deleteSql);
                 statement.setInt(1, empleadosProyectosId);
-                statement.executeUpdate();
+                int filasAfectadas1 = statement.executeUpdate();
 
-                String deleteSql2="DELETE FROM proyectos WHERE YEAR(p.comienzo)=?";
+                String deleteSql2 = "DELETE FROM proyectos WHERE YEAR(comienzo)=?";
                 statement = conexion.prepareStatement(deleteSql2);
                 statement.setInt(1, año);
-                statement.executeUpdate();
+                int filasAfectadas2 = statement.executeUpdate();
+
+                filasAfectadasTotal += filasAfectadas1 + filasAfectadas2;
             }
 
-
-
-
-
+            if (filasAfectadasTotal > 0) {
+                System.out.println("Cambios hechos");
+            } else {
+                System.out.println("No se pudieron realizar cambios");
+            }
         }catch (SQLException exception) {
             System.out.println("Error de SQL\n" + exception.getMessage());
             exception.printStackTrace();
