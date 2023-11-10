@@ -57,13 +57,13 @@ class HoldingDAOTest {
 
     @Test
     void resumenProyectos() {
-        String esperado="CodeFusion María 6300.0\n"+
-                        "CodeFusion Juan 6300.0\n"+
-                        "CyberPulse Laura 3800.0\n"+
-                        "FusionWorks Carlos 4500.0\n"+
-                        "QuantumQuest null 0.0\n";
-        String actual= dao.resumenProyectos();
-        assertEquals(esperado,actual);
+        String esperado = "CodeFusion María 6300.0\n" +
+                "CodeFusion Juan 6300.0\n" +
+                "CyberPulse Laura 3800.0\n" +
+                "FusionWorks Carlos 4500.0\n" +
+                "QuantumQuest null 0.0\n";
+        String actual = dao.resumenProyectos();
+        assertEquals(esperado, actual);
     }
 
     @Test

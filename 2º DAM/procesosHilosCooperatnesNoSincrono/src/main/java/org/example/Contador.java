@@ -1,15 +1,17 @@
 package org.example;
 
+import java.util.concurrent.SynchronousQueue;
+
 public class Contador {
     private int cuenta=0;
 
     public Contador() {
         this.cuenta = cuenta;
     }
-    public int getCuenta() {
+    public synchronized int getCuenta() {
         return cuenta;
     }
-    public int incrementa(){
+    public synchronized int incrementa(){
         cuenta++;
         return cuenta;
     }
