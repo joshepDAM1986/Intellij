@@ -36,7 +36,7 @@ fun main() {
     miCancion.imprimirDescripcion()
 
     // Verificar si la canción es popular
-    if (miCancion.esPopular) {
+    if (miCancion.esPopular==true) {
         println("Esta canción no es muy popular.")
     } else {
         println("Esta canción es popular.")
