@@ -306,6 +306,7 @@ public class HoldingDAO {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         int filasAfectadasTotal=0;
+
         try {
             conexion = establecerConexion();
 
