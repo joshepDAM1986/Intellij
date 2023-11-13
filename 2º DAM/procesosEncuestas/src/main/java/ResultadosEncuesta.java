@@ -5,8 +5,6 @@ public class ResultadosEncuesta {
     private final HashMap<String, Integer> totalPorRespuesta = new HashMap<>();
     private final HashMap<String, Integer> totalPorZona = new HashMap<>();
 
-
-
     //Suma uno a número de repuestas para la zona y para la respuesta
     synchronized public void anotaRespuesta(String idZona, String respuesta) {
         Integer numRespValor = this.totalPorRespuesta.get(respuesta);
