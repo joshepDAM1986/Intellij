@@ -12,8 +12,30 @@ package org.example;
 //    No hace falta crear una clase para el hilo que genera el número al azar. Es el hilo inicial, que ejecuta el método
 //    main, y que crea el resto de los hilos.
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        NumeroOculto numeroOculto = new NumeroOculto();
+        List<Thread> hilos = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            Thread hilo = new Thread(new Hilo(numeroOculto));
+            hilos.add(hilo);
+            hilo.start();
+        }
+
+        for (Thread hilo : hilos) {
+            try {
+                hilo.join(); // Esperar a que cada hilo termine
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("El juego ha terminado, los hilos han sido interrumpidos.");
     }
 }
+
+
+
