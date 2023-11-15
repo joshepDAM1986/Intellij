@@ -32,8 +32,8 @@ public class HoldingDAO {
                 resultSet = statement.executeQuery();
 
                 if (!resultSet.next()) {
-                    String insert = "INSERT INTO empleados (fecha_nacimiento, category, email, nombre, apellidos, fecha_contratacion, salario, empresa_id) " +
-                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                    String insert = "INSERT INTO empleados " +
+                            "VALUES (NULL,?, ?, ?, ?, ?, ?, ?, ?)";
                     statement = conexion.prepareStatement(insert);
                     statement.setString(1, fecha_nacimiento);
                     statement.setString(2, categoria);
@@ -237,7 +237,6 @@ public class HoldingDAO {
                 resultSet = statement.executeQuery();
                 while (resultSet.next()) {
                     String proyecto = resultSet.getString("proyecto");
-
                     resultado.append(resultSet.getString(1)).append(" ").append(resultSet.getString(2)).append(" ").append((costeProyecto(proyecto))).append("\n");
                 }
         }catch (SQLException exception) {

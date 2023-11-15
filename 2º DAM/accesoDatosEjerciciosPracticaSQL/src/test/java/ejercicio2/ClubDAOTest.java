@@ -23,6 +23,7 @@ class ClubDAOTest {
 
     @Test
     void crearEvento() {
+        dao.crearEvento("Cumpleaños Enrique","2023-11-01");
     }
 
     @Test
@@ -43,6 +44,13 @@ class ClubDAOTest {
 
     @Test
     void resumentEventos() {
+        String esperado= "Cata de vinos 2020-11-30 Juan\n"+
+                         "Cata de vinos 2020-11-30 Jose\n"+
+                         "Fiesta de la espuma 2021-12-20 Juan\n"+
+                         "Fiesta de la espuma 2021-12-20 Antonio\n"+
+                         "Partido de futbol sala 2023-06-30 Antonio\n";
+        String actual= dao.resumentEventos();
+        assertEquals(esperado,actual);
     }
 
     @Test
