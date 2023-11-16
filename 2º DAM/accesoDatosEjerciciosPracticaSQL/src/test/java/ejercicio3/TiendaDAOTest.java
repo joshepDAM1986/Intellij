@@ -23,33 +23,59 @@ class TiendaDAOTest {
 
     @Test
     void añadirVenta() {
+        dao.añadirVenta("Paco Menendez","Barra de pan",5);
     }
 
     @Test
     void comprasCliente() {
+        String esperado="Botella de vino 3\n" +
+                "Botella de agua 10\n";
+        String actual=dao.comprasCliente("Pepe Luis Jimenez");
+        assertEquals(esperado,actual);
     }
 
     @Test
     void recaudacionTotal() {
+        Double esperado=224.0;
+        Double actual=dao.recaudacionTotal();
+        assertEquals(esperado,actual);
     }
 
     @Test
     void porCategorias() {
+        String esperado="Bebida 24\n" +
+                "Comida 5\n" +
+                "Otros 0\n";
+        String actual=dao.porCategorias();
+        assertEquals(esperado,actual);
     }
 
     @Test
     void ultimaVenta() {
+        String esperado="Paco Menendez Plato de macarrones 2021-10-11\n" +
+                "Pepe Luis Jimenez Botella de vino 2021-09-09\n" +
+                "Francisco López Serrano Botella de agua 2020-12-17\n";
+        String actual=dao.ultimaVenta();
+        assertEquals(esperado,actual);
     }
 
     @Test
     void masVendido() {
+        String esperado="Botella de agua 17\n";
+        String actual=dao.masVendido();
+        assertEquals(esperado,actual);
     }
 
     @Test
     void sinVentas() {
+        String esperado="Barra de pan\n";
+        String actual=dao.sinVentas();
+        assertEquals(esperado,actual);
     }
+
 
     @Test
     void borrarProveedor() {
+        dao.borrarProveedor("Innovate Supply Co.");
     }
 }

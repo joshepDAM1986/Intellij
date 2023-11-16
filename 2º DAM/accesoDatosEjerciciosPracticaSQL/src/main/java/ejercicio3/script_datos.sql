@@ -3,6 +3,7 @@ INSERT INTO CATEGORIAS VALUES (1, 'Comida');
 INSERT INTO CATEGORIAS VALUES (2, 'Bebida');
 INSERT INTO CATEGORIAS VALUES (3, 'Otros');
 -- INSERTs para PROVEEDORES
+ALTER TABLE PROVEEDORES AUTO_INCREMENT = 1;
 INSERT INTO PROVEEDORES (nombre, contacto, telefono, email) VALUES ('Innovate Supply Co.', 'Ana Martínez', '123-456-7890', 'ana@innovatesupply.com');
 INSERT INTO PROVEEDORES (nombre, contacto, telefono, email) VALUES ('EcoSolutions Ltd.', 'Carlos Rodríguez', '987-654-3210', 'carlos@ecosolutions.com');
 INSERT INTO PROVEEDORES (nombre, contacto, telefono, email) VALUES ('StellarCraft Providers', 'Laura García', '555-123-4567', 'laura@stellarcraft.com');

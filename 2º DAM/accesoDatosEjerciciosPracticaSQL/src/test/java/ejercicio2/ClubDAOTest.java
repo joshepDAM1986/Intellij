@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ClubDAOTest {
 
-
     ClubDAO dao;
     @BeforeEach
     void setUp() {
@@ -28,18 +27,20 @@ class ClubDAOTest {
 
     @Test
     void añadirSocio() {
+        {dao.añadirSocio("Josele");}
     }
 
     @Test
     void apuntarseEvento() {
+        dao.apuntarseEvento("Juan","Partido de futbol sala");
     }
 
     @Test
     void eventosSocio() {
-    }
-
-    @Test
-    void sociosEvento() {
+        String esperado= "Cata de vinos\n" +
+                         "Fiesta de la espuma\n";
+        String actual=dao.eventosSocio("Juan");
+        assertEquals(esperado,actual);
     }
 
     @Test
@@ -55,21 +56,36 @@ class ClubDAOTest {
 
     @Test
     void valoracionesEvento() {
+        String esperado= "Gran evento, mucha diversión\n"+
+                         "Divertido pero podría haber más actividades\n";
+        String actual= dao.valoracionesEvento("Fiesta de la espuma");
+        assertEquals(esperado,actual);
     }
 
     @Test
     void eventoMultitudinario() {
+        String esperado= "Fiesta de la espuma";
+        String actual=dao.eventoMultitudinario();
+        assertEquals(esperado,actual);
     }
 
     @Test
     void sinSocios() {
+        String resultado="Maraton de cine";
+        String actual= dao.sinSocios();
+        assertEquals(resultado,actual);
     }
 
     @Test
     void mejorValorado() {
+       String esperado="Evento: Cata de vinos\n" +
+                       "Puntuacion: 5.0\n";
+       String actual=dao.mejorValorado();
+       assertEquals(esperado,actual);
     }
 
     @Test
     void borrarEventos() {
+        dao.borrarEventos(2023);
     }
 }
