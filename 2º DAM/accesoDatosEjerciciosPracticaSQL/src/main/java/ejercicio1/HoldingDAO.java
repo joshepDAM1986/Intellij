@@ -26,7 +26,8 @@ public class HoldingDAO {
             Integer id_empresa = devolverIdEmpresaNombre(empresa, conexion);
 
             if (id_empresa != null) {
-                String existe = "SELECT email FROM empleados WHERE email=?";
+                String existe = "SELECT email " +
+                        "FROM empleados WHERE email=?";
                 statement = conexion.prepareStatement(existe);
                 statement.setString(1, email);
                 resultSet = statement.executeQuery();
@@ -71,7 +72,9 @@ public class HoldingDAO {
 
             if (id_empresa != null) {
 
-                    String updateSql = "UPDATE empleados SET salario = salario + ? WHERE empresa_id= ?";
+                    String updateSql = "UPDATE empleados " +
+                            "SET salario = salario + ? " +
+                            "WHERE empresa_id= ?";
                     statement = conexion.prepareStatement(updateSql);
                     statement.setDouble(1, subida);
                     statement.setInt(2,id_empresa);
@@ -104,7 +107,9 @@ public class HoldingDAO {
             Integer id_empresa = devolverIdEmpresaNombre(empresa, conexion);
 
             if (id_empresa != null) {
-                String updateSql = "UPDATE empleados SET empresa_id =? WHERE nombre=?";
+                String updateSql = "UPDATE empleados " +
+                        "SET empresa_id =? " +
+                        "WHERE nombre=?";
                 statement = conexion.prepareStatement(updateSql);
                 statement.setInt(1, id_empresa);
                 statement.setString(2,emplead);
@@ -138,7 +143,9 @@ public class HoldingDAO {
             Integer id_empresa = devolverIdEmpresaNombre(empresa, conexion);
 
             if (id_empresa != null) {
-                String selectSql = "SELECT nombre FROM empleados WHERE empresa_id= ? ";
+                String selectSql = "SELECT nombre " +
+                        "FROM empleados " +
+                        "WHERE empresa_id= ? ";
                 statement = conexion.prepareStatement(selectSql);
                 statement.setInt(1, id_empresa);
                 resultSet = statement.executeQuery();
@@ -205,8 +212,9 @@ public class HoldingDAO {
             Integer id_proyecto = devolverIdProyectoNombre(proyecto, conexion);
             if (id_proyecto != null) {
                 String selectSql = "SELECT e.salario FROM empleados e " +
-                                   "JOIN empleados_proyectos ep ON e.id = ep.empleado_id " +
-                                   "WHERE ep.proyecto_id = ?";
+                        "JOIN empleados_proyectos ep " +
+                        "ON e.id = ep.empleado_id " +
+                        "WHERE ep.proyecto_id = ?";
                 statement = conexion.prepareStatement(selectSql);
                 statement.setInt(1, id_proyecto);
                 resultSet = statement.executeQuery();
@@ -232,7 +240,16 @@ public class HoldingDAO {
         StringBuilder resultado= new StringBuilder();
         try {
             conexion = establecerConexion();
-                String selectSql = "SELECT p.titulo AS proyecto, e.nombre, COALESCE(e.salario,0), SUM(e.salario) FROM proyectos p LEFT JOIN empleados_proyectos ep ON p.id = ep.proyecto_id LEFT JOIN empleados e ON e.id=ep.empleado_id GROUP BY e.nombre ORDER BY p.titulo";
+                String selectSql = "SELECT p.titulo AS proyecto, e.nombre, " +
+                        "COALESCE(e.salario,0), " +
+                        "SUM(e.salario) " +
+                        "FROM proyectos p " +
+                        "LEFT JOIN empleados_proyectos ep " +
+                        "ON p.id = ep.proyecto_id " +
+                        "LEFT JOIN empleados e " +
+                        "ON e.id=ep.empleado_id " +
+                        "GROUP BY e.nombre " +
+                        "ORDER BY p.titulo, e.nombre";
                 statement = conexion.prepareStatement(selectSql);
                 resultSet = statement.executeQuery();
                 while (resultSet.next()) {
@@ -248,7 +265,6 @@ public class HoldingDAO {
         return resultado.toString();
     }
 
-
     public Integer empleadosSinCoche() {
         Connection conexion = null;
         PreparedStatement statement = null;
@@ -256,7 +272,11 @@ public class HoldingDAO {
         int resultado=0;
         try {
             conexion = establecerConexion();
-            String selectSql = "SELECT COUNT(e.id) FROM empleados e LEFT JOIN coches c ON e.id=c.empleado_id WHERE empleado_id is NULL";
+            String selectSql = "SELECT COUNT(e.id) " +
+                    "FROM empleados e " +
+                    "LEFT JOIN coches c " +
+                    "ON e.id=c.empleado_id " +
+                    "WHERE empleado_id is NULL";
             statement = conexion.prepareStatement(selectSql);
             resultSet = statement.executeQuery();
             if (resultSet.next()) {
@@ -271,7 +291,6 @@ public class HoldingDAO {
         return resultado;
     }
 
-
     public void BorrarProyectosSinEmp() {
         Connection conexion = null;
         PreparedStatement statement = null;
@@ -279,7 +298,11 @@ public class HoldingDAO {
         try {
             conexion = establecerConexion();
 
-                String selectSql = "SELECT p.id FROM proyectos p LEFT JOIN empleados_proyectos ep ON p.id=ep.proyecto_id WHERE empleado_id is NULL";
+                String selectSql = "SELECT p.id " +
+                        "FROM proyectos p " +
+                        "LEFT JOIN empleados_proyectos ep " +
+                        "ON p.id=ep.proyecto_id " +
+                        "WHERE empleado_id is NULL";
                 statement = conexion.prepareStatement(selectSql);
                 resultSet = statement.executeQuery();
 
@@ -309,7 +332,13 @@ public class HoldingDAO {
         try {
             conexion = establecerConexion();
 
-            String selectSql = "SELECT ep.empleado_id FROM empleados_proyectos ep JOIN empleados e ON ep.empleado_id=e.id JOIN proyectos p ON p.id=ep.proyecto_id WHERE YEAR(p.comienzo)=?";
+            String selectSql = "SELECT ep.empleado_id " +
+                    "FROM empleados_proyectos ep " +
+                    "JOIN empleados e " +
+                    "ON ep.empleado_id=e.id " +
+                    "JOIN proyectos p " +
+                    "ON p.id=ep.proyecto_id " +
+                    "WHERE YEAR(p.comienzo)=?";
             statement = conexion.prepareStatement(selectSql);
             statement.setInt(1,año);
             resultSet = statement.executeQuery();
@@ -317,12 +346,14 @@ public class HoldingDAO {
             while (resultSet.next()) {
                 int empleadosProyectosId = resultSet.getInt("empleado_id");
 
-                String deleteSql = "DELETE FROM empleados_proyectos WHERE empleado_id=?";
+                String deleteSql = "DELETE FROM empleados_proyectos " +
+                        "WHERE empleado_id=?";
                 statement = conexion.prepareStatement(deleteSql);
                 statement.setInt(1, empleadosProyectosId);
                 int filasAfectadas1 = statement.executeUpdate();
 
-                String deleteSql2 = "DELETE FROM proyectos WHERE YEAR(comienzo)=?";
+                String deleteSql2 = "DELETE FROM proyectos " +
+                        "WHERE YEAR(comienzo)=?";
                 statement = conexion.prepareStatement(deleteSql2);
                 statement.setInt(1, año);
                 int filasAfectadas2 = statement.executeUpdate();
@@ -362,7 +393,9 @@ public class HoldingDAO {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         Integer id = null;
-        String existe = "SELECT id FROM empresas WHERE razon_social=?";
+        String existe = "SELECT id " +
+                "FROM empresas " +
+                "WHERE razon_social=?";
         try {
             statement = conexion.prepareStatement(existe);
             statement.setString(1, nombre);

@@ -87,7 +87,9 @@ public class TiendaDAO {
         Double resultado=0.0;
         try {
             conexion = establecerConexion();
-                String select = "SELECT SUM(p.precio*v.unidades) FROM productos p JOIN ventas v ON p.id=v.producto";
+                String select = "SELECT SUM(p.precio*v.unidades) " +
+                        "FROM productos p " +
+                        "JOIN ventas v ON p.id=v.producto";
                 statement = conexion.prepareStatement(select);
                 resultSet = statement.executeQuery();
                 while (resultSet.next()) {
@@ -135,7 +137,6 @@ public class TiendaDAO {
         String resultado="";
         try {
             conexion = establecerConexion();
-
             String select = "SELECT cl.nombre AS nombre_cliente, " +
                             "p.nombre AS nombre_producto, " +
                             "v.fecha AS fecha_venta " +
@@ -145,7 +146,7 @@ public class TiendaDAO {
                             "JOIN productos p " +
                             "ON p.id = v.producto " +
                             "GROUP BY cl.nombre " +
-                            "ORDER BY v.fecha DESC";
+                            "ORDER BY v.fecha DESC LIMIT 1";
             statement = conexion.prepareStatement(select);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
@@ -217,20 +218,16 @@ public class TiendaDAO {
     public void borrarProveedor(String nombre) {
         try {
             conexion = establecerConexion();
-
-            // Obtener el ID del proveedor
             Integer idProveedor = devolverIdProveedorNombre(nombre, conexion);
             if (idProveedor != null) {
                 String deleteProductosSql = "DELETE FROM productos WHERE proveedor_id=?";
                 statement = conexion.prepareStatement(deleteProductosSql);
                 statement.setInt(1, idProveedor);
                 int filasAfectadasProductos = statement.executeUpdate();
-
                 String deleteProveedorSql = "DELETE FROM proveedores WHERE id=?";
                 statement = conexion.prepareStatement(deleteProveedorSql);
                 statement.setInt(1, idProveedor);
                 int filasAfectadasProveedor = statement.executeUpdate();
-
                 if (filasAfectadasProductos > 0 || filasAfectadasProveedor > 0) {
                     System.out.println("Proveedor y productos borrados con éxito");
                 }else{

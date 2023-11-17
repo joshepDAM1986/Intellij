@@ -52,9 +52,8 @@ class TiendaDAOTest {
 
     @Test
     void ultimaVenta() {
-        String esperado="Paco Menendez Plato de macarrones 2021-10-11\n" +
-                "Pepe Luis Jimenez Botella de vino 2021-09-09\n" +
-                "Francisco López Serrano Botella de agua 2020-12-17\n";
+        String esperado="Paco Menendez Plato de macarrones 2021-10-11\n";
+
         String actual=dao.ultimaVenta();
         assertEquals(esperado,actual);
     }

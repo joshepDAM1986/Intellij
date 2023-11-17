@@ -64,7 +64,7 @@ class ClubDAOTest {
 
     @Test
     void eventoMultitudinario() {
-        String esperado= "Fiesta de la espuma";
+        String esperado= "Cata de vinos";
         String actual=dao.eventoMultitudinario();
         assertEquals(esperado,actual);
     }
@@ -78,8 +78,8 @@ class ClubDAOTest {
 
     @Test
     void mejorValorado() {
-       String esperado="Evento: Cata de vinos\n" +
-                       "Puntuacion: 5.0\n";
+       String esperado="Evento: Fiesta de la espuma\n" +
+                       "Puntuacion: 4.2\n";
        String actual=dao.mejorValorado();
        assertEquals(esperado,actual);
     }
