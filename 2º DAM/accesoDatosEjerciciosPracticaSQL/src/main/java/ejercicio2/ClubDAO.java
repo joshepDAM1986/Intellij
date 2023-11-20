@@ -4,7 +4,6 @@ import java.sql.*;
 import java.time.LocalDate;
 
 public class ClubDAO {
-
     private String host;
     private String base_datos;
     private String usuario;
@@ -136,8 +135,10 @@ public class ClubDAO {
             if(id_socio!=null) {
                 String select = "SELECT e.nombre " +
                         "FROM eventos e " +
-                        "JOIN inscripciones i ON e.id=i.evento " +
-                        "JOIN socios s ON s.id=i.socio " +
+                        "JOIN inscripciones i " +
+                        "ON e.id=i.evento " +
+                        "JOIN socios s " +
+                        "ON s.id=i.socio " +
                         "WHERE s.nombre=? ORDER BY e.nombre";
                 statement = conexion.prepareStatement(select);
                 statement.setString(1, socio);
@@ -167,8 +168,10 @@ public class ClubDAO {
             conexion = establecerConexion();
                 String select = "SELECT e.nombre, e.fecha, s.nombre " +
                         "FROM eventos e " +
-                        "JOIN inscripciones i ON e.id=i.evento " +
-                        "JOIN socios s ON s.id=i.socio " +
+                        "JOIN inscripciones i " +
+                        "ON e.id=i.evento " +
+                        "JOIN socios s " +
+                        "ON s.id=i.socio " +
                         "ORDER BY e.nombre";
                 statement = conexion.prepareStatement(select);
                 resultSet = statement.executeQuery();
@@ -198,7 +201,8 @@ public class ClubDAO {
             if(id_evento!=null) {
                 String select = "SELECT re.comentario " +
                         "FROM resenas_eventos re " +
-                        "JOIN eventos e ON re.evento_id=e.id " +
+                        "JOIN eventos e " +
+                        "ON re.evento_id=e.id " +
                         "WHERE e.nombre=?";
                 statement = conexion.prepareStatement(select);
                 statement.setString(1, evento);
@@ -227,8 +231,10 @@ public class ClubDAO {
             conexion = establecerConexion();
                 String select = "SELECT e.nombre " +
                         "FROM eventos e " +
-                        "JOIN inscripciones i ON e.id=i.evento " +
-                        "JOIN socios s ON s.id=i.socio " +
+                        "JOIN inscripciones i " +
+                        "ON e.id=i.evento " +
+                        "JOIN socios s " +
+                        "ON s.id=i.socio " +
                         "GROUP BY e.nombre " +
                         "ORDER BY COUNT(i.evento) DESC LIMIT 1 ";
                 statement = conexion.prepareStatement(select);
@@ -254,9 +260,11 @@ public class ClubDAO {
             conexion = establecerConexion();
             String select = "SELECT e.nombre " +
                     "FROM eventos e " +
-                    "LEFT JOIN inscripciones i ON e.id=i.evento " +
-                    "LEFT JOIN socios s ON s.id=i.socio " +
-                    "WHERE i.socio IS NULL";
+                    "LEFT JOIN inscripciones i " +
+                    "ON e.id=i.evento " +
+                    "LEFT JOIN socios s " +
+                    "ON s.id=i.socio " +
+                    "WHERE s.nombre IS NULL";
             statement = conexion.prepareStatement(select);
             resultSet = statement.executeQuery();
             if(resultSet.next()){
@@ -280,7 +288,8 @@ public class ClubDAO {
             conexion = establecerConexion();
             String select = "SELECT e.nombre as eventoNombre, AVG(re.puntuacion) " +
                     "FROM eventos e " +
-                    "JOIN resenas_eventos re ON e.id=re.evento_id " +
+                    "JOIN resenas_eventos re " +
+                    "ON e.id=re.evento_id " +
                     "ORDER BY re.puntuacion  " +
                     "LIMIT 1";
             statement = conexion.prepareStatement(select);

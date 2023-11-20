@@ -61,8 +61,10 @@ public class TiendaDAO {
             if(id_cliente!=null) {
                 String select = "SELECT p.nombre, v.unidades " +
                         "FROM productos p " +
-                        "JOIN ventas v ON p.id = v.producto " +
-                        "JOIN clientes c ON c.id = v.cliente " +
+                        "JOIN ventas v " +
+                        "ON p.id = v.producto " +
+                        "JOIN clientes c " +
+                        "ON c.id = v.cliente " +
                         "WHERE c.id = ?";
                 statement = conexion.prepareStatement(select);
                 statement.setInt (1, id_cliente);
@@ -89,7 +91,8 @@ public class TiendaDAO {
             conexion = establecerConexion();
                 String select = "SELECT SUM(p.precio*v.unidades) " +
                         "FROM productos p " +
-                        "JOIN ventas v ON p.id=v.producto";
+                        "JOIN ventas v " +
+                        "ON p.id=v.producto";
                 statement = conexion.prepareStatement(select);
                 resultSet = statement.executeQuery();
                 while (resultSet.next()) {
@@ -220,11 +223,13 @@ public class TiendaDAO {
             conexion = establecerConexion();
             Integer idProveedor = devolverIdProveedorNombre(nombre, conexion);
             if (idProveedor != null) {
-                String deleteProductosSql = "DELETE FROM productos WHERE proveedor_id=?";
+                String deleteProductosSql = "DELETE FROM productos " +
+                        "WHERE proveedor_id=?";
                 statement = conexion.prepareStatement(deleteProductosSql);
                 statement.setInt(1, idProveedor);
                 int filasAfectadasProductos = statement.executeUpdate();
-                String deleteProveedorSql = "DELETE FROM proveedores WHERE id=?";
+                String deleteProveedorSql = "DELETE FROM proveedores " +
+                        "WHERE id=?";
                 statement = conexion.prepareStatement(deleteProveedorSql);
                 statement.setInt(1, idProveedor);
                 int filasAfectadasProveedor = statement.executeUpdate();

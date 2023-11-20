@@ -3,7 +3,6 @@ package ejercicio1;
 import java.sql.*;
 
 public class HoldingDAO {
-
     private String host;
     private String base_datos;
     private String usuario;
@@ -211,7 +210,8 @@ public class HoldingDAO {
             conexion = establecerConexion();
             Integer id_proyecto = devolverIdProyectoNombre(proyecto, conexion);
             if (id_proyecto != null) {
-                String selectSql = "SELECT e.salario FROM empleados e " +
+                String selectSql = "SELECT e.salario " +
+                        "FROM empleados e " +
                         "JOIN empleados_proyectos ep " +
                         "ON e.id = ep.empleado_id " +
                         "WHERE ep.proyecto_id = ?";
@@ -297,23 +297,37 @@ public class HoldingDAO {
         ResultSet resultSet = null;
         try {
             conexion = establecerConexion();
+//                String selectSql = "SELECT p.nombre " +
+//                        "FROM proyectos p " +
+//                        "LEFT JOIN empleados_proyectos ep " +
+//                        "ON p.id=ep.proyecto_id " +
+//                        "WHERE empleado_id is NULL";
+//                statement = conexion.prepareStatement(selectSql);
+//                resultSet = statement.executeQuery();
+//
+//                while(resultSet.next()){
+//                    int proyectoId = resultSet.getInt("id");
+//
+//                    String deleteSql="DELETE FROM proyectos WHERE id=?";
+//                    statement = conexion.prepareStatement(deleteSql);
+//                    statement.setInt(1, proyectoId);
+//                    statement.executeUpdate();
+//                }
+            String deleteSql="DELETE p " +
+                    "FROM proyectos p " +
+                    "LEFT JOIN empleados_proyectos ep " +
+                    "ON p.id=ep.proyecto_id " +
+                    "LEFT JOIN empleados e " +
+                    "ON ep.empleado_id=e.id " +
+                    "WHERE e.nombre IS NULL";
+            statement = conexion.prepareStatement(deleteSql);
+            int filasAfectadas = statement.executeUpdate();
 
-                String selectSql = "SELECT p.id " +
-                        "FROM proyectos p " +
-                        "LEFT JOIN empleados_proyectos ep " +
-                        "ON p.id=ep.proyecto_id " +
-                        "WHERE empleado_id is NULL";
-                statement = conexion.prepareStatement(selectSql);
-                resultSet = statement.executeQuery();
-
-                while(resultSet.next()){
-                    int proyectoId = resultSet.getInt("id");
-
-                    String deleteSql="DELETE FROM proyectos WHERE id=?";
-                    statement = conexion.prepareStatement(deleteSql);
-                    statement.setInt(1, proyectoId);
-                    statement.executeUpdate();
-                }
+            if (filasAfectadas > 0) {
+                System.out.println("Cambios realizados");
+            }else{
+                System.out.println("No pudieron realizarse cambios");
+            }
 
         }catch (SQLException exception) {
             System.out.println("Error de SQL\n" + exception.getMessage());
@@ -393,9 +407,7 @@ public class HoldingDAO {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         Integer id = null;
-        String existe = "SELECT id " +
-                "FROM empresas " +
-                "WHERE razon_social=?";
+        String existe = "SELECT id FROM empresas WHERE razon_social=?";
         try {
             statement = conexion.prepareStatement(existe);
             statement.setString(1, nombre);
