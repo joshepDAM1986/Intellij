@@ -158,7 +158,35 @@ public class ClubDAO {
         return  resultado;
     }
 
-    public String resumentEventos() {
+    private String sociosEvento(String evento){
+        Connection conexion = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        String resultado="";
+        try {
+            conexion = establecerConexion();
+            String selectSql="SELECT s.nombre FROM socios s " +
+                    "JOIN inscripciones i ON s.id=i.socio "+
+                    "JOIN eventos e ON i.evento=e.id "+
+                    "WHERE e.nombre=?";
+            statement=conexion.prepareStatement(selectSql);
+            statement.setString(1,evento);
+            resultSet=statement.executeQuery();
+
+            while(resultSet.next()){
+                resultado+=resultSet.getString(1)+"\n";
+            }
+
+        } catch (SQLException exception) {
+            System.out.println("Error de SQL\n" + exception.getMessage());
+            exception.printStackTrace();
+        } finally {
+            cerrarConexion(conexion, statement, resultSet);
+        }
+        return resultado;
+    }
+
+    public String resumenEventos() {
         Connection conexion = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -166,27 +194,24 @@ public class ClubDAO {
 
         try {
             conexion = establecerConexion();
-                String select = "SELECT e.nombre, e.fecha, s.nombre " +
-                        "FROM eventos e " +
-                        "JOIN inscripciones i " +
-                        "ON e.id=i.evento " +
-                        "JOIN socios s " +
-                        "ON s.id=i.socio " +
-                        "ORDER BY e.nombre";
-                statement = conexion.prepareStatement(select);
-                resultSet = statement.executeQuery();
-                while (resultSet.next()) {
-                    resultado += resultSet.getString(1)+" "+
-                                 resultSet.getString(2)+" "+
-                                 resultSet.getString(3)+"\n";
-                }
+            String selectSql="SELECT * FROM eventos";
+            statement=conexion.prepareStatement(selectSql);
+            resultSet= statement.executeQuery();
+            while (resultSet.next()){
+                String nombre=resultSet.getString("nombre");
+                resultado+=nombre+"\n"+
+                        "Fecha:"+resultSet.getString("fecha")+"\n"+
+                        sociosEvento(nombre)+
+                        "======================\n";
+            }
+
         } catch (SQLException exception) {
             System.out.println("Error de SQL\n" + exception.getMessage());
             exception.printStackTrace();
         } finally {
             cerrarConexion(conexion, statement, resultSet);
         }
-        return  resultado;
+        return resultado;
     }
 
     public String valoracionesEvento(String evento){
@@ -229,14 +254,11 @@ public class ClubDAO {
         String resultado="";
         try {
             conexion = establecerConexion();
-                String select = "SELECT e.nombre " +
-                        "FROM eventos e " +
-                        "JOIN inscripciones i " +
-                        "ON e.id=i.evento " +
-                        "JOIN socios s " +
-                        "ON s.id=i.socio " +
-                        "GROUP BY e.nombre " +
-                        "ORDER BY COUNT(i.evento) DESC LIMIT 1 ";
+                String select = "SELECT e.nombre FROM eventos e " +
+            "JOIN inscripciones i ON e.id=i.evento "+
+                    "GROUP BY i.evento "+
+                    "ORDER BY COUNT(*) DESC, e.nombre ASC " +
+                    "LIMIT 1";
                 statement = conexion.prepareStatement(select);
                 resultSet = statement.executeQuery();
                 if(resultSet.next()){

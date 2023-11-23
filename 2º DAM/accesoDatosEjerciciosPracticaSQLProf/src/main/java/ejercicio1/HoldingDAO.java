@@ -267,9 +267,6 @@ public class HoldingDAO {
             sentencia.setInt(1,id);
             sentencia.executeUpdate();
 
-
-
-
         } catch (SQLException exception) {
             System.out.println("Error de SQL\n" + exception.getMessage());
             exception.printStackTrace();

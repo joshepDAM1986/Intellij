@@ -124,7 +124,7 @@ public class ClubDAO {
                     "Fecha:"+resultado.getString("fecha")+"\n"+
                     sociosEvento(nombre)+
                     "======================\n";
-        }
+            }
 
         } catch (SQLException exception) {
             System.out.println("Error de SQL\n" + exception.getMessage());

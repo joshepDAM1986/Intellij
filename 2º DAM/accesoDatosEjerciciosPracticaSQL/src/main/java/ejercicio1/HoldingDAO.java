@@ -1,5 +1,7 @@
 package ejercicio1;
 
+import utilidades.BasesDatos;
+
 import java.sql.*;
 
 public class HoldingDAO {
@@ -210,7 +212,7 @@ public class HoldingDAO {
             conexion = establecerConexion();
             Integer id_proyecto = devolverIdProyectoNombre(proyecto, conexion);
             if (id_proyecto != null) {
-                String selectSql = "SELECT e.salario " +
+                String selectSql = "SELECT SUM(e.salario) " +
                         "FROM empleados e " +
                         "JOIN empleados_proyectos ep " +
                         "ON e.id = ep.empleado_id " +
@@ -233,36 +235,63 @@ public class HoldingDAO {
         return resultado;
     }
 
+    private String empleadosProyecto(String proyecto){
+        Connection conexion = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        String resultado="";
+        try {
+            conexion = establecerConexion();
+
+            String sql="SELECT e.nombre,e.apellidos FROM proyectos p " +
+                    "JOIN empleados_proyectos ep ON p.id=ep.proyecto_id "+
+                    "JOIN empleados e ON ep.empleado_id=e.id "+
+                    "WHERE p.titulo=?";
+            statement=conexion.prepareStatement(sql);
+            statement.setString(1,proyecto);
+            resultSet=statement.executeQuery();
+
+            while(resultSet.next()){
+                resultado+=resultSet.getString(1)+" "+
+                        resultSet.getString(2)+"\n";
+            }
+
+
+        } catch (SQLException exception) {
+            System.out.println("Error de SQL\n" + exception.getMessage());
+            exception.printStackTrace();
+        } finally {
+            cerrarConexion(conexion, statement, resultSet);
+        }
+        return resultado;
+    }
+
     public String resumenProyectos() {
         Connection conexion = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-        StringBuilder resultado= new StringBuilder();
+        String resultado="";
         try {
             conexion = establecerConexion();
-                String selectSql = "SELECT p.titulo AS proyecto, e.nombre, " +
-                        "COALESCE(e.salario,0), " +
-                        "SUM(e.salario) " +
-                        "FROM proyectos p " +
-                        "LEFT JOIN empleados_proyectos ep " +
-                        "ON p.id = ep.proyecto_id " +
-                        "LEFT JOIN empleados e " +
-                        "ON e.id=ep.empleado_id " +
-                        "GROUP BY e.nombre " +
-                        "ORDER BY p.titulo, e.nombre";
-                statement = conexion.prepareStatement(selectSql);
-                resultSet = statement.executeQuery();
-                while (resultSet.next()) {
-                    String proyecto = resultSet.getString("proyecto");
-                    resultado.append(resultSet.getString(1)).append(" ").append(resultSet.getString(2)).append(" ").append((costeProyecto(proyecto))).append("\n");
-                }
+            String sql="SELECT * FROM proyectos";
+            statement=conexion.prepareStatement(sql);
+            resultSet=statement.executeQuery();
+
+            while(resultSet.next()){
+                String titulo=resultSet.getString("titulo");
+                resultado+=titulo+"\n"+
+                        "Fecha:"+resultSet.getString("comienzo")+"\n"+
+                        empleadosProyecto(titulo)+
+                        "Coste:"+costeProyecto(titulo)+"\n"+
+                        "======================\n";
+            }
         }catch (SQLException exception) {
             System.out.println("Error de SQL\n" + exception.getMessage());
             exception.printStackTrace();
         } finally {
             cerrarConexion(conexion, statement, resultSet);
         }
-        return resultado.toString();
+        return resultado;
     }
 
     public Integer empleadosSinCoche() {
@@ -297,29 +326,11 @@ public class HoldingDAO {
         ResultSet resultSet = null;
         try {
             conexion = establecerConexion();
-//                String selectSql = "SELECT p.nombre " +
-//                        "FROM proyectos p " +
-//                        "LEFT JOIN empleados_proyectos ep " +
-//                        "ON p.id=ep.proyecto_id " +
-//                        "WHERE empleado_id is NULL";
-//                statement = conexion.prepareStatement(selectSql);
-//                resultSet = statement.executeQuery();
-//
-//                while(resultSet.next()){
-//                    int proyectoId = resultSet.getInt("id");
-//
-//                    String deleteSql="DELETE FROM proyectos WHERE id=?";
-//                    statement = conexion.prepareStatement(deleteSql);
-//                    statement.setInt(1, proyectoId);
-//                    statement.executeUpdate();
-//                }
             String deleteSql="DELETE p " +
                     "FROM proyectos p " +
                     "LEFT JOIN empleados_proyectos ep " +
                     "ON p.id=ep.proyecto_id " +
-                    "LEFT JOIN empleados e " +
-                    "ON ep.empleado_id=e.id " +
-                    "WHERE e.nombre IS NULL";
+                    "WHERE ep.empleado_id IS NULL";
             statement = conexion.prepareStatement(deleteSql);
             int filasAfectadas = statement.executeUpdate();
 
@@ -346,7 +357,7 @@ public class HoldingDAO {
         try {
             conexion = establecerConexion();
 
-            String selectSql = "SELECT ep.empleado_id " +
+            String selectSql = "SELECT ep.empleado_id AS idEmpleado " +
                     "FROM empleados_proyectos ep " +
                     "JOIN empleados e " +
                     "ON ep.empleado_id=e.id " +
@@ -358,7 +369,7 @@ public class HoldingDAO {
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                int empleadosProyectosId = resultSet.getInt("empleado_id");
+                int empleadosProyectosId = resultSet.getInt("idEmpleado");
 
                 String deleteSql = "DELETE FROM empleados_proyectos " +
                         "WHERE empleado_id=?";

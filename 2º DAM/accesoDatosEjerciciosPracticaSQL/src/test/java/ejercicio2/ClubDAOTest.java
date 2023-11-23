@@ -1,6 +1,5 @@
 package ejercicio2;
 
-import ejercicio1.HoldingDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import utilidades.BasesDatos;
@@ -44,15 +43,29 @@ class ClubDAOTest {
     }
 
     @Test
-    void resumentEventos() {
-        String esperado= "Cata de vinos 2020-11-30 Juan\n"+
-                         "Cata de vinos 2020-11-30 Jose\n"+
-                         "Fiesta de la espuma 2021-12-20 Juan\n"+
-                         "Fiesta de la espuma 2021-12-20 Antonio\n"+
-                         "Partido de futbol sala 2023-06-30 Antonio\n";
-        String actual= dao.resumentEventos();
+    void resumenEventos() {
+        String esperado=
+                        "Fiesta de la espuma\n" +
+                        "Fecha:2021-12-20\n" +
+                        "Juan\n" +
+                        "Antonio\n" +
+                        "======================\n" +
+                        "Cata de vinos\n" +
+                        "Fecha:2020-11-30\n" +
+                        "Juan\n" +
+                        "Jose\n" +
+                        "======================\n" +
+                        "Maraton de cine\n" +
+                        "Fecha:2022-05-30\n" +
+                        "======================\n" +
+                        "Partido de futbol sala\n" +
+                        "Fecha:2023-06-30\n" +
+                        "Antonio\n" +
+                        "======================\n";
+        String actual=dao.resumenEventos();
         assertEquals(esperado,actual);
     }
+
 
     @Test
     void valoracionesEvento() {

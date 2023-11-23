@@ -29,6 +29,6 @@ class DiscografiaDAOTest {
     }
     @Test
     void calificacionAlbun() {
-        System.out.println(dao.calificacionAlbun("Death Magnetic"));
+        System.out.println(dao.calificacionAlbun("Devil Came to Me"));
     }
 }

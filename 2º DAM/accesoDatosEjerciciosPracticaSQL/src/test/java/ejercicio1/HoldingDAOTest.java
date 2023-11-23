@@ -58,14 +58,31 @@ class HoldingDAOTest {
 
     @Test
     void resumenProyectos() {
-        String esperado = "CodeFusion Juan 6300.0\n" +
-                          "CodeFusion María 6300.0\n" +
-                          "CyberPulse Laura 3800.0\n" +
-                          "FusionWorks Carlos 4500.0\n" +
-                          "QuantumQuest null 0.0\n";
-        String actual = dao.resumenProyectos();
-        assertEquals(esperado, actual);
+        String esperado=
+                "CodeFusion\n" +
+                        "Fecha:2023-01-01\n"+
+                        "Juan Pérez\n"+
+                        "María Gómez\n"+
+                        "Coste:6300.0\n"+
+                        "======================\n"+
+                        "FusionWorks\n" +
+                        "Fecha:2022-05-15\n"+
+                        "Carlos Martínez\n"+
+                        "Coste:4500.0\n"+
+                        "======================\n"+
+                        "CyberPulse\n" +
+                        "Fecha:2023-03-10\n"+
+                        "Laura Sánchez\n"+
+                        "Coste:3800.0\n"+
+                        "======================\n"+
+                        "QuantumQuest\n" +
+                        "Fecha:2022-11-20\n"+
+                        "Coste:0.0\n"+
+                        "======================\n";
+        String actual=dao.resumenProyectos();
+        assertEquals(esperado,actual);
     }
+
 
     @Test
     void empleadosSinCoche() {

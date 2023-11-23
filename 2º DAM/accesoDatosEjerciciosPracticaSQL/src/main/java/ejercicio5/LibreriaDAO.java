@@ -40,7 +40,7 @@ public class LibreriaDAO {
                     int filasAfectadas = statement.executeUpdate();
 
                     if (filasAfectadas > 0) {
-                        System.out.println("Empleado insertado exitosamente");
+                        System.out.println("Libro insertado exitosamente");
                     }
                 }else{
                     throw new RuntimeException("El ISBN ya existe");
@@ -73,7 +73,7 @@ public class LibreriaDAO {
                     int filasAfectadas = statement.executeUpdate();
 
                     if (filasAfectadas > 0) {
-                        System.out.println("Préstamo ingresado correctamente");
+                        System.out.println("Préstamo añadido correctamente");
                     }
                 } else {
                     throw new RuntimeException("El ISBN no existe");

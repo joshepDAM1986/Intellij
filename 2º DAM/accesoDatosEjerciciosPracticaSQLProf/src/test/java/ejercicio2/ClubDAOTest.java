@@ -49,7 +49,6 @@ class ClubDAOTest {
                 "Fecha:2021-12-20\n" +
                 "Juan\n" +
                 "Antonio\n" +
-                "Jose\n" +
                 "======================\n" +
                 "Cata de vinos\n" +
                 "Fecha:2020-11-30\n" +
