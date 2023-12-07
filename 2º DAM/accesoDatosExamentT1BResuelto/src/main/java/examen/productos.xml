@@ -1,0 +1,20 @@
+<almacenes>
+    <producto>
+       <nombre>Televisor LED</nombre>
+       <categoria>Electrónica</categoria>
+       <stock>5</stock>
+       <precio>499.99</precio>
+    </producto>
+    <producto>
+       <nombre>Tablet</nombre>
+       <categoria>Electrónica</categoria>
+       <stock>15</stock>
+       <precio>199.99</precio>
+    </producto>
+    <producto>
+       <nombre>Teclado Mecánico</nombre>
+       <categoria>Computadoras</categoria>
+       <stock>25</stock>
+       <precio>89.99</precio>
+    </producto>
+</almacenes>

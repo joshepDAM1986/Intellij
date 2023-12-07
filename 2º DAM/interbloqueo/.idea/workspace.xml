@@ -4,32 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bb43123-eba9-431b-b607-57fe846b1671" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../2º DAM/accesoDatosExamenT2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2º DAM/accesoDatosExamenT2/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="85b81192-fea3-434f-91b2-1f9f9b02ab3d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../interbloqueo/interbloqueo/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2YjHmwY8iIPPSCvtePzdMlhBfzR" />
+  <component name="ProjectId" id="2Yuo9jOPlHnKhsBl5iGsHqMkUIm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,17 +28,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/garci/OneDrive/Documentos/IdeaProjects/2º DAM/accesoDatosDesfaseObjRel"
+    "last_opened_file_path": "C:/Users/garci/OneDrive/Documentos/IdeaProjects/2º DAM/accesoDatosExamentT1BResuelto"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7bb43123-eba9-431b-b607-57fe846b1671" name="Changes" comment="" />
-      <created>1701032233474</created>
+      <changelist id="85b81192-fea3-434f-91b2-1f9f9b02ab3d" name="Changes" comment="" />
+      <created>1701384675929</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1701032233474</updated>
+      <updated>1701384675929</updated>
     </task>
     <servers />
   </component>
