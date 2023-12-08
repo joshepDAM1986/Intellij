@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="74f7716e-7db0-4a1f-bef5-2951a8d5a0a7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/src/main/java/entidades/Mueble.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/src/main/java/util/HibernateUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/src/main/resources/import.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/src/test/java/mueble/MuebleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/target/classes/entidades/Mueble.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/target/classes/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/target/classes/import.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/target/classes/util/HibernateUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/ejemploHibernate/target/test-classes/mueble/MuebleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/.idea/interbloqueo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/interbloqueo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/src/main/java/org/example/Cuenta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/src/main/java/org/example/GestorTransferencias.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/src/main/java/org/example/Hilo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/target/classes/org/example/Cuenta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/target/classes/org/example/GestorTransferencias.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/target/classes/org/example/Hilo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/interbloqueo/interbloqueo/target/classes/org/example/Main.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2ZGkd3SoPCEuoQp96tanspIvlCt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/garci/OneDrive/Documentos/IdeaProjects/2º DAM/procesosEP1T2Colecta"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="procesosEJ11T2Aparcamiento" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="74f7716e-7db0-4a1f-bef5-2951a8d5a0a7" name="Changes" comment="" />
+      <created>1702055889154</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702055889154</updated>
+    </task>
+    <servers />
+  </component>
+</project>
