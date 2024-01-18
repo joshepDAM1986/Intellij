@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\garci\OneDrive\Documentos\IdeaProjects\2º DAM\interfacesSwing\out\artifacts\interfacesSwing_jar\interfacesSwing.jar</jar>
+  <outfile>C:\Users\garci\OneDrive\Documentos\IdeaProjects\2º DAM\interfacesSwing\out\artifacts\interfacesSwing_jar\productoSwing.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\garci\OneDrive\Documentos\IdeaProjects\2º DAM\interfacesSwing\out\artifacts\interfacesSwing_jar\gato.ico</icon>
+  <jre>
+    <path>%JAVA_HOME%;%PATH%</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion></minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+</launch4jConfig>

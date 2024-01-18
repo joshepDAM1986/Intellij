@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="interfacesSaludo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/interfacesSaludo_jar</output-path>
+    <root id="archive" name="interfacesSaludo.jar">
+      <element id="module-output" name="interfacesSaludo" />
+    </root>
+  </artifact>
+</component>

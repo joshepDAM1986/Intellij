@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="interfacesSwing:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/interfacesSwing_jar</output-path>
+    <root id="archive" name="interfacesSwing.jar">
+      <element id="module-output" name="interfacesSwing" />
+    </root>
+  </artifact>
+</component>
