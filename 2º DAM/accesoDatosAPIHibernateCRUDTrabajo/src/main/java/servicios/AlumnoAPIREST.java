@@ -22,7 +22,7 @@ public class AlumnoAPIREST {
         Spark.port(8080);
         dao = implementacion;
 
-        //Mostrar todos
+        // Mostrar todos
         Spark.get("/alumnos/mostrartodos", (request, response) -> {
             response.type("application/json");
 
@@ -30,7 +30,7 @@ public class AlumnoAPIREST {
             return gson.toJson(alumnos);
         });
 
-        //Mostrar todos paginado
+        // Mostrar todos paginado
         Spark.get("/alumnos/mostrartodos/paginado/:pagina/:tam_pagina", (request, response) -> {
             response.type("application/json");
 
@@ -45,7 +45,7 @@ public class AlumnoAPIREST {
             return gson.toJson(paginaResultado);
         });
 
-        //Añadir
+        // Añadir
         Spark.post("/alumnos/aniadiralumno", (request, response) -> {
             response.type("application/json");
 
@@ -55,7 +55,7 @@ public class AlumnoAPIREST {
             return gson.toJson(creado);
         });
 
-        //Buscar id
+        // Buscar por id
         Spark.get("/alumnos/buscarxid/:id", (request, response) -> {
             response.type("application/json");
             long id = Long.parseLong(request.params(":id"));
@@ -69,16 +69,7 @@ public class AlumnoAPIREST {
             }
         });
 
-        //Buscar categoria
-        Spark.get("/alumnos/buscarxcategoria/:categoria", (request, response) -> {
-            response.type("application/json");
-
-            String categoria = request.params(":categoria");
-            List<AlumnoDTO> alumnos = dao.buscarByCategoria(categoria);
-            return gson.toJson(alumnos);
-        });
-
-        //Buscar nombre like
+        //Buscar por nombre like
         Spark.get("/alumnos/buscarxnombre/:nombre", (request, response) -> {
             response.type("application/json");
 
@@ -87,18 +78,29 @@ public class AlumnoAPIREST {
             return gson.toJson(alumnos);
         });
 
-        // Contar numero alumnos por categoria
-        Spark.get("/alumnos/contarencategoria/:categoria", (request, response) -> {
+        //Buscar en categoria
+        Spark.get("/alumnos/buscarxcategoriadto/:categoria", (request, response) -> {
             response.type("application/json");
 
             String categoria = request.params(":categoria");
-            List<String> categorias = Arrays.asList(categoria);
-
-            long cantidad = dao.numeroAlumnosInCategoria(categorias);
-            return gson.toJson(cantidad);
+            List<AlumnoDTO> alumnos = dao.buscarByCategoria(categoria);
+            return gson.toJson(alumnos);
         });
 
-        //Nota media
+        // Buscar en lista categorias
+        Spark.get("/alumnos/buscarxlistacategorias/:categorias", (request, response) -> {
+            response.type("application/json");
+
+            // Obtén las categorías de la URL y conviértelas en una lista
+            String categoriasParam = request.params(":categorias");
+            List<String> categorias = Arrays.asList(categoriasParam.split(","));
+
+            // Llama al método con la lista de categorías
+            List<Alumno> alumnos = dao.buscarByListaCategoria(categorias);
+            return gson.toJson(alumnos);
+        });
+
+        // Calcular nota media
         Spark.get("/alumnos/mostrarmediatotal", (request, response) -> {
             response.type("application/json");
 
@@ -106,7 +108,7 @@ public class AlumnoAPIREST {
             return "Nota media total: "+media.toString();
         });
 
-        //Modificar por id
+        // Modificar por id
         Spark.put("/alumnos/modificarxid/:id", (request, response) -> {
             response.type("application/json");
 
@@ -123,7 +125,7 @@ public class AlumnoAPIREST {
             }
         });
 
-        //Borrar por id
+        // Borrar por id
         Spark.delete("/alumnos/borrarxid/:id", (request, response) -> {
             response.type("application/json");
 
@@ -137,7 +139,7 @@ public class AlumnoAPIREST {
             }
         });
 
-        //Error ruta
+        // Error de ruta
         Spark.notFound((request, response) -> {
             response.type("application/json");
 

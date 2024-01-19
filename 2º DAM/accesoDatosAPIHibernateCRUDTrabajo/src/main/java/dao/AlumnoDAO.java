@@ -84,20 +84,21 @@ public class AlumnoDAO implements AlumnoDAOInterface {
 
         Query<AlumnoDTO> query = session.createQuery("select new dto.AlumnoDTO(a.nombre, a.apellidos, a.categoria, a.nota) from Alumno a where a.categoria = :categoria", AlumnoDTO.class);
         List<AlumnoDTO> calificacion=query.setParameter("categoria", categoria).list();
+
         session.close();
 
         return calificacion;
     }
 
     @Override
-    public Long numeroAlumnosInCategoria(List<String> categorias) {
-         Session session = HibernateUtil.getSessionFactory().openSession();
+    public List<Alumno> buscarByListaCategoria(List<String> categorias) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
 
-         Query<Long> query = session.createQuery("select count(a) from Alumno a where a.categoria in :categorias", Long.class);
-         query.setParameterList("categorias", categorias);
 
-         return query.uniqueResult();
+        Query<Alumno> query = session.createQuery("from Alumno a where a.categoria in :categorias", Alumno.class);
+        List<Alumno> alumnos = query.setParameterList("categorias", categorias).list();
 
+        return alumnos;
     }
 
     @Override

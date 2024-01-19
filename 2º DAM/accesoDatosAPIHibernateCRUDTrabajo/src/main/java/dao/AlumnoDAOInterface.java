@@ -14,7 +14,7 @@ public interface AlumnoDAOInterface {
     Alumno buscarById(long id);
     List<AlumnoDTO> buscarByCategoria(String categoria);
 
-    Long numeroAlumnosInCategoria(List<String> categoria);
+    List<Alumno> buscarByListaCategoria(List<String> categorias);
 
     Double notaMedia();
 
