@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5a484da3-5077-498b-8f9b-df8b09f04532" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../2º DAM/accesoDatosAPIHibernateCRUDTrabajo/src/main/java/dao/AlumnoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../2º DAM/accesoDatosAPIHibernateCRUDTrabajo/src/main/java/dao/AlumnoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/accesoDatosAPIHibernateCRUDTrabajo/src/main/java/dao/AlumnoDAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../2º DAM/accesoDatosAPIHibernateCRUDTrabajo/src/main/java/dao/AlumnoDAOInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/accesoDatosAPIHibernateCRUDTrabajo/src/main/java/servicios/AlumnoAPIREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/../2º DAM/accesoDatosAPIHibernateCRUDTrabajo/src/main/java/servicios/AlumnoAPIREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/accesoDatosAPIHibernateCRUDTrabajo/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../2º DAM/accesoDatosAPIHibernateCRUDTrabajo/src/main/resources/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/procesosInfoInterfacesRed/target/classes/ej_3_2/InfoInterfacesRedTwo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../2º DAM/procesosInfoInterfacesRed/target/classes/ej_3_2/InfoInterfacesRedTwo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/procesosInfoInterfacesRed/target/classes/ej_3_3/ScanLocalNetwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/../2º DAM/procesosInfoInterfacesRed/target/classes/ej_3_3/ScanLocalNetwork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2º DAM/procesosInfoInterfacesRed/target/classes/ej_3_4/BroadcastAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/../2º DAM/procesosInfoInterfacesRed/target/classes/ej_3_4/BroadcastAddress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servidor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MuebleDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MuebleDAOInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dto/MuebleDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entidades/Mueble.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicios/MueblesAPIREST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicios/RespuestaPaginacion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/HibernateUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/import.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/MuebleDAOTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/entidades/MuebleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servidor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/MuebleDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/MuebleDAOInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dto/MuebleDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entidades/Mueble.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/import.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servicios/MueblesAPIREST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servicios/RespuestaPaginacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/HibernateUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/asociaciones/MueblesProvTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dao/MuebleDAOTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/entidades/MuebleTest.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2YaUaKbu2RMcr0ZgbRFPD2Ma0zq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/garci/OneDrive/Documentos/IdeaProjects/2º DAM/accesoDatosApiHibernateCRUDActualizado",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="dao" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Servidor">
+    <configuration name="Servidor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Servidor" />
+      <module name="pasos_hibernate" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MuebleDAOTest.devolverNombreImagenes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pasos_hibernate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.MuebleDAOTest" />
+      <option name="METHOD_NAME" value="devolverNombreImagenes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MuebleDAOTest.devolverNombrePreciosImagenes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pasos_hibernate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.MuebleDAOTest" />
+      <option name="METHOD_NAME" value="devolverNombrePreciosImagenes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MueblesProvTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pasos_hibernate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="asociaciones.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="asociaciones" />
+      <option name="MAIN_CLASS_NAME" value="asociaciones.MueblesProvTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MueblesProvTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pasos_hibernate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="asociaciones.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="asociaciones" />
+      <option name="MAIN_CLASS_NAME" value="asociaciones.MueblesProvTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Servidor" />
+        <item itemvalue="JUnit.MueblesProvTest.test2" />
+        <item itemvalue="JUnit.MueblesProvTest.test1" />
+        <item itemvalue="JUnit.MuebleDAOTest.devolverNombreImagenes" />
+        <item itemvalue="JUnit.MuebleDAOTest.devolverNombrePreciosImagenes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a484da3-5077-498b-8f9b-df8b09f04532" name="Changes" comment="" />
+      <created>1700763247779</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700763247779</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../.." />
+      <path value="$USER_HOME$" />
+    </ignored-roots>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
