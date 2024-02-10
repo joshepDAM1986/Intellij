@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="UDP_PresentacionClient">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/UDP_PresentacionClient/out/artifacts/UDP_PresentacionClient_jar/UDP_PresentacionClient.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

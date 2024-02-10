@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e312b723-21f5-453c-8b6c-224016d54044" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../procesosA35/procesosEchoclient/udp_echoclient.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../procesosA35/procesosEchoserver/udp_echoserver.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../procesosA36/UDP_PresentacionClient/UDP_PresentacionClient.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../procesosA36/UDP_PresentacionServer/UDP_PresentacionServer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/src/main/java/dao/AlumnoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/src/main/java/dao/AlumnoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/src/main/java/dao/AlumnoDAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/src/main/java/dao/AlumnoDAOInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/src/main/java/servicios/AlumnoAPIREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/src/main/java/servicios/AlumnoAPIREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/target/classes/dao/AlumnoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/target/classes/dao/AlumnoDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/target/classes/dao/AlumnoDAOInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/target/classes/dao/AlumnoDAOInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/target/classes/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/target/classes/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/target/classes/servicios/AlumnoAPIREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/../accesoDatosAPIHibernateCRUDAlumnos/target/classes/servicios/AlumnoAPIREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accesoDatosApiHibernateCRUDActual/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../accesoDatosApiHibernateCRUDActual/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accesoDatosApiHibernateCRUDActual/src/main/java/servicios/MueblesAPIREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/../accesoDatosApiHibernateCRUDActual/src/main/java/servicios/MueblesAPIREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accesoDatosApiHibernateCRUDActual/target/classes/servicios/MueblesAPIREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/../accesoDatosApiHibernateCRUDActual/target/classes/servicios/MueblesAPIREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accesoDatosApiHibernateCRUDActual/target/test-classes/asociaciones/MueblesProvTest.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2boKXWvMmRkSz3wtku2vF0q6R2o" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/garci/OneDrive/Documentos/IdeaProjects/2º DAM/procesosA37/UDP_PresentacionClient"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e312b723-21f5-453c-8b6c-224016d54044" name="Changes" comment="" />
+      <created>1706876032250</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706876032250</updated>
+    </task>
+    <servers />
+  </component>
+</project>
