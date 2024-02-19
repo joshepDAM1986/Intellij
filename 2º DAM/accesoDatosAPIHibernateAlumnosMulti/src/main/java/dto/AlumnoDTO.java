@@ -1,17 +1,23 @@
 package dto;
 
+import com.google.gson.annotations.Expose;
+
 public class AlumnoDTO {
+    @Expose
     private String nombre;
-    private String apellidos;
+    @Expose
+    private String email;
+    @Expose
     private String categoria;
+    @Expose
     private Double nota;
 
     public AlumnoDTO() {
     }
 
-    public AlumnoDTO(String nombre, String apellidos, String categoria, Double nota) {
+    public AlumnoDTO(String nombre, String email, String categoria, Double nota) {
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.email = email;
         this.categoria = categoria;
         this.nota = nota;
     }
@@ -24,12 +30,12 @@ public class AlumnoDTO {
         this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getEmail() {
+        return email;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getCategoria() {
@@ -52,7 +58,7 @@ public class AlumnoDTO {
     public String toString() {
         return "AlumnoDTO{" +
                 "nombre='" + nombre + '\'' +
-                ", apellidos='" + apellidos + '\'' +
+                ", email='" + email + '\'' +
                 ", categoria='" + categoria + '\'' +
                 ", nota=" + nota +
                 '}';

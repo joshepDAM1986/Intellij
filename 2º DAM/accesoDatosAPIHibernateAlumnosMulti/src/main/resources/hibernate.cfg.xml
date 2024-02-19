@@ -25,6 +25,7 @@
         <mapping class="entidades.Alumno"/>
         <mapping class="entidades.Curso"/>
         <mapping class="entidades.Profesor"/>
+        <mapping class="entidades.Academia"/>
 
     </session-factory>
 </hibernate-configuration>

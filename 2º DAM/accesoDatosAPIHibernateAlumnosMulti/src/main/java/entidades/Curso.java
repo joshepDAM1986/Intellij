@@ -1,15 +1,15 @@
 package entidades;
 
 import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="Cursos")
-public class Curso implements Serializable{
+@Table(name = "Cursos")
+public class Curso implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Expose
@@ -19,18 +19,44 @@ public class Curso implements Serializable{
     @Expose
     private String nombre;
 
+    @Column(name = "nivel", length = 50, nullable = false)
+    @Expose
+    private String nivel;
+
     @Column(name = "horas", nullable = false)
     @Expose
     private Double horas;
 
-    @OneToMany(mappedBy = "curs", fetch = FetchType.LAZY)
-    private List<Alumno> registro=new ArrayList<>();
+    @OneToMany(mappedBy = "curso", fetch = FetchType.LAZY)
+    private List<Alumno> registroCurso = new ArrayList<>();
 
-    public List<Alumno> getRegistro(){return registro;}
+    @ManyToMany(mappedBy = "cursos")
+    private List<Academia> academias = new ArrayList<>();
 
-    public void setRegistro(List<Alumno> registro){this.registro= registro;}
+    public List<Academia> getAcademias() {
+        return academias;
+    }
+
+    public void setAcademias(List<Academia> academias) {
+        this.academias = academias;
+    }
+
+    public List<Alumno> getRegistroCurso() {
+        return registroCurso;
+    }
+
+    public void setRegistroCurso(List<Alumno> registroCurso) {
+        this.registroCurso = registroCurso;
+    }
 
     public Curso() {
+    }
+
+    public Curso(Long id, String nombre, String nivel, Double horas) {
+        this.id = id;
+        this.nombre = nombre;
+        this.nivel = nivel;
+        this.horas = horas;
     }
 
     public Long getId() {
@@ -49,6 +75,14 @@ public class Curso implements Serializable{
         this.nombre = nombre;
     }
 
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+
     public Double getHoras() {
         return horas;
     }
@@ -62,6 +96,7 @@ public class Curso implements Serializable{
         return "Curso{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
+                ", nivel='" + nivel + '\'' +
                 ", horas=" + horas +
                 '}';
     }

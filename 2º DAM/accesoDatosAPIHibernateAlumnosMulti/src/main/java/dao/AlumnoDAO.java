@@ -84,7 +84,7 @@ public class AlumnoDAO implements AlumnoDAOInterface {
     public List<AlumnoDTO> buscarByCategoria(String categoria) {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
-        Query<AlumnoDTO> query = session.createQuery("select new dto.AlumnoDTO(a.nombre, a.apellidos, a.categoria, a.nota) from Alumno a where a.categoria = :categoria", AlumnoDTO.class);
+        Query<AlumnoDTO> query = session.createQuery("select new dto.AlumnoDTO(a.nombre, a.email, a.categoria, a.nota) from Alumno a where a.categoria = :categoria", AlumnoDTO.class);
         List<AlumnoDTO> calificacion=query.setParameter("categoria", categoria).list();
 
         session.close();
@@ -98,7 +98,7 @@ public class AlumnoDAO implements AlumnoDAOInterface {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
 
-        Query<AlumnoDTO> query = session.createQuery("select new dto.AlumnoDTO(a.nombre, a.apellidos, a.categoria, a.nota) from Alumno a where a.categoria in :categorias order by categoria", AlumnoDTO.class);
+        Query<AlumnoDTO> query = session.createQuery("select new dto.AlumnoDTO(a.nombre, a.email, a.categoria, a.nota) from Alumno a where a.categoria in :categorias order by categoria", AlumnoDTO.class);
         List<AlumnoDTO> alumnos = query.setParameterList("categorias", categorias).list();
 
         return alumnos;
@@ -223,7 +223,6 @@ public class AlumnoDAO implements AlumnoDAOInterface {
         long contador= query.getSingleResult();
         System.out.println(contador);
         session.close();
-
         return contador;
     }
 }

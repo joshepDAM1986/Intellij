@@ -95,8 +95,6 @@ public class Proveedor implements Serializable {
         this.email = email;
     }
 
-
-
     @Override
     public String toString() {
         return "Proveedor{" +

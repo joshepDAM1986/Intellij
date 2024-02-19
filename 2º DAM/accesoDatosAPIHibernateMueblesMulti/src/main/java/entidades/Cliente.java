@@ -34,9 +34,6 @@ public class Cliente implements Serializable {
     public void setMuebles(List<Mueble> muebles) {
         this.muebles = muebles;
     }
-
-
-
     public Cliente(){}
 
     public Cliente(Long id, String nombre, String email) {

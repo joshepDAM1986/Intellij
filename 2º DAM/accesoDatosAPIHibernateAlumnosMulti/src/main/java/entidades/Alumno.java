@@ -20,13 +20,13 @@ public class Alumno implements Serializable {
     @Expose
     private String dni;
 
-    @Column(name = "nombre", length = 100, nullable = false)
+    @Column(name = "nombre", length = 150, nullable = false)
     @Expose
     private String nombre;
 
-    @Column(name = "apellidos", length = 100, nullable = false)
+    @Column(name = "email", length = 100, nullable = false)
     @Expose
-    private String apellidos;
+    private String email;
 
     @Column(name = "imagen_url")
     @Expose
@@ -48,20 +48,50 @@ public class Alumno implements Serializable {
     @Expose
     private String categoria;
 
+    public List<Profesor> getProfesores(){
+        return profesores;
+    }
+
+    public void setProfesores(List<Profesor> profesores){
+        this.profesores=profesores;
+    }
+
+    //Relaciones
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="curso_key",
+               foreignKey = @ForeignKey(name="fk_alumno_curso"))
+    private Curso curso;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="academia_key",
+            foreignKey = @ForeignKey(name="fk_alumno_academia"))
+    private Academia academia;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "profesor_alumno",
+            joinColumns= @JoinColumn(name ="alumno_id"),
+            inverseJoinColumns = @JoinColumn(name = "profesor_id"))
+    private List<Profesor> profesores=new ArrayList<>();
+
+
+    //Constructores
     public Alumno() {
     }
 
-    public Alumno(long id, String dni, String nombre, String apellidos, String imagen_url, Integer edad, Double nota, LocalDate fecha_matriculacion, String categoria) {
+    public Alumno(long id, String dni, String nombre, String email, String imagen_url, Integer edad, Double nota, LocalDate fecha_matriculacion, String categoria) {
         this.id = id;
         this.dni = dni;
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.email = email;
         this.imagen_url = imagen_url;
         this.edad = edad;
         this.nota = nota;
         this.fecha_matriculacion = fecha_matriculacion;
         this.categoria = categoria;
     }
+
+    //Getters y Setters
 
     public long getId() {
         return id;
@@ -87,12 +117,12 @@ public class Alumno implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getEmail() {
+        return email;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getImagen_url() {
@@ -135,13 +165,29 @@ public class Alumno implements Serializable {
         this.categoria = categoria;
     }
 
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public Academia getAcademia() {
+        return academia;
+    }
+
+    public void setAcademia(Academia academia) {
+        this.academia = academia;
+    }
+
     @Override
     public String toString() {
         return "Alumno{" +
                 "id=" + id +
                 ", dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ", apellidos='" + apellidos + '\'' +
+                ", email='" + email + '\'' +
                 ", imagen_url='" + imagen_url + '\'' +
                 ", edad=" + edad +
                 ", nota=" + nota +
