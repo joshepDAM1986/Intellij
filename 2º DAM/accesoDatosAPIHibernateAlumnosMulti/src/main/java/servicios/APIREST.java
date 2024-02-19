@@ -14,7 +14,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
-public class AlumnoAPIREST {
+public class APIREST {
     private AlumnoDAOInterface dao;
     private CursoDAOInterface dao_curs;
     private ProfesorDAOInterface dao_prof;
@@ -27,13 +27,15 @@ public class AlumnoAPIREST {
             .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
             .create();
 
-    public AlumnoAPIREST(AlumnoDAOInterface implementacion, CursoDAOInterface implementacion_curs, ProfesorDAOInterface implementacion_prof, AcademiaDAOInterface implementacion_acad, AsociacionesDAOInterface implementacion_asoc) {
+    public APIREST(AlumnoDAOInterface implementacion, CursoDAOInterface implementacion_curs, ProfesorDAOInterface implementacion_prof, AcademiaDAOInterface implementacion_acad, AsociacionesDAOInterface implementacion_asoc) {
         Spark.port(8080);
         dao = implementacion;
         dao_curs = implementacion_curs;
         dao_prof = implementacion_prof;
         dao_acad = implementacion_acad;
         dao_asoc = implementacion_asoc;
+
+        //------------------------------------------END POINT DE ALUMNO------------------------------------------//
 
         // Mostrar todos
         Spark.get("/alumnos/todos", (request, response) -> {
@@ -159,7 +161,7 @@ public class AlumnoAPIREST {
             return gson.toJson(creado);
         });
 
-        // Modificar por id
+        // Modificar
         Spark.put("/alumnos/modificar/:id", (request, response) -> {
             response.type("application/json");
 
@@ -176,7 +178,7 @@ public class AlumnoAPIREST {
             }
         });
 
-        // Borrar por id
+        // Borrar
         Spark.delete("/alumnos/borrar/:id", (request, response) -> {
             response.type("application/json");
 
@@ -197,6 +199,204 @@ public class AlumnoAPIREST {
             response.type("application/json");
             return "{\"error\": \"Ruta no encontrada\",\"hint1\": \"/alumnos\"," +
                     "\"hint2\": \"/alumnos/paginado/:pagina/:tam_pagina\",\"hint3\": \"/alumnos/id/:id\"}";
+        });
+
+        //------------------------------------------END POINT DE CURSO------------------------------------------//
+
+        // Mostrar todos
+        Spark.get("/cursos/todos", (request, response) -> {
+            response.type("application/json");
+
+            List<Curso> cursos = dao_curs.devolverTodosCursos();
+            return gson.toJson(cursos);
+        });
+
+        // Mostrar todos paginado
+        Spark.get("/cursos/todos/paginado/:pagina/:tam_pagina", (request, response) -> {
+            response.type("application/json");
+
+            Integer pagina = Integer.parseInt(request.params(":pagina"));
+            Integer tamaño_pagina = Integer.parseInt(request.params(":tam_pagina"));
+
+            List<Curso> cursos = dao_curs.devolverTodosCursos(pagina, tamaño_pagina);
+            long totalElementos = dao_curs.totalCursos();
+
+            RespuestaPaginacion<Curso> paginaResultado = new RespuestaPaginacion<>(cursos, totalElementos, pagina, tamaño_pagina);
+
+            return gson.toJson(paginaResultado);
+        });
+
+        // Crear
+        Spark.post("/cursos/crear", (request, response) -> {
+            response.type("application/json");
+
+            String body = request.body();
+            Curso nuevoCurso = gson.fromJson(body, Curso.class);
+            Curso creado = dao_curs.crearCurso(nuevoCurso);
+            return gson.toJson(creado);
+        });
+
+        // Modificar
+        Spark.put("/cursos/modificar/:id", (request, response) -> {
+            response.type("application/json");
+
+            long id = Long.parseLong(request.params(":id"));
+            String body = request.body();
+            Curso cursoActualizado = gson.fromJson(body, Curso.class);
+            cursoActualizado.setId(id);
+            Curso actualizado = dao_curs.updateByIdCurso(cursoActualizado);
+            if (actualizado != null) {
+                return gson.toJson(actualizado);
+            } else {
+                response.status(404);
+                return "Curso no encontrado";
+            }
+        });
+
+        // Borrar
+        Spark.delete("/cursos/borrar/:id", (request, response) -> {
+            response.type("application/json");
+
+            long id = Long.parseLong(request.params(":id"));
+            boolean eliminado = dao_curs.deleteByIdCurso(id);
+            if (eliminado) {
+                return "Curso eliminado correctamente";
+            } else {
+                response.status(404);
+                return "Curso no encontrado";
+            }
+        });
+
+        //------------------------------------------END POINT DE PROFESORES------------------------------------------//
+
+        // Mostrar todos
+        Spark.get("/profesores/todos", (request, response) -> {
+            response.type("application/json");
+
+            List<Profesor> profesores = dao_prof.devolverTodosProfesores();
+            return gson.toJson(profesores);
+        });
+
+        // Mostrar todos paginado
+        Spark.get("/profesores/todos/paginado/:pagina/:tam_pagina", (request, response) -> {
+            response.type("application/json");
+
+            Integer pagina = Integer.parseInt(request.params(":pagina"));
+            Integer tamaño_pagina = Integer.parseInt(request.params(":tam_pagina"));
+
+            List<Profesor> profesores = dao_prof.devolverTodosProfesores(pagina, tamaño_pagina);
+            long totalElementos = dao_prof.totalProfesores();
+
+            RespuestaPaginacion<Profesor> paginaResultado = new RespuestaPaginacion<>(profesores, totalElementos, pagina, tamaño_pagina);
+
+            return gson.toJson(paginaResultado);
+        });
+
+        // Crear
+        Spark.post("/profesores/crear", (request, response) -> {
+            response.type("application/json");
+
+            String body = request.body();
+            Profesor nuevoProfesor = gson.fromJson(body, Profesor.class);
+            Profesor creado = dao_prof.crearProfesor(nuevoProfesor);
+            return gson.toJson(creado);
+        });
+
+        // Modificar
+        Spark.put("/profesores/modificar/:id", (request, response) -> {
+            response.type("application/json");
+
+            long id = Long.parseLong(request.params(":id"));
+            String body = request.body();
+            Profesor profesorActualizado = gson.fromJson(body, Profesor.class);
+            profesorActualizado.setId(id);
+            Profesor actualizado = dao_prof.updateByIdProfesores(profesorActualizado);
+            if (actualizado != null) {
+                return gson.toJson(actualizado);
+            } else {
+                response.status(404);
+                return "Profesor no encontrado";
+            }
+        });
+
+        // Borrar
+        Spark.delete("/profesores/borrar/:id", (request, response) -> {
+            response.type("application/json");
+
+            long id = Long.parseLong(request.params(":id"));
+            boolean eliminado = dao_prof.deleteByIdProfesores(id);
+            if (eliminado) {
+                return "Profesor eliminado correctamente";
+            } else {
+                response.status(404);
+                return "Profesor no encontrado";
+            }
+        });
+
+        //------------------------------------------END POINT DE ACADEMIA------------------------------------------//
+
+        // Mostrar todos
+        Spark.get("/academias/todos", (request, response) -> {
+            response.type("application/json");
+
+            List<Academia> academias = dao_acad.devolverTodosAcademias();
+            return gson.toJson(academias);
+        });
+
+        // Mostrar todos paginado
+        Spark.get("/academias/todos/paginado/:pagina/:tam_pagina", (request, response) -> {
+            response.type("application/json");
+
+            Integer pagina = Integer.parseInt(request.params(":pagina"));
+            Integer tamaño_pagina = Integer.parseInt(request.params(":tam_pagina"));
+
+            List<Academia> academias = dao_acad.devolverTodosAcademias(pagina, tamaño_pagina);
+            long totalElementos = dao_acad.totalAcademias();
+
+            RespuestaPaginacion<Academia> paginaResultado = new RespuestaPaginacion<>(academias, totalElementos, pagina, tamaño_pagina);
+
+            return gson.toJson(paginaResultado);
+        });
+
+        // Crear
+        Spark.post("/academias/crear", (request, response) -> {
+            response.type("application/json");
+
+            String body = request.body();
+            Academia nuevaAcademia = gson.fromJson(body, Academia.class);
+            Academia creado = dao_acad.crearAcademia(nuevaAcademia);
+            return gson.toJson(creado);
+        });
+
+        // Modificar
+        Spark.put("/academias/modificar/:id", (request, response) -> {
+            response.type("application/json");
+
+            long id = Long.parseLong(request.params(":id"));
+            String body = request.body();
+            Academia academiaActualizada = gson.fromJson(body, Academia.class);
+            academiaActualizada.setId(id);
+            Academia actualizada = dao_acad.updateByIdAcademias(academiaActualizada);
+            if (actualizada != null) {
+                return gson.toJson(actualizada);
+            } else {
+                response.status(404);
+                return "Academia no encontrada";
+            }
+        });
+
+        // Borrar
+        Spark.delete("/academias/borrar/:id", (request, response) -> {
+            response.type("application/json");
+
+            long id = Long.parseLong(request.params(":id"));
+            boolean eliminada = dao_acad.deleteByIdAcademias(id);
+            if (eliminada) {
+                return "Academia eliminada correctamente";
+            } else {
+                response.status(404);
+                return "academia no encontrada";
+            }
         });
 
         //------------------------------------------END POINT DE RELACIONES------------------------------------------//

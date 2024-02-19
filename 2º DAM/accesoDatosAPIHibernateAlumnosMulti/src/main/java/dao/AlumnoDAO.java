@@ -199,9 +199,9 @@ public class AlumnoDAO implements AlumnoDAOInterface {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             session.beginTransaction();
-            Alumno mueble = this.buscarById(id);
-            if(mueble!=null){
-                session.delete(mueble);
+            Alumno alumno = this.buscarById(id);
+            if(alumno!=null){
+                session.delete(alumno);
             }else{
                 return false;
             }
