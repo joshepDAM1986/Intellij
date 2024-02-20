@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "28093fae-25f1-44eb-b728-1c918e79bda8",
+		"name": "Profesores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32295171"
+	},
+	"item": [
+		{
+			"name": "Mostrar Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/profesores/todos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profesores",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar Todos Paginado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/profesores/todos/paginado/1/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profesores",
+						"todos",
+						"paginado",
+						"1",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Nuevo Profesor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Pedrote Sanchudo\",\r\n        \"email\": \"pedrote@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/profesores/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profesores",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Profesor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Pedro Sanchez\",\r\n        \"email\": \"pedro@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/profesores/modificar/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profesores",
+						"modificar",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Profesor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Pedro Sanchez\",\r\n        \"email\": \"pedro@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/profesores/borrar/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profesores",
+						"borrar",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

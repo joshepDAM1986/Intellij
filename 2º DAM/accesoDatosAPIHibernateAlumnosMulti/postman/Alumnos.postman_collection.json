@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "51aa50bc-cb0b-4186-8862-87245054290d",
+		"name": "Alumnos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32295171"
+	},
+	"item": [
+		{
+			"name": "Mostrar Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/alumnos/todos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar Todos Paginado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/alumnos/todos/paginado/1/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"todos",
+						"paginado",
+						"1",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar las Imágenes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"dni\": \"75162631B\",\r\n        \"nombre\": \"Jose\",\r\n        \"apellidos\": \"Garcia\",\r\n        \"imagen_url\": \"Sin Imagen\",\r\n        \"edad\": 38,\r\n        \"nota\": 9,\r\n        \"fecha_matriculacion\": \"2022-01-01\",\r\n        \"categoria\": \"Sobresaliente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/imagenes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"imagenes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar Mayores de Edad",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"dni\": \"75162631B\",\r\n        \"nombre\": \"Jose\",\r\n        \"apellidos\": \"Garcia\",\r\n        \"imagen_url\": \"Sin Imagen\",\r\n        \"edad\": 38,\r\n        \"nota\": 9,\r\n        \"fecha_matriculacion\": \"2022-01-01\",\r\n        \"categoria\": \"Sobresaliente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/mayores",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"mayores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n    \"dni\": \"75162631B\",\r\n    \"nombre\": \"Jose\",\r\n    \"apellidos\": \"Garcia\",\r\n    \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/jose.urlficticia.com\",\r\n    \"edad\": 38,\r\n    \"nota\": 9,\r\n    \"fecha_matriculacion\": \"2022-01-1\",\r\n    \"categoria\": \"Sobresaliente\",\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/buscarid/14",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"buscarid",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por Nombre Like",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n    \"dni\": \"75162631B\",\r\n    \"nombre\": \"Jose\",\r\n    \"apellidos\": \"Garcia\",\r\n    \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/jose.urlficticia.com\",\r\n    \"edad\": 38,\r\n    \"nota\": 9,\r\n    \"fecha_matriculacion\": \"2022-01-1\",\r\n    \"categoria\": \"Sobresaliente\",\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/buscarnombre/an",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"buscarnombre",
+						"an"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por Categoría (DTO)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n    \"dni\": \"75162631B\",\r\n    \"nombre\": \"Jose\",\r\n    \"apellidos\": \"Garcia\",\r\n    \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/jose.urlficticia.com\",\r\n    \"edad\": 38,\r\n    \"nota\": 9,\r\n    \"fecha_matriculacion\": \"2022-01-1\",\r\n    \"categoria\": \"Sobresaliente\",\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/buscarcategoria/suspenso",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"buscarcategoria",
+						"suspenso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por Lista de  Categorías (DTO)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n    \"dni\": \"75162631B\",\r\n    \"nombre\": \"Jose\",\r\n    \"apellidos\": \"Garcia\",\r\n    \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/jose.urlficticia.com\",\r\n    \"edad\": 38,\r\n    \"nota\": 9,\r\n    \"fecha_matriculacion\": \"2022-01-1\",\r\n    \"categoria\": \"Sobresaliente\",\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/buscarlistacategorias/suspenso,sobresaliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"buscarlistacategorias",
+						"suspenso,sobresaliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Entre Años",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/buscarentreanios/2020/2022",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"buscarentreanios",
+						"2020",
+						"2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Entre Años en Lista de Categorías",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"dni\": \"75162631B\",\r\n        \"nombre\": \"Jose\",\r\n        \"apellidos\": \"Garcia\",\r\n        \"imagen_url\": \"Sin Imagen\",\r\n        \"edad\": 38,\r\n        \"nota\": 9,\r\n        \"fecha_matriculacion\": \"2022-01-01\",\r\n        \"categoria\": \"Sobresaliente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/buscarentreanioslistacategorias/2021/2023/suspenso",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"buscarentreanioslistacategorias",
+						"2021",
+						"2023",
+						"suspenso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calcular Media Total",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n    \"dni\": \"75162631B\",\r\n    \"nombre\": \"Jose\",\r\n    \"apellidos\": \"Garcia\",\r\n    \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/jose.urlficticia.com\",\r\n    \"edad\": 38,\r\n    \"nota\": 9,\r\n    \"fecha_matriculacion\": \"2022-01-1\",\r\n    \"categoria\": \"Sobresaliente\",\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/mediatotal",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"mediatotal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calcular Media Total de una Categoría",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"dni\": \"75162631B\",\r\n        \"nombre\": \"Jose\",\r\n        \"apellidos\": \"Garcia\",\r\n        \"imagen_url\": \"Sin Imagen\",\r\n        \"edad\": 38,\r\n        \"nota\": 9,\r\n        \"fecha_matriculacion\": \"2022-01-01\",\r\n        \"categoria\": \"Sobresaliente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/mediatotalcategoria/sobresaliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"mediatotalcategoria",
+						"sobresaliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Nuevo Alumno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"dni\": \"75162631B\",\r\n        \"nombre\": \"Jose Garcia\",\r\n        \"email\": \"jose.garcia@gmail.com\",\r\n        \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/joshepegar.jpg?alt=media&token=fb6485e7-3cd2-43b2-bbdd-8a515r9g1847\",\r\n        \"edad\": 38,\r\n        \"nota\": 9,\r\n        \"fecha_matriculacion\": \"2022-01-01\",\r\n        \"categoria\": \"Sobresaliente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Alumno",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"dni\": \"75162631B\",\r\n        \"nombre\": \"Pedro Jimenez\",\r\n        \"email\": \"jose.garcia@gmail.com\",\r\n        \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/joshepegar.jpg?alt=media&token=fb6485e7-3cd2-43b2-bbdd-8a515r9g1847\",\r\n        \"edad\": 38,\r\n        \"nota\": 9,\r\n        \"fecha_matriculacion\": \"2022-02-02\",\r\n        \"categoria\": \"Sobresaliente\",\r\n        \"academia_key\": \"2\",\r\n        \"curso_key\": \"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/modificar/15",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"modificar",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Alumno",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumnos/borrar/16",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"borrar",
+						"16"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
