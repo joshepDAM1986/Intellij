@@ -27,18 +27,11 @@ public class Curso implements Serializable {
     @Expose
     private Double horas;
 
-    @OneToMany(mappedBy = "curso", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "curso", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Alumno> registroCurso = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "cursos")
-    private List<Academia> academias = new ArrayList<>();
-
-    public List<Academia> getAcademias() {
-        return academias;
-    }
-
-    public void setAcademias(List<Academia> academias) {
-        this.academias = academias;
+    public List<Alumno> getAlumnos() {
+        return this.registroCurso;
     }
 
     public List<Alumno> getRegistroCurso() {
@@ -47,6 +40,21 @@ public class Curso implements Serializable {
 
     public void setRegistroCurso(List<Alumno> registroCurso) {
         this.registroCurso = registroCurso;
+    }
+
+    @ManyToMany
+    @JoinTable(
+            name = "cursos_asignaturas",
+            joinColumns = @JoinColumn(name = "curso_id"),
+            inverseJoinColumns = @JoinColumn(name = "asignatura_id"))
+    private List<Asignatura> asignaturas = new ArrayList<>();
+
+    public List<Asignatura> getAsignaturas() {
+        return asignaturas;
+    }
+
+    public void setAsignaturas(List<Asignatura> asignaturas) {
+        this.asignaturas = asignaturas;
     }
 
     public Curso() {

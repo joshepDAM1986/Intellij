@@ -1,7 +1,7 @@
 package dao;
 
-import entidades.Academia;
 import entidades.Alumno;
+import entidades.Asignatura;
 import entidades.Curso;
 import entidades.Profesor;
 import org.hibernate.Session;
@@ -51,7 +51,7 @@ public class AsociacionesDAO implements AsociacionesDAOInterface {
     }
 
     @Override
-    public List<Alumno> alumnosCurso(Curso c) {
+    public List<Alumno> obtenerAlumnosCurso(Curso c) {
         List<Alumno> lista_alumnos;
 
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -137,89 +137,34 @@ public class AsociacionesDAO implements AsociacionesDAOInterface {
     }
 
     @Override
-    public Academia obtenerAcademiaAlumno(Alumno a) {
-        Academia academia;
-        Session session = HibernateUtil.getSessionFactory().openSession();
-
-        try {
-            Query<Alumno> query = session.createQuery("select a from Alumno a join fetch a.academia where a.id =:id", Alumno.class);
-            query.setParameter("id", a.getId());
-            academia = query.getSingleResult().getAcademia();
-
-        } catch (NoResultException nre) {
-            academia=null;
-        }catch(NullPointerException npe){
-            return null;
-        }
-        session.close();
-
-        return academia;
-    }
-
-    @Override
-    public List<Alumno> alumnosAcademia(Academia ac) {
-        List<Alumno> lista_alumnos;
-
-        Session session = HibernateUtil.getSessionFactory().openSession();
-
-        try {
-            Query<Academia> query = session.createQuery("select ac from Academia ac join fetch ac.registroAcademia where ac.id =:id", Academia.class);
-            query.setParameter("id", ac.getId());
-            lista_alumnos = query.getSingleResult().getRegistroAcademia();
-        } catch (NoResultException nre) {
-            lista_alumnos = new ArrayList<>();
-        }catch(NullPointerException npe){
-            return null;
-        }
-        session.close();
-        return lista_alumnos;
-    }
-
-    @Override
-    public boolean asignarAcademiaAlumno(Alumno a, Academia ac) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        try {
-            session.beginTransaction();
-            a.setAcademia(ac);
-            session.update(a);
-            session.getTransaction().commit();
-        } catch (PersistenceException e) {
-            e.printStackTrace();
-            session.getTransaction().rollback();
-            return false;
-        }
-        session.close();
-        return true;
-    }
-
-    @Override
-    public List<Academia> cursosConAcademias(Curso c) {
-        List<Academia> lista_academias = null;
+    public List<Asignatura> cursosAsignaturas(Curso c) {
+        List<Asignatura> lista_asignaturas = null;
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            Query<Curso> query = session.createQuery("select c from Curso c join fetch c.academias where c.id =:id", Curso.class);
+            Query<Curso> query = session.createQuery("select c from Curso c join fetch c.asignaturas where c.id =:id", Curso.class);
             query.setParameter("id", c.getId());
-            lista_academias = query.getSingleResult().getAcademias();
+            lista_asignaturas = query.getSingleResult().getAsignaturas();
 
         } catch (NoResultException nre) {
-            lista_academias = new ArrayList<>();
+            lista_asignaturas = new ArrayList<>();
         }catch(NullPointerException npe){
             return null;
         }
         session.close();
-        return lista_academias;
+
+        return lista_asignaturas;
     }
 
     @Override
-    public List<Curso> academiasConCursos(Academia ac) {
+    public List<Curso> asignaturasCursos(Asignatura as) {
         List<Curso> lista_cursos = null;
 
         Session session = HibernateUtil.getSessionFactory().openSession();
 
         try {
-            Query<Academia> query = session.createQuery("select ac from Academia ac join fetch ac.cursos where ac.id =:id", Academia.class);
-            query.setParameter("id", ac.getId());
+            Query<Asignatura> query = session.createQuery("select a from Asignatura a join fetch a.cursos where a.id =:id", Asignatura.class);
+            query.setParameter("id", as.getId());
             lista_cursos = query.getSingleResult().getCursos();
         } catch (NoResultException nre) {
             lista_cursos = new ArrayList<>();
@@ -229,86 +174,23 @@ public class AsociacionesDAO implements AsociacionesDAOInterface {
         session.close();
         return lista_cursos;
     }
+
     @Override
-    public boolean asignarAcademiaCurso(Curso c, Academia ac) {
+    public boolean asignarAsignatura(Curso c, Asignatura as) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            List<Curso> lista_cursos = academiasConCursos(ac);
+            List<Curso> lista_cursos = asignaturasCursos(as);
             lista_cursos.add(c);
-            ac.setCursos(lista_cursos);
+            as.setCursos(lista_cursos);
 
-            List<Academia> lista_academias = cursosConAcademias(c);
-            lista_academias.add(ac);
-            c.setAcademias(lista_academias);
+            List<Asignatura> lista_asignaturas = cursosAsignaturas(c);
+            lista_asignaturas.add(as);
+            c.setAsignaturas(lista_asignaturas);
 
             session.beginTransaction();
 
             session.update(c);
-            session.update(ac);
-            session.getTransaction().commit();
-
-        } catch (PersistenceException e) {
-            e.printStackTrace();
-            session.getTransaction().rollback();
-            return false;
-        }
-        session.close();
-        return true;
-    }
-    @Override
-    public List<Academia> profesoresConAcademias(Profesor p) {
-        List<Academia> lista_academias = null;
-
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        try {
-            Query<Profesor> query = session.createQuery("select p from Profesor p join fetch p.academias where p.id =:id", Profesor.class);
-            query.setParameter("id", p.getId());
-            lista_academias = query.getSingleResult().getAcademias();
-
-        } catch (NoResultException nre) {
-            lista_academias = new ArrayList<>();
-        }catch(NullPointerException npe){
-            return null;
-        }
-        session.close();
-        return lista_academias;
-    }
-
-    @Override
-    public List<Profesor> academiasConProfesores(Academia ac) {
-        List<Profesor> lista_profesores = null;
-
-        Session session = HibernateUtil.getSessionFactory().openSession();
-
-        try {
-            Query<Academia> query = session.createQuery("select ac from Academia ac join fetch ac.profesores where ac.id =:id", Academia.class);
-            query.setParameter("id", ac.getId());
-            lista_profesores = query.getSingleResult().getProfesores();
-        } catch (NoResultException nre) {
-            lista_profesores = new ArrayList<>();
-        }catch(NullPointerException npe){
-            return null;
-        }
-        session.close();
-        return lista_profesores;
-    }
-
-    @Override
-    public boolean asignarAcademiaProfesores(Profesor p, Academia ac) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        try {
-            List<Profesor> lista_profesores = academiasConProfesores(ac);
-            lista_profesores.add(p);
-            ac.setProfesores(lista_profesores);
-
-            List<Academia> lista_academias = profesoresConAcademias(p);
-            lista_academias.add(ac);
-            p.setAcademias(lista_academias);
-
-            session.beginTransaction();
-
-            session.update(p);
-            session.update(ac);
+            session.update(as);
             session.getTransaction().commit();
 
         } catch (PersistenceException e) {

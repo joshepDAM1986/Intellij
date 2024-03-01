@@ -14,7 +14,7 @@ public interface ProfesorDAOInterface {
 
     Long totalProfesores();
 
-    Profesor buscarPorId(Long id);
+    Profesor buscarPorId(long id);
 
     Profesor updateByIdProfesores(Profesor profesor);
 

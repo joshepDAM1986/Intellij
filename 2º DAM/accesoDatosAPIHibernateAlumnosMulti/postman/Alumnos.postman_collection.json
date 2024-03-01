@@ -402,7 +402,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"dni\": \"75162631B\",\r\n        \"nombre\": \"Pedro Jimenez\",\r\n        \"email\": \"jose.garcia@gmail.com\",\r\n        \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/joshepegar.jpg?alt=media&token=fb6485e7-3cd2-43b2-bbdd-8a515r9g1847\",\r\n        \"edad\": 38,\r\n        \"nota\": 9,\r\n        \"fecha_matriculacion\": \"2022-02-02\",\r\n        \"categoria\": \"Sobresaliente\",\r\n        \"academia_key\": \"2\",\r\n        \"curso_key\": \"3\"\r\n}",
+					"raw": "{\r\n        \"dni\": \"75162631B\",\r\n        \"nombre\": \"Pedro Jimenez\",\r\n        \"email\": \"jose.garcia@gmail.com\",\r\n        \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/joshepegar.jpg?alt=media&token=fb6485e7-3cd2-43b2-bbdd-8a515r9g1847\",\r\n        \"edad\": 38,\r\n        \"nota\": 4,\r\n        \"fecha_matriculacion\": \"2022-02-02\",\r\n        \"categoria\": \"Suspenso\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -410,7 +410,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/alumnos/modificar/15",
+					"raw": "localhost:8080/alumnos/modificar/21",
 					"host": [
 						"localhost"
 					],
@@ -418,7 +418,7 @@
 					"path": [
 						"alumnos",
 						"modificar",
-						"15"
+						"21"
 					]
 				}
 			},

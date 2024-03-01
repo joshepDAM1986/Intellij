@@ -34,17 +34,6 @@ public class Profesor implements Serializable {
         this.alumnos = alumnos;
     }
 
-    @ManyToMany(mappedBy = "profesores")
-    private List<Academia> academias = new ArrayList<>();
-
-    public List<Academia> getAcademias() {
-        return academias;
-    }
-
-    public void setAcademias(List<Academia> academias) {
-        this.academias = academias;
-    }
-
     public Profesor() {
     }
 

@@ -1,18 +1,20 @@
 package dao;
 
-import entidades.Academia;
 import entidades.Alumno;
+import entidades.Asignatura;
 import entidades.Curso;
 import entidades.Profesor;
 
 import java.util.List;
 
 public interface AsociacionesDAOInterface {
-    boolean asignarCurso(Alumno a, Curso c);
+
 
     Curso obtenercursoAlumno(Alumno m);
 
-    List<Alumno> alumnosCurso(Curso p);
+    List<Alumno> obtenerAlumnosCurso(Curso p);
+
+    boolean asignarCurso(Alumno a, Curso c);
 
     List<Profesor> alumnosConProfesor(Alumno m);
 
@@ -20,21 +22,9 @@ public interface AsociacionesDAOInterface {
 
     boolean asignarProfesor(Alumno a, Profesor p);
 
-    Academia obtenerAcademiaAlumno(Alumno a);
+    List<Asignatura> cursosAsignaturas(Curso c);
 
-    List<Alumno> alumnosAcademia(Academia ac);
+    List<Curso> asignaturasCursos(Asignatura as);
 
-    boolean asignarAcademiaAlumno(Alumno a, Academia ac);
-
-    List<Academia> cursosConAcademias(Curso c);
-
-    List<Curso> academiasConCursos(Academia ac);
-
-    boolean asignarAcademiaCurso(Curso c, Academia ac);
-
-    List<Academia> profesoresConAcademias(Profesor p);
-
-    List<Profesor> academiasConProfesores(Academia ac);
-
-    boolean asignarAcademiaProfesores(Profesor p, Academia ac);
+    boolean asignarAsignatura(Curso c, Asignatura as);
 }

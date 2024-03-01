@@ -7,129 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Asignar Profesor a una Academia",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/profesores/academias/3/3",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"profesores",
-						"academias",
-						"3",
-						"3"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obtener Profesores de una Academia",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/academias/profesores/3",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"academias",
-						"profesores",
-						"3"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obtener Academias de un Profesor",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/profesores/academias/3",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"profesores",
-						"academias",
-						"3"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Asignar Curso a una Academia",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/cursos/academias/2/5",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"cursos",
-						"academias",
-						"2",
-						"5"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obtener Academias de un Curso",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/cursos/academias/2",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"cursos",
-						"academias",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obtener Cursos de una Academia",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/academias/cursos/1",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"academias",
-						"cursos",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Asignar Alumno a Academia",
+			"name": "Crear Nuevo Alumno con Curso y Profesor",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -143,120 +21,15 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/alumnos/academias/16/5",
+					"raw": "localhost:8080/alumnos/crear/1/1",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"alumnos",
-						"academias",
-						"16",
-						"5"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obtener Alumnos de una Academia",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n        \"dni\": \"75162631B\",\r\n        \"nombre\": \"Jose Garcia\",\r\n        \"email\": \"jose.garcia@gmail.com\",\r\n        \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/joshepegar.jpg?alt=media&token=fb6485e7-3cd2-43b2-bbdd-8a515r9g1847\",\r\n        \"edad\": 38,\r\n        \"nota\": 9,\r\n        \"fecha_matriculacion\": \"2022-01-01\",\r\n        \"categoria\": \"Sobresaliente\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8080/academias/alumnos/5",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"academias",
-						"alumnos",
-						"5"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obtener Academia de un Alumno",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n        \"dni\": \"75162631B\",\r\n        \"nombre\": \"Jose Garcia\",\r\n        \"email\": \"jose.garcia@gmail.com\",\r\n        \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/joshepegar.jpg?alt=media&token=fb6485e7-3cd2-43b2-bbdd-8a515r9g1847\",\r\n        \"edad\": 38,\r\n        \"nota\": 9,\r\n        \"fecha_matriculacion\": \"2022-01-01\",\r\n        \"categoria\": \"Sobresaliente\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8080/alumnos/academias/5",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"alumnos",
-						"academias",
-						"5"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Asignar Profesor a Alumno",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/alumnos/profesor/15/5",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"alumnos",
-						"profesor",
-						"15",
-						"5"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obtener Alumnos que reciben clase a un Profesor",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/profesores/alumnos/1",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"profesores",
-						"alumnos",
+						"crear",
+						"1",
 						"1"
 					]
 				}
@@ -264,20 +37,31 @@
 			"response": []
 		},
 		{
-			"name": "Obtener Profesores que dan clase de un alumno",
+			"name": "Modificar Alumno y asignar Curso y Profesor",
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"dni\": \"75162631B\",\r\n        \"nombre\": \"Jose Garcia Navarro\",\r\n        \"email\": \"jose.garcia@gmail.com\",\r\n        \"imagen_url\": \"https://firebasestorage.googleapis.com/v0/b/joshepapihibernate.appspot.com/o/joshepegar.jpg?alt=media&token=fb6485e7-3cd2-43b2-bbdd-8a515r9g1847\",\r\n        \"edad\": 38,\r\n        \"nota\": 8,\r\n        \"fecha_matriculacion\": \"2022-02-02\",\r\n        \"categoria\": \"Notable\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/alumnos/profesores/1",
+					"raw": "localhost:8080/alumnos/modificar/25/1/5",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"alumnos",
-						"profesores",
-						"1"
+						"modificar",
+						"25",
+						"1",
+						"5"
 					]
 				}
 			},
@@ -289,7 +73,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/cursos/alumnos/2/16",
+					"raw": "localhost:8080/cursos/alumnos/4/21",
 					"host": [
 						"localhost"
 					],
@@ -297,8 +81,28 @@
 					"path": [
 						"cursos",
 						"alumnos",
-						"2",
-						"16"
+						"4",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Curso de un Alumno",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/alumnos/cursos/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumnos",
+						"cursos",
+						"2"
 					]
 				}
 			},
@@ -325,20 +129,155 @@
 			"response": []
 		},
 		{
-			"name": "Obtener Curso de un Alumno",
+			"name": "Asignar Profesor a Alumno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/profesores/alumnos/4/21",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profesores",
+						"alumnos",
+						"4",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Profesores que dan clase de un alumno",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/alumnos/cursos/2",
+					"raw": "localhost:8080/alumnos/profesores/1",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"alumnos",
+						"profesores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Alumnos que reciben clase a un Profesor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/profesores/alumnos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profesores",
+						"alumnos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asignar Asignatura a un Curso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Primeros Auxilios\",\r\n    \"horas_semanales\": \"6\",\r\n    \"tipo\": \"Comun\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/asignaturas/cursos/1/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"asignaturas",
 						"cursos",
-						"2"
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cursos que tienen esta Asignatura",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Primeros Auxilios\",\r\n    \"nivel\": \"Medio\",\r\n    \"horas\": 1500.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/asignaturas/cursos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"asignaturas",
+						"cursos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Asignaturas de un Curso",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Primeros Auxilios\",\r\n    \"nivel\": \"Medio\",\r\n    \"horas\": 1500.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cursos/asignaturas/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cursos",
+						"asignaturas",
+						"1"
 					]
 				}
 			},

@@ -1,6 +1,9 @@
 package entidades;
 
 import com.google.gson.annotations.Expose;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -8,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="alumnos")
+@Table(name = "alumnos")
 public class Alumno implements Serializable {
 
     @Id
@@ -44,36 +47,30 @@ public class Alumno implements Serializable {
     @Expose
     private LocalDate fecha_matriculacion;
 
-    @Column(name="categoria", nullable = false)
+    @Column(name = "categoria", nullable = false)
     @Expose
     private String categoria;
 
-    public List<Profesor> getProfesores(){
+    //Relaciones
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "curso_key",
+            foreignKey = @ForeignKey(name = "fk_alumno_curso"))
+    private Curso curso;
+
+    @ManyToMany
+    @JoinTable(
+            name = "profesor_alumno",
+            joinColumns = @JoinColumn(name = "alumno_id"),
+            inverseJoinColumns = @JoinColumn(name = "profesor_id"))
+    private List<Profesor> profesores = new ArrayList<>();
+
+    public List<Profesor> getProfesores() {
         return profesores;
     }
 
-    public void setProfesores(List<Profesor> profesores){
-        this.profesores=profesores;
+    public void setProfesores(List<Profesor> profesores) {
+        this.profesores = profesores;
     }
-
-    //Relaciones
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="curso_key",
-               foreignKey = @ForeignKey(name="fk_alumno_curso"))
-    private Curso curso;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="academia_key",
-            foreignKey = @ForeignKey(name="fk_alumno_academia"))
-    private Academia academia;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "profesor_alumno",
-            joinColumns= @JoinColumn(name ="alumno_id"),
-            inverseJoinColumns = @JoinColumn(name = "profesor_id"))
-    private List<Profesor> profesores=new ArrayList<>();
-
 
     //Constructores
     public Alumno() {
@@ -171,14 +168,6 @@ public class Alumno implements Serializable {
 
     public void setCurso(Curso curso) {
         this.curso = curso;
-    }
-
-    public Academia getAcademia() {
-        return academia;
-    }
-
-    public void setAcademia(Academia academia) {
-        this.academia = academia;
     }
 
     @Override

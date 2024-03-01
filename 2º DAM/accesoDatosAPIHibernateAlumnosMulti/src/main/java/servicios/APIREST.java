@@ -5,8 +5,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import dao.*;
 import dto.AlumnoDTO;
-import entidades.Academia;
 import entidades.Alumno;
+import entidades.Asignatura;
 import entidades.Curso;
 import entidades.Profesor;
 import spark.Spark;
@@ -18,7 +18,8 @@ public class APIREST {
     private AlumnoDAOInterface dao;
     private CursoDAOInterface dao_curs;
     private ProfesorDAOInterface dao_prof;
-    private AcademiaDAOInterface dao_acad;
+    private AsignaturaDAOInterface dao_asig;
+
     private AsociacionesDAOInterface dao_asoc;
 
     private Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation()
@@ -27,12 +28,12 @@ public class APIREST {
             .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
             .create();
 
-    public APIREST(AlumnoDAOInterface implementacion, CursoDAOInterface implementacion_curs, ProfesorDAOInterface implementacion_prof, AcademiaDAOInterface implementacion_acad, AsociacionesDAOInterface implementacion_asoc) {
+    public APIREST(AlumnoDAOInterface implementacion, CursoDAOInterface implementacion_curs, ProfesorDAOInterface implementacion_prof, AsignaturaDAOInterface implementacion_asig, AsociacionesDAOInterface implementacion_asoc) {
         Spark.port(8080);
         dao = implementacion;
         dao_curs = implementacion_curs;
         dao_prof = implementacion_prof;
-        dao_acad = implementacion_acad;
+        dao_asig = implementacion_asig;
         dao_asoc = implementacion_asoc;
 
         //------------------------------------------END POINT DE ALUMNO------------------------------------------//
@@ -333,75 +334,146 @@ public class APIREST {
             }
         });
 
-        //------------------------------------------END POINT DE ACADEMIA------------------------------------------//
+        //------------------------------------------END POINT DE ASIGNATURA------------------------------------------//
 
         // Mostrar todos
-        Spark.get("/academias/todos", (request, response) -> {
+        Spark.get("/asignaturas/todos", (request, response) -> {
             response.type("application/json");
 
-            List<Academia> academias = dao_acad.devolverTodosAcademias();
-            return gson.toJson(academias);
+            List<Asignatura> asignaturas = dao_asig.devolverTodosAsignaturas();
+            return gson.toJson(asignaturas);
         });
 
         // Mostrar todos paginado
-        Spark.get("/academias/todos/paginado/:pagina/:tam_pagina", (request, response) -> {
+        Spark.get("/asignaturas/todos/paginado/:pagina/:tam_pagina", (request, response) -> {
             response.type("application/json");
 
             Integer pagina = Integer.parseInt(request.params(":pagina"));
             Integer tamaño_pagina = Integer.parseInt(request.params(":tam_pagina"));
 
-            List<Academia> academias = dao_acad.devolverTodosAcademias(pagina, tamaño_pagina);
-            long totalElementos = dao_acad.totalAcademias();
+            List<Asignatura> asignaturas = dao_asig.devolverTodosAsignaturas(pagina, tamaño_pagina);
+            long totalElementos = dao_prof.totalProfesores();
 
-            RespuestaPaginacion<Academia> paginaResultado = new RespuestaPaginacion<>(academias, totalElementos, pagina, tamaño_pagina);
+            RespuestaPaginacion<Asignatura> paginaResultado = new RespuestaPaginacion<>(asignaturas, totalElementos, pagina, tamaño_pagina);
 
             return gson.toJson(paginaResultado);
         });
 
         // Crear
-        Spark.post("/academias/crear", (request, response) -> {
+        Spark.post("/asignaturas/crear", (request, response) -> {
             response.type("application/json");
 
             String body = request.body();
-            Academia nuevaAcademia = gson.fromJson(body, Academia.class);
-            Academia creado = dao_acad.crearAcademia(nuevaAcademia);
-            return gson.toJson(creado);
+            Asignatura nuevaAsignatura = gson.fromJson(body, Asignatura.class);
+            Asignatura creada = dao_asig.crearAsignatura(nuevaAsignatura);
+            return gson.toJson(creada);
         });
 
         // Modificar
-        Spark.put("/academias/modificar/:id", (request, response) -> {
+        Spark.put("/asignaturas/modificar/:id", (request, response) -> {
             response.type("application/json");
 
             long id = Long.parseLong(request.params(":id"));
             String body = request.body();
-            Academia academiaActualizada = gson.fromJson(body, Academia.class);
-            academiaActualizada.setId(id);
-            Academia actualizada = dao_acad.updateByIdAcademias(academiaActualizada);
+            Asignatura asignaturaActualizada = gson.fromJson(body, Asignatura.class);
+            asignaturaActualizada.setId(id);
+            Asignatura actualizada = dao_asig.updateByIdAsignatura(asignaturaActualizada);
             if (actualizada != null) {
                 return gson.toJson(actualizada);
             } else {
                 response.status(404);
-                return "Academia no encontrada";
+                return "Asignatura no encontrado";
             }
         });
 
         // Borrar
-        Spark.delete("/academias/borrar/:id", (request, response) -> {
+        Spark.delete("/asignaturas/borrar/:id", (request, response) -> {
             response.type("application/json");
 
             long id = Long.parseLong(request.params(":id"));
-            boolean eliminada = dao_acad.deleteByIdAcademias(id);
-            if (eliminada) {
-                return "Academia eliminada correctamente";
+            boolean eliminado = dao_asig.deleteByIdAsignatura(id);
+            if (eliminado) {
+                return "Asignatura eliminada correctamente";
             } else {
                 response.status(404);
-                return "academia no encontrada";
+                return "Asignatura no encontrada";
             }
         });
 
         //------------------------------------------END POINT DE RELACIONES------------------------------------------//
 
-        // Entpoint localizador de excepciones
+        // Crear alumno y asignar curso y profesor
+        Spark.post("/alumnos/crear/:cursoId/:profesorId", (request, response) -> {
+            response.type("application/json");
+
+            String body = request.body();
+            Alumno nuevoAlumno = gson.fromJson(body, Alumno.class);
+
+            // Obtén la ID del curso y del profesor de la ruta
+            Long cursoId = Long.parseLong(request.params(":cursoId"));
+            Long profesorId = Long.parseLong(request.params(":profesorId"));
+
+            // Verifica si el curso y el profesor existen antes de asignarlos al alumno
+            Curso curso = dao_curs.buscarPorId(cursoId);
+            Profesor profesor = dao_prof.buscarPorId(profesorId);
+
+            if (curso != null && profesor != null) {
+                // Los curso y profesor existen, asígnalos al alumno
+                nuevoAlumno.setCurso(curso);
+                nuevoAlumno.getProfesores().add(profesor);
+
+                // Realiza la creación del alumno y la asignación del curso y profesor
+                Alumno creado = dao.create(nuevoAlumno);
+
+                return gson.toJson(creado);
+            } else {
+                response.status(404);
+                return "Curso o profesor no encontrado";
+            }
+        });
+
+        // Modificar alumno y asignar curso y profesor
+        Spark.put("/alumnos/modificar/:id/:cursoId/:profesorId", (request, response) -> {
+            response.type("application/json");
+
+            long id = Long.parseLong(request.params(":id"));
+            Alumno alumnoActualizado = gson.fromJson(request.body(), Alumno.class);
+            alumnoActualizado.setId(id);
+
+            // Obtén la ID del nuevo curso y del nuevo profesor de la ruta
+            Long nuevoCursoId = Long.parseLong(request.params(":cursoId"));
+            Long nuevoProfesorId = Long.parseLong(request.params(":profesorId"));
+
+            // Modifica el alumno y asigna el nuevo curso
+            Alumno actualizado = dao.updateById(alumnoActualizado);
+
+            if (actualizado != null) {
+                // Obtén el curso y profesor por sus IDs
+                Curso nuevoCurso = dao_curs.buscarPorId(nuevoCursoId);
+                Profesor nuevoProfesor = dao_prof.buscarPorId(nuevoProfesorId);
+
+                if (nuevoCurso != null && nuevoProfesor != null) {
+                    // Asigna el nuevo curso y profesor al alumno
+                    actualizado.setCurso(nuevoCurso);
+
+                    // Agrega el nuevo profesor a la lista
+                    actualizado.getProfesores().add(nuevoProfesor);
+
+                    // Actualiza nuevamente el alumno en la base de datos
+                    dao.updateById(actualizado);
+
+                    return gson.toJson(actualizado);
+                } else {
+                    response.status(404);
+                    return "Curso o profesor no encontrado";
+                }
+            } else {
+                response.status(404);
+                return "Alumno no encontrado";
+            }
+        });
+
+        // Localizador de excepciones
         Spark.exception(Exception.class, (exception, request, response) -> {
             response.type("application/json");
             exception.printStackTrace(); // Imprime la excepción en la consola
@@ -409,7 +481,7 @@ public class APIREST {
             response.body("Excepcion en tu codigo"); // Mensaje de error para el cliente
         });
 
-        // Entpoint obtener el curso de un alumno
+        // Obtener el curso de un alumno
         Spark.get("/alumnos/cursos/:idal", (request, response) -> {
             Long idal = Long.parseLong(request.params(":idal"));
             Alumno a= dao.buscarById(idal);
@@ -419,25 +491,25 @@ public class APIREST {
                 return gson.toJson(c);
             }
             else{
-                return "No existe ese curso";
+                return "No existe ese alumno";
             }
         });
 
-        // Entpoint obtener los alumnos de un curso
+        // Obtener los alumnos de un curso
         Spark.get("/cursos/alumnos/:idcurs", (request, response) -> {
             Long id = Long.parseLong(request.params(":idcurs"));
             Curso p= dao_curs.buscarPorId(id);
-            List<Alumno> a = dao_asoc.alumnosCurso(p);
+            List<Alumno> a = dao_asoc.obtenerAlumnosCurso(p);
             response.type("application/json");
             if (a!=null) {
                 return gson.toJson(a);
             }
             else{
-                return "No existe ese alumno";
+                return "No existe ese curso";
             }
         });
 
-        // Entpoint Asignar curso a alumno
+        // Asignar curso a alumno
         Spark.post("/cursos/alumnos/:idcurs/:idal", (request, response) -> {
             Long idal = Long.parseLong(request.params(":idal"));
             Long idcurs = Long.parseLong(request.params(":idcurs"));
@@ -447,7 +519,7 @@ public class APIREST {
             return gson.toJson(dao_asoc.asignarCurso(a,c));
         });
 
-        // Entpoint obtener profesores de un alumno
+        // Obtener profesores de un alumno
         Spark.get("/alumnos/profesores/:idal", (request, response) -> {
             Long idal = Long.parseLong(request.params(":idal"));
             Alumno a= dao.buscarById(idal);
@@ -457,11 +529,11 @@ public class APIREST {
                 return gson.toJson(p);
             }
             else{
-                return "No existe ese profesor";
+                return "No existe ese alumno";
             }
         });
 
-        // Entpoint obtener alumnos de un profesor
+        // Obtener alumnos de un profesor
         Spark.get("/profesores/alumnos/:idprof", (request, response) -> {
             Long id = Long.parseLong(request.params(":idprof"));
             Profesor p= dao_prof.buscarPorId(id);
@@ -471,132 +543,56 @@ public class APIREST {
                 return gson.toJson(a);
             }
             else{
-                return "No existe ese alumno";
+                return "No existe ese profesor";
             }
         });
 
-        // Entpoint Asignar profesor a alumno
-        Spark.post("/alumnos/profesor/:idal/:idprof", (request, response) -> {
-            Long idal = Long.parseLong(request.params(":idal"));
-            Long idprof = Long.parseLong(request.params(":idprof"));
-            Alumno a= dao.buscarById(idal);
-            Profesor p= dao_prof.buscarPorId(idprof);
-            response.type("application/json");
-            return gson.toJson(dao_asoc.asignarProfesor(a,p));
+            // Asignar profesor a alumno
+            Spark.post("/profesores/alumnos/:idprof/:idal", (request, response) -> {
+                Long idal = Long.parseLong(request.params(":idal"));
+                Long idprof = Long.parseLong(request.params(":idprof"));
+                Alumno a= dao.buscarById(idal);
+                Profesor p= dao_prof.buscarPorId(idprof);
+                response.type("application/json");
+                return gson.toJson(dao_asoc.asignarProfesor(a,p));
         });
 
-        // Entpoint obtener la academia de un alumno
-        Spark.get("/alumnos/academias/:idal", (request, response) -> {
-            Long idal = Long.parseLong(request.params(":idal"));
-            Alumno a= dao.buscarById(idal);
-            Academia ac = dao_asoc.obtenerAcademiaAlumno(a);
+        // Obtener asignaturas de un curso
+        Spark.get("/cursos/asignaturas/:idcurs", (request, response) -> {
+            Long idcurs = Long.parseLong(request.params(":idcurs"));
+            Curso c= dao_curs.buscarPorId(idcurs);
+            List<Asignatura> as = dao_asoc.cursosAsignaturas(c);
             response.type("application/json");
-            if (ac!=null) {
-                return gson.toJson(ac);
+            if (as!=null) {
+                return gson.toJson(as);
             }
             else{
-                return "No existe esa academia";
+                return "No existe ese curso";
             }
         });
 
-        // Entpoint obtener los alumnos de una academia
-        Spark.get("/academias/alumnos/:idac", (request, response) -> {
-            Long idac = Long.parseLong(request.params(":idac"));
-            Academia ac= dao_acad.buscarPorId(idac);
-            List<Alumno> a = dao_asoc.alumnosAcademia(ac);
-            response.type("application/json");
-            if (a!=null) {
-                return gson.toJson(a);
-            }
-            else{
-                return "No existe ese alumno";
-            }
-        });
-
-        // Entpoint Asignar academia a alumno
-        Spark.post("/alumnos/academias/:idal/:idac", (request, response) -> {
-            Long idal = Long.parseLong(request.params(":idal"));
-            Long idac = Long.parseLong(request.params(":idac"));
-            Alumno a= dao.buscarById(idal);
-            Academia ac= dao_acad.buscarPorId(idac);
-            response.type("application/json");
-            return gson.toJson(dao_asoc.asignarAcademiaAlumno(a,ac));
-        });
-
-        // Entoint obtener academias de un curso
-        Spark.get("/cursos/academias/:idcur", (request, response) -> {
-            Long idcur = Long.parseLong(request.params(":idcur"));
-            Curso c= dao_curs.buscarPorId(idcur);
-            List<Academia> ac = dao_asoc.cursosConAcademias(c);
-            response.type("application/json");
-            if (ac!=null) {
-                return gson.toJson(ac);
-            }
-            else{
-                return "No existe esa academia";
-            }
-        });
-
-        // Entpoint obtener cursos de una academia
-        Spark.get("/academias/cursos/:idac", (request, response) -> {
-            Long idaca = Long.parseLong(request.params(":idac"));
-            Academia ac= dao_acad.buscarPorId(idaca);
-            List<Curso> c = dao_asoc.academiasConCursos(ac);
+        // Obtener cursos de una asignatura
+        Spark.get("/asignaturas/cursos/:idasig", (request, response) -> {
+            Long idasig = Long.parseLong(request.params(":idasig"));
+            Asignatura as= dao_asig.buscarPorId(idasig);
+            List<Curso> c = dao_asoc.asignaturasCursos(as);
             response.type("application/json");
             if (c!=null) {
                 return gson.toJson(c);
             }
             else{
-                return "No existe ese curso ";
+                return "No existe esa asignatura";
             }
         });
 
-        // Entpoint Asignar curso a academia
-        Spark.post("/cursos/academias/:idcurs/:idac", (request, response) -> {
+        // Asignar asignatura a curso
+        Spark.post("/asignaturas/cursos/:idasig/:idcurs", (request, response) -> {
             Long idcurs = Long.parseLong(request.params(":idcurs"));
-            Long idaca = Long.parseLong(request.params(":idac"));
+            Long idasig = Long.parseLong(request.params(":idasig"));
             Curso c= dao_curs.buscarPorId(idcurs);
-            Academia ac= dao_acad.buscarPorId(idaca);
+            Asignatura as= dao_asig.buscarPorId(idasig);
             response.type("application/json");
-            return gson.toJson(dao_asoc.asignarAcademiaCurso(c,ac));
-        });
-
-        // Entoint obtener academias de un profesor
-        Spark.get("/profesores/academias/:idprof", (request, response) -> {
-            Long idprof = Long.parseLong(request.params(":idprof"));
-            Profesor p= dao_prof.buscarPorId(idprof);
-            List<Academia> ac = dao_asoc.profesoresConAcademias(p);
-            response.type("application/json");
-            if (ac!=null) {
-                return gson.toJson(ac);
-            }
-            else{
-                return "No existe esa academia";
-            }
-        });
-
-        // Entpoint obtener profesores de una academia
-        Spark.get("/academias/profesores/:idac", (request, response) -> {
-            Long idaca = Long.parseLong(request.params(":idac"));
-            Academia ac= dao_acad.buscarPorId(idaca);
-            List<Profesor> p = dao_asoc.academiasConProfesores(ac);
-            response.type("application/json");
-            if (p!=null) {
-                return gson.toJson(p);
-            }
-            else{
-                return "No existe ese profesor ";
-            }
-        });
-
-        // Entpoint Asignar profesor a academia
-        Spark.post("/profesores/academias/:idprof/:idac", (request, response) -> {
-            Long idprof = Long.parseLong(request.params(":idprof"));
-            Long idaca = Long.parseLong(request.params(":idac"));
-            Profesor p= dao_prof.buscarPorId(idprof);
-            Academia ac= dao_acad.buscarPorId(idaca);
-            response.type("application/json");
-            return gson.toJson(dao_asoc.asignarAcademiaProfesores(p,ac));
+            return gson.toJson(dao_asoc.asignarAsignatura(c,as));
         });
     }
 }

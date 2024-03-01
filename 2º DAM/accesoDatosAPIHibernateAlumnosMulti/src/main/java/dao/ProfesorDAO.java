@@ -61,7 +61,7 @@ public class ProfesorDAO implements ProfesorDAOInterface{
         return contador;
     }
     @Override
-    public Profesor buscarPorId(Long id) {
+    public Profesor buscarPorId(long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
         Profesor p = session.find(Profesor.class, id);
