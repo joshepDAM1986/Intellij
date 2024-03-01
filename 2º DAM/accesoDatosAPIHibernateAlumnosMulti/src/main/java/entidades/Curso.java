@@ -19,9 +19,9 @@ public class Curso implements Serializable {
     @Expose
     private String nombre;
 
-    @Column(name = "nivel", length = 50, nullable = false)
+    @Column(name = "tipo", length = 50, nullable = false)
     @Expose
-    private String nivel;
+    private String tipo;
 
     @Column(name = "horas", nullable = false)
     @Expose
@@ -60,10 +60,10 @@ public class Curso implements Serializable {
     public Curso() {
     }
 
-    public Curso(Long id, String nombre, String nivel, Double horas) {
+    public Curso(Long id, String nombre, String tipo, Double horas) {
         this.id = id;
         this.nombre = nombre;
-        this.nivel = nivel;
+        this.tipo = tipo;
         this.horas = horas;
     }
 
@@ -83,12 +83,12 @@ public class Curso implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getNivel() {
-        return nivel;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setNivel(String nivel) {
-        this.nivel = nivel;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public Double getHoras() {
@@ -104,7 +104,7 @@ public class Curso implements Serializable {
         return "Curso{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", nivel='" + nivel + '\'' +
+                ", tipo='" + tipo + '\'' +
                 ", horas=" + horas +
                 '}';
     }

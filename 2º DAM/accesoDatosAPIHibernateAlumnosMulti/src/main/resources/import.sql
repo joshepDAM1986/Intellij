@@ -1,8 +1,8 @@
-INSERT INTO cursos (nombre, nivel, horas) VALUES ('Desarrollo Aplicaciones Multiplataforma', 'Superior', 2000)
-INSERT INTO cursos (nombre, nivel, horas) VALUES ('Desarrollo Aplicaciones Web', 'Superior', 1800)
-INSERT INTO cursos (nombre, nivel, horas) VALUES ('Sistemas Microinformáticos', 'Superior', 1700)
-INSERT INTO cursos (nombre, nivel, horas) VALUES ('Integración Social', 'Superior', 1900)
-INSERT INTO cursos (nombre, nivel, horas) VALUES ('Educación Infantil', 'Superior', 1600)
+INSERT INTO cursos (nombre, tipo, horas) VALUES ('Desarrollo Aplicaciones Multiplataforma', 'Presencial', 2000)
+INSERT INTO cursos (nombre, tipo, horas) VALUES ('Desarrollo Aplicaciones Web', 'Presendial', 1800)
+INSERT INTO cursos (nombre, tipo, horas) VALUES ('Sistemas Microinformáticos', 'Híbrido', 1700)
+INSERT INTO cursos (nombre, tipo, horas) VALUES ('Integración Social', 'Online', 1900)
+INSERT INTO cursos (nombre, tipo, horas) VALUES ('Educación Infantil', 'Online', 1600)
 
 INSERT INTO asignaturas (nombre, horas_semanales, tipo) VALUES ('Inglés', 3, 'Comun');
 INSERT INTO asignaturas (nombre, horas_semanales, tipo) VALUES ('Emprendimiento e Iniciativa Emprendedora', 3, 'Comun');
